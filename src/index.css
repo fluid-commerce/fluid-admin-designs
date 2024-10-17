@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gray-200;
+  @apply bg-gray-100;
 }
 
 code {
@@ -17,6 +17,22 @@ code {
     monospace;
 }
 
+.nav-icons {
+  @apply fill-iconGray group-hover:fill-blue-500;
+}
+
 .gray-icons {
-  @apply fill-gray-500;
+  @apply fill-gray-400 group-hover:fill-blue-500;
+}
+
+.destructive-icons {
+  @apply fill-red-500;
+}
+
+.save-icons {
+  @apply fill-white;
+}
+
+.black-icons {
+  @apply fill-gray-600 group-hover:fill-blue-500;
 }

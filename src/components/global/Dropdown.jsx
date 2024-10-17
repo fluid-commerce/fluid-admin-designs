@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 
+import ChevronDown from "../../images/svgs/solid/chevron-down.svg";
+import RenderIcon from "./RenderIcon";
+
 export default function Dropdown() {
   const [selectedLanguage, setSelectedLanguage] = useState("English (EN)");
   const languages = [
@@ -19,12 +22,9 @@ export default function Dropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <MenuButton className="inline-flex w-full justify-center gap-x-1.5 bg-gray-200 rounded-md px-3 py-1 text-sm font-medium text-gray-900 ">
+        <MenuButton className="inline-flex w-full justify-center items-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
           {selectedLanguage}
-          <ChevronDownIcon
-            aria-hidden="true"
-            className="-mr-1 h-5 w- text-gray-400"
-          />
+          <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
         </MenuButton>
       </div>
 

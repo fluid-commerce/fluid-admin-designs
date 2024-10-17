@@ -22,7 +22,7 @@ export function SidebarHeader({ className, ...props }) {
       {...props}
       className={clsx(
         className,
-        "flex flex-col border-b border-zinc-950/5 p-4 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5"
+        "flex flex-col border-zinc-950/5 p-4 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5"
       )}
     />
   );
@@ -101,10 +101,10 @@ export function SidebarHeading({ className, ...props }) {
 }
 
 export const SidebarItem = forwardRef(function SidebarItem(
-  { current, className, children, ...props },
-
+  { current, className, active, children, ...props },
   ref
 ) {
+  console.log(active);
   let classes = clsx(
     // Base
     "flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5",
@@ -115,7 +115,8 @@ export const SidebarItem = forwardRef(function SidebarItem(
     // Avatar
     "data-[slot=avatar]:*:-m-0.5 data-[slot=avatar]:*:size-7 data-[slot=avatar]:*:[--ring-opacity:10%] sm:data-[slot=avatar]:*:size-6",
     // Hover
-    "data-[hover]:bg-zinc-950/5 data-[slot=icon]:*:data-[hover]:fill-zinc-950",
+    !active &&
+      "data-[hover]:bg-zinc-950/5 data-[slot=icon]:*:data-[hover]:fill-zinc-950",
     // Active
     "data-[active]:bg-zinc-950/5 data-[slot=icon]:*:data-[active]:fill-zinc-950",
     // Current

@@ -58,13 +58,16 @@ import MessagingIcon from "./images/svgs/solid/messages.svg";
 import ShoppingCart from "./images/svgs/solid/cart-shopping.svg";
 import SharingIcon from "./images/svgs/solid/share-from-square.svg";
 import MarketingIcon from "./images/svgs/sharp-solid/megaphone.svg";
-import ChevronDown from "./images/svgs/regular/chevron-down.svg";
+import ChevronDown from "./images/svgs/solid/chevron-down.svg";
+import ChevronUp from "./images/svgs/solid/chevron-up.svg";
+import ChevronRight from "./images/svgs/solid/chevron-right.svg";
 import MobilePhone from "./images/svgs/solid/mobile-screen-button.svg";
 import Users from "./images/svgs/solid/users.svg";
 import Gear from "./images/svgs/solid/gear.svg";
 
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState(null);
   return (
     <SidebarLayout
       navbar={
@@ -114,30 +117,39 @@ export default function AppLayout() {
           <SidebarHeader>
             <Dropdown>
               <DropdownButton as={SidebarItem} className="lg:mb-2.5">
-                <Avatar src="/tailwind-logo.svg" />
-                <SidebarLabel>Tailwind Labs</SidebarLabel>
-                <ChevronDownIcon />
+                <div className="flex flex-row justify-between w-full items-center">
+                  <div className="flex flex-row gap-3">
+                    <Avatar src="/tailwind-logo.svg" />
+                    <SidebarLabel>
+                      {selectedCompany ? selectedCompany : "Neumi"}
+                    </SidebarLabel>
+                  </div>
+                  <div className="flex flex-col gap-[-0.5rem]">
+                    <RenderIcon path={ChevronDown} size={"w-3"} />
+                  </div>
+                </div>
               </DropdownButton>
               <DropdownMenu
                 className="min-w-80 lg:min-w-64"
                 anchor="bottom start"
               >
-                <DropdownItem href="/teams/1/settings">
-                  <Cog8ToothIcon />
-                  <DropdownLabel>Settings</DropdownLabel>
-                </DropdownItem>
-                <DropdownDivider />
-                <DropdownItem href="/teams/1">
+                <DropdownItem
+                  onClick={() => setSelectedCompany("Neumi")}
+                  // href="/teams/1"
+                >
                   <Avatar slot="icon" src="/tailwind-logo.svg" />
-                  <DropdownLabel>Tailwind Labs</DropdownLabel>
+                  <DropdownLabel>Neumi</DropdownLabel>
                 </DropdownItem>
-                <DropdownItem href="/teams/2">
+                <DropdownItem
+                  onClick={() => setSelectedCompany("Asea")}
+                  // href="/teams/2"
+                >
                   <Avatar
                     slot="icon"
                     initials="WC"
                     className="bg-purple-500 text-white"
                   />
-                  <DropdownLabel>Workcation</DropdownLabel>
+                  <DropdownLabel>Asea</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="/teams/create">
@@ -165,7 +177,7 @@ export default function AppLayout() {
                 } rounded-lg cursor-pointer`}
               >
                 <SidebarItem>
-                  <RenderIcon path={HouseBlank} />
+                  <RenderIcon path={HouseBlank} type={"nav"} />
                   <SidebarLabel>Home</SidebarLabel>
                 </SidebarItem>
               </div>
@@ -181,52 +193,57 @@ export default function AppLayout() {
                       : setSelectedTab("messaging");
                   }}
                 >
-                  <RenderIcon path={MessagingIcon} />
+                  <RenderIcon path={MessagingIcon} size={"w-4"} type={"nav"} />
                   <SidebarLabel>Messaging</SidebarLabel>
                 </SidebarItem>
               </div>
               <div
                 className={`${
-                  selectedTab === "orders" ? "bg-gray-200" : ""
-                } rounded-lg cursor-pointer`}
+                  selectedTab === "sharing" ? "bg-white" : ""
+                } rounded-lg cursor-pointer no-hover`}
               >
                 <SidebarItem
                   onClick={() => {
-                    selectedTab === "orders"
+                    selectedTab === "sharing"
                       ? setSelectedTab(null)
-                      : setSelectedTab("orders");
+                      : setSelectedTab("sharing");
                   }}
+                  active={selectedTab === "sharing"}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <div className="flex items-center gap-4">
-                      <RenderIcon path={SharingIcon} />
+                    <div className="flex items-center gap-3">
+                      <RenderIcon path={SharingIcon} type={"nav"} />
                       <SidebarLabel>Sharing</SidebarLabel>
                     </div>
                     <div>
-                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                      {selectedTab !== "sharing" ? (
+                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                      ) : (
+                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                      )}
                     </div>
                   </div>
                 </SidebarItem>
               </div>
-              {selectedTab === "orders" && (
+              {selectedTab === "sharing" && (
                 <SidebarSection className="pl-8">
-                  <SidebarItem href="/orders/sub1">
+                  <SidebarItem href="/sharing/sub1">
                     <SidebarLabel>Media</SidebarLabel>
                   </SidebarItem>
-                  <SidebarItem href="/orders/sub2">
+                  <SidebarItem href="/sharing/sub2">
                     <SidebarLabel>Pages</SidebarLabel>
                   </SidebarItem>
-                  <SidebarItem href="/orders/sub2">
+                  <SidebarItem href="/sharing/sub2">
                     <SidebarLabel>Enrollments</SidebarLabel>
                   </SidebarItem>
-                  <SidebarItem href="/orders/sub2">
+                  <SidebarItem href="/sharing/sub2">
                     <SidebarLabel>Playlists</SidebarLabel>
                   </SidebarItem>
                 </SidebarSection>
               )}
               <div
                 className={`${
-                  selectedTab === "shopping" ? "bg-gray-200" : ""
+                  selectedTab === "shopping" ? "bg-white" : ""
                 } rounded-lg cursor-pointer`}
               >
                 <SidebarItem
@@ -235,14 +252,19 @@ export default function AppLayout() {
                       ? setSelectedTab(null)
                       : setSelectedTab("shopping");
                   }}
+                  active={selectedTab === "shopping"}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <div className="flex items-center gap-4">
-                      <RenderIcon path={ShoppingCart} />
+                    <div className="flex items-center gap-3">
+                      <RenderIcon path={ShoppingCart} type={"nav"} />
                       <SidebarLabel>Shopping</SidebarLabel>
                     </div>
                     <div>
-                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                      {selectedTab !== "shopping" ? (
+                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                      ) : (
+                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                      )}
                     </div>
                   </div>
                 </SidebarItem>
@@ -268,7 +290,7 @@ export default function AppLayout() {
               )}
               <div
                 className={`${
-                  selectedTab === "marketing" ? "bg-gray-200" : ""
+                  selectedTab === "marketing" ? "bg-white" : ""
                 } rounded-lg cursor-pointer`}
               >
                 <SidebarItem
@@ -277,14 +299,19 @@ export default function AppLayout() {
                       ? setSelectedTab(null)
                       : setSelectedTab("marketing");
                   }}
+                  active={selectedTab === "marketing"}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <div className="flex items-center gap-4">
-                      <RenderIcon path={MarketingIcon} />
+                    <div className="flex items-center gap-3">
+                      <RenderIcon path={MarketingIcon} type={"nav"} />
                       <SidebarLabel>Marketing</SidebarLabel>
                     </div>
                     <div>
-                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                      {selectedTab !== "marketing" ? (
+                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                      ) : (
+                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                      )}
                     </div>
                   </div>
                 </SidebarItem>
@@ -310,7 +337,7 @@ export default function AppLayout() {
               )}
               <div
                 className={`${
-                  selectedTab === "mobile" ? "bg-gray-200" : ""
+                  selectedTab === "mobile" ? "bg-white" : ""
                 } rounded-lg cursor-pointer`}
               >
                 <SidebarItem
@@ -319,14 +346,19 @@ export default function AppLayout() {
                       ? setSelectedTab(null)
                       : setSelectedTab("mobile");
                   }}
+                  active={selectedTab === "mobile"}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <div className="flex items-center gap-4">
-                      <RenderIcon path={MobilePhone} size={"h-4 w-4"} />
+                    <div className="flex items-center gap-3">
+                      <RenderIcon path={MobilePhone} type={"nav"} />
                       <SidebarLabel>Mobile App</SidebarLabel>
                     </div>
                     <div>
-                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                      {selectedTab !== "mobile" ? (
+                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                      ) : (
+                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                      )}
                     </div>
                   </div>
                 </SidebarItem>

@@ -8,7 +8,6 @@ import {
   PencilIcon,
   PlusIcon,
 } from "@heroicons/react/20/solid";
-import { ComboboxInput, Combobox } from "@headlessui/react";
 
 import TextDropdown from "../global/TextDropdown";
 import Dropdown from "../global/Dropdown";
@@ -60,7 +59,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function VarientsTable() {
+export default function PromptsTable() {
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -108,19 +107,19 @@ export default function VarientsTable() {
       <div className="p-3 sm:flex sm:items-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h1 className="text-sm font-medium text-base font-medium leading-6 text-gray-900">
-            Variants
+            Prompts
           </h1>
           <button
             type="button"
             className="inline-flex items-center bg-gray-100 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
           >
             <RenderIcon path={Plus} size={"w-3"} />
-            Add Variant
+            Add Prompt
           </button>
         </div>
       </div>
       <div className="flow-root">
-        <div className="inline-block w-full">
+        <div className="">
           <div className="inline-block min-w-full align-middle">
             <div className="inline-block w-full">
               <table className="min-w-full table-fixed divide-y divide-gray-200">
@@ -128,34 +127,20 @@ export default function VarientsTable() {
                   <tr>
                     <th
                       scope="col"
-                      className="w-full py-2 px-4 text-left text-sm font-medium text-gray-900"
-                    >
-                      Variant
-                    </th>
-                    <th
-                      scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/12 px-3 py-2 text-left text-sm font-medium text-gray-900"
                     >
                       Type
                     </th>
                     <th
                       scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-10/12 py-2 px-4 text-left text-sm font-medium text-gray-900"
                     >
-                      Inventory
+                      Prompt
                     </th>
                     <th
                       scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
-                    >
-                      SKU
-                    </th>
-                    <th
-                      scope="col"
-                      className="w-auto relative py-2 pl-3 pr-4 sm:pr-3"
-                    >
-                      <span className="sr-only">Edit</span>
-                    </th>
+                      className="w-1/12 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                    ></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
@@ -168,58 +153,32 @@ export default function VarientsTable() {
                           : "hover:bg-gray-50 cursor-pointer"
                       )}
                     >
+                      <td className="w-1/12 whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        Type
+                      </td>
                       <td
                         className={classNames(
-                          "whitespace-nowrap py-2 px-4 text-sm font-medium min-w-[10rem]",
+                          "w-10/12 whitespace-nowrap py-2 px-4 text-sm font-medium",
                           selectedVariants.includes(variant)
                             ? "text-indigo-600"
                             : "text-gray-900"
                         )}
                       >
                         <div className="w-full flex flex-row items-center gap-4">
-                          <img
-                            src={dummyProductImage}
-                            alt="Product Image"
-                            className="h-16 w-16 flex-none rounded-md object-cover object-center"
-                          />
                           <div className="text-sm font-medium">
                             {variant.name}
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        Type
-                      </td>
-                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
-                        <input
-                          type="text"
-                          name="inventory"
-                          id="inventory"
-                          value={variant.inventory}
-                          className="w-full rounded-md border-0 bg-white py-1 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                        />
-                      </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <input
-                          type="text"
-                          name="sku"
-                          id="sku"
-                          placeholder="SKU"
-                          value={variant.sku}
-                          className="w-full rounded-md border-0 bg-white py-1 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                        />
-                      </td>
-                      <td className="whitespace-nowrap py-4 pl-3 text-right text-sm font-medium sm:pr-3">
+
+                      <td className="w-1/12 whitespace-nowrap py-4 pl-3 text-sm font-medium sm:pr-3">
                         {/* <a
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
                           ...<span className="sr-only">, {variant.name}</span>
                         </a> */}
-                        <Menu
-                          as="div"
-                          className="relative inline-block text-left"
-                        >
+                        <Menu as="div" className="relative inline-block">
                           <div className="text-gray-600 hover:text-gray-900">
                             <MenuButton className="">...</MenuButton>
                           </div>

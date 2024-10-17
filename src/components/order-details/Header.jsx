@@ -15,11 +15,24 @@ import {
 } from "@heroicons/react/20/solid";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 
+import RenderIcon from "../global/RenderIcon";
 import Dropdown from "../global/Dropdown";
-
+import ChevronLeft from "../../images/svgs/solid/chevron-left.svg";
+import ChevronDown from "../../images/svgs/solid/chevron-down.svg";
+import Link from "../../images/svgs/solid/link.svg";
+import Pinterest from "../../images/svgs/brands/square-pinterest.svg";
+import LinkedIn from "../../images/svgs/brands/linkedin.svg";
+import Facebook from "../../images/svgs/brands/facebook.svg";
+import Reddit from "../../images/svgs/brands/reddit.svg";
+import X from "../../images/svgs/brands/x-twitter.svg";
+import ArrowUp from "../../images/svgs/solid/arrow-up-long.svg";
+import Duplicate from "../../images/svgs/solid/copy.svg";
+import Archive from "../../images/svgs/solid/box-archive.svg";
+import Trash from "../../images/svgs/solid/trash-can.svg";
+import Check from "../../images/svgs/solid/check.svg";
 export default function Header() {
   return (
-    <header className="p-6 bg-white mb-6 relative isolate z-50 rounded-t-lg">
+    <header className="p-6 bg-white relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div
@@ -34,18 +47,18 @@ export default function Header() {
           </div> */}
 
       <div aria-hidden="true" className="inset-8 -z-10 overflow-hidden">
-        <div className="flex flex-row justify-between items-center space-x-2">
-          <div className="flex flex-row items-center space-x-2 cursor-pointer">
-            <ChevronLeftIcon className="h-4 w-4 text-gray-400" />
+        <div className="flex flex-row justify-between items-center">
+          <div className="flex flex-row items-center cursor-pointer">
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-sm/6 text-zinc-500"
+              className="flex items-center gap-2 text-sm/6 text-zinc-500"
             >
+              <RenderIcon path={ChevronLeft} size={"w-1.5"} />
               Orders
             </a>
           </div>
           <div>
-            <span className="isolate inline-flex rounded-md shadow-sm">
+            <span className="isolate inline-flex rounded-md">
               <button
                 type="button"
                 className="relative inline-flex items-center rounded-l-md px-1 py-1 bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
@@ -93,12 +106,9 @@ export default function Header() {
             <Dropdown />
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 bg-gray-200 rounded-md px-3 py-1 text-sm font-medium text-gray-900">
+                <MenuButton className="inline-flex w-full justify-center items-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
                   Share
-                  <ChevronDownIcon
-                    aria-hidden="true"
-                    className="-mr-1 h-5 w-5 text-gray-400"
-                  />
+                  <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
                 </MenuButton>
               </div>
 
@@ -110,73 +120,54 @@ export default function Header() {
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 gap-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <LinkIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Link} size={"h-3 w-4"} />
                       Copy Link
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4  gap-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <PrinterIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Pinterest} size={"h-4 w-4"} />
                       Pinterest
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <HeartIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={LinkedIn} size={"h-4.5 w-4"} />
                       LinkedIn
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <HeartIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Facebook} size={"h-4 w-4"} />
                       Facebook
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <HeartIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Reddit} size={"h-4 w-4"} />
                       Reddit
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="group flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <HeartIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
-                      X
+                      <RenderIcon path={X} size={"h-4 w-4"} />X
                     </a>
                   </MenuItem>
                 </div>
@@ -184,12 +175,9 @@ export default function Header() {
             </Menu>
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 bg-gray-200 rounded-md px-3 py-1 text-sm font-medium text-gray-900 ">
+                <MenuButton className="inline-flex w-full items-center justify-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
                   Actions
-                  <ChevronDownIcon
-                    aria-hidden="true"
-                    className="-mr-1 h-5 w-5 text-gray-400"
-                  />
+                  <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
                 </MenuButton>
               </div>
 
@@ -201,12 +189,9 @@ export default function Header() {
                   <MenuItem>
                     <a
                       href="#"
-                      className="block flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <ArrowUpIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={ArrowUp} size={"h-4 w-3"} />
                       Send to Top
                     </a>
                   </MenuItem>
@@ -214,24 +199,18 @@ export default function Header() {
                   <MenuItem>
                     <a
                       href="#"
-                      className="block flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <DocumentDuplicateIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Duplicate} size={"h-4 w-4"} />
                       Duplicate
                     </a>
                   </MenuItem>
                   <MenuItem>
                     <a
                       href="#"
-                      className="block flex items-center px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
-                      <ArchiveBoxXMarkIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500"
-                      />
+                      <RenderIcon path={Archive} size={"h-4 w-4"} />
                       Archive
                     </a>
                   </MenuItem>
@@ -239,11 +218,12 @@ export default function Header() {
                   <MenuItem>
                     <a
                       href="#"
-                      className="block flex items-center px-4 py-2 text-sm text-red-700 data-[focus]:bg-gray-100 data-[focus]:text-red-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-red-700 data-[focus]:bg-gray-100 data-[focus]:text-red-900"
                     >
-                      <TrashIcon
-                        aria-hidden="true"
-                        className="mr-3 h-5 w-5 text-red-400 group-hover:text-red-500"
+                      <RenderIcon
+                        path={Trash}
+                        size={"h5 w-4"}
+                        type={"destructive"}
                       />
                       Delete
                     </a>
@@ -251,11 +231,11 @@ export default function Header() {
                 </div>
               </MenuItems>
             </Menu>
-            <div className="border-l border-gray-300 h-6 mx-2"></div>
+            <div className="border-l border-gray-300 h-6 mx-1"></div>
             <span className="hidden sm:block">
               <button
                 type="button"
-                className="inline-flex items-center bg-gray-200 rounded-md px-3 py-1 text-sm font-medium text-gray-900"
+                className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
               >
                 Preview
               </button>
@@ -263,12 +243,9 @@ export default function Header() {
             <span>
               <button
                 type="button"
-                className="inline-flex items-center rounded-md bg-blue-600 px-3 py-1 text-sm font-medium text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="inline-flex items-center rounded-md bg-blue-600 px-3 py-1 gap-1 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
-                <CheckIcon
-                  aria-hidden="true"
-                  className="-ml-0.5 mr-1.5 h-5 w-5"
-                />
+                <RenderIcon path={Check} size={"w-3"} type={"save"} />
                 Save
               </button>
             </span>

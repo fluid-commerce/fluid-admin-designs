@@ -57,6 +57,9 @@ import VarientsTable from "../../components/order-details/VarientsTable";
 import ProductDetails from "../../components/order-details/ProductDetails";
 import Header from "../../components/order-details/Header";
 import CardContainer from "../../components/order-details/CardContainer";
+import Edit from "../../images/svgs/regular/pencil.svg";
+import RenderIcon from "../../components/global/RenderIcon";
+import PromptsTable from "../../components/order-details/PromptsTable";
 const statusOptions = [
   { id: 1, name: "Active" },
   { id: 2, name: "Inactive" },
@@ -182,9 +185,9 @@ export default function OrderDetails() {
           </div>
         </div>
         <div className="mx-auto max-w-7xl px-6 pb-6">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-6 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* Left Column */}
-            <div className="lg:col-span-2 space-y-4">
+            <div className="lg:col-span-2 space-y-6">
               {/* Product Details */}
               <CardContainer>
                 <ProductDetails />
@@ -194,9 +197,14 @@ export default function OrderDetails() {
               <CardContainer>
                 <VarientsTable />
               </CardContainer>
+
+              {/* Prompts Table */}
+              <CardContainer>
+                <PromptsTable />
+              </CardContainer>
             </div>
             {/* Right Column */}
-            <div className="lg:col-start-3 space-y-8">
+            <div className="lg:col-start-3 space-y-6">
               <div className="-mx-4 p-4 rounded-lg border border-gray-200 bg-white shadow-sm shadow-sm sm:mx-0">
                 <div className="font-medium sm:text-sm">Status</div>
                 <TextDropdown options={statusOptions} />
@@ -233,7 +241,7 @@ export default function OrderDetails() {
                 <div className="p-3">
                   {/* Content goes here */}
                   {/* We use less vertical padding on card headers on desktop than on body sections */}
-                  <div className="text-lg/6 font-medium sm:text-sm">
+                  <div className="text-sm font-medium sm:text-sm">
                     Product Organization
                   </div>
                 </div>
@@ -245,15 +253,13 @@ export default function OrderDetails() {
                   >
                     <li>
                       <div>
-                        <div className="text-sm font-medium sm:text-sm">
-                          Theme
-                        </div>
+                        <div className="text-sm">Theme</div>
                         <TextDropdown options={themes} />
                       </div>
                     </li>
                     <li>
                       <div>
-                        <div className="pt-2 text-sm font-medium sm:text-sm">
+                        <div className="pt-2 text-sm sm:text-sm">
                           Product Collection
                         </div>
                         <TextDropdown options={[]} />
@@ -261,17 +267,13 @@ export default function OrderDetails() {
                     </li>
                     <li>
                       <div>
-                        <div className="pt-2 text-sm font-medium sm:text-sm">
-                          Tags
-                        </div>
+                        <div className="pt-2 text-sm sm:text-sm">Tags</div>
                         <TextDropdown options={tags} />
                       </div>
                     </li>
                     <li>
                       <div>
-                        <div className="pt-2 text-sm font-medium sm:text-sm">
-                          Label
-                        </div>
+                        <div className="pt-2 text-sm sm:text-sm">Label</div>
                         <TextDropdown options={labels} />
                       </div>
                     </li>
@@ -312,7 +314,7 @@ export default function OrderDetails() {
                               />
                               <label
                                 htmlFor={notificationMethod.id}
-                                className="ml-3 block text-xs font-medium leading-6 text-gray-900"
+                                className="ml-3 block text-sm leading-6 text-gray-900"
                               >
                                 {notificationMethod.title}
                               </label>
@@ -323,24 +325,39 @@ export default function OrderDetails() {
                     </li>
                     <li>
                       <div className="flex flex-col space-y-2">
-                        <div className="pt-2 text-lg/6 font-medium sm:text-sm">
+                        <div className="flex flex-row justify-between items-center py-2 text-lg/6 font-medium sm:text-sm">
                           Search Engine Listing
-                        </div>
-                        <div className="flex flex-row space-x-2">
-                          <img
-                            src={dummyProductImage}
-                            alt="Product Image"
-                            className="h-[calc(2rem+2rem)] w-[calc(2rem+2rem)] flex-none rounded-md object-cover object-center"
-                          />
-                          <div>
-                            <h4 className="text-sm/5 font-medium text-zinc-950">
-                              Apple Vision Pro
-                            </h4>
-                            <p className="text-xs/5 font-normal text-zinc-500">
-                              Apple Vision Pro is apples first 3D vision camera.
-                              You can capture magical spacial photos and...
-                            </p>
+                          <div className="cursor-pointer rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
+                            <RenderIcon
+                              path={Edit}
+                              size={"h-4 w-4"}
+                              type={"black"}
+                            />
                           </div>
+                        </div>
+                        <div className="flex flex-col space-y-2">
+                          <div className="flex flex-row space-x-2">
+                            <img
+                              src={dummyProductImage}
+                              alt="Product Image"
+                              className="h-16 w-16 flex-none rounded-md object-cover object-center"
+                            />
+                            <div>
+                              <h4 className="text-sm/5 font-medium text-zinc-950">
+                                Apple Vision Pro
+                              </h4>
+                              <a
+                                href=""
+                                className="text-xs/5 font-normal text-blue-600 underline"
+                              >
+                                productlink.com/apple-vision-pro
+                              </a>
+                            </div>
+                          </div>
+                          <p className="text-xs/5 font-normal text-zinc-500">
+                            Apple Vision Pro is apples first 3D vision camera.
+                            You can capture magical spacial photos and...
+                          </p>
                         </div>
                       </div>
                     </li>

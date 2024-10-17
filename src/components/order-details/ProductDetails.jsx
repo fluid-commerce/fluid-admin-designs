@@ -4,7 +4,8 @@ import TextDropdown from "../global/TextDropdown";
 
 import dummyProductImage from "../../images/apple-vision-pro.png";
 import Tabs from "../global/Tabs";
-
+import ImageLandscape from "../../images/svgs/regular/image-landscape.svg";
+import RenderIcon from "../global/RenderIcon";
 const categories = [
   { id: 1, name: "Electronics" },
   { id: 2, name: "Clothing" },
@@ -44,7 +45,7 @@ export default function ProductDetails() {
           </div>
         </div>
 
-        <div className="col-span-full">
+        <div className="col-span-full ring-1 ring-gray-300 rounded-lg">
           <Tabs />
           {/* <label
               htmlFor="about"
@@ -54,7 +55,7 @@ export default function ProductDetails() {
             </label> */}
           <div className=" overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
             <div id="hs-editor-tiptap">
-              <div className="ring-1 ring-inset ring-gray-300 flex align-middle gap-x-0.5 p-2 dark:border-neutral-700">
+              <div className="flex align-middle gap-x-0.5 p-2 border-b border-gray-300 dark:border-neutral-700">
                 <button
                   className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                   type="button"
@@ -258,7 +259,7 @@ export default function ProductDetails() {
                 </button>
               </div>
 
-              <textarea className="h-[10rem] overflow-auto w-full p-2 border border-gray-300 rounded-b-md" />
+              <textarea className="h-[10rem] overflow-auto w-full p-2 border-0 rounded-b-md focus:ring-0" />
             </div>
           </div>
         </div>
@@ -297,15 +298,12 @@ export default function ProductDetails() {
               <img
                 src={dummyProductImage}
                 alt="Product Image"
-                className="h-40 w-40 flex-none rounded-md object-cover object-center"
+                className="h-40 w-40 flex-none rounded-md object-cover object-center hover:opacity-75 hover:cursor-pointer"
               />
             </div>
-            <div className="mt-2 h-40 w-40 justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-              <div className="text-center">
-                <PhotoIcon
-                  aria-hidden="true"
-                  className="mx-auto h-12 w-12 text-gray-300"
-                />
+            <div className="mt-2 h-40 w-40 flex items-center justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+              <div className="flex flex-col items-center text-center">
+                <RenderIcon path={ImageLandscape} size={"w-8"} />
                 <div className="mt-4 flex flex-col text-sm leading-6 text-gray-600">
                   <label
                     htmlFor="file-upload"

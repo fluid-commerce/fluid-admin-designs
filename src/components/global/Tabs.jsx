@@ -1,16 +1,28 @@
-import { useState } from "react";
+/*
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+*/
+const tabs = [
+  { name: "Full Description", href: "#", current: false },
+  { name: "Short Description", href: "#", current: false },
+  { name: "Features", href: "#", current: true },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Tabs() {
-  const [tabs, setTabs] = useState([
-    { name: "Short Description", href: "", current: true },
-    { name: "Full Description", href: "", current: false },
-    { name: "Features", href: "", current: false },
-  ]);
-
+export default function Example() {
   return (
     <div>
       <div className="sm:hidden">
@@ -22,7 +34,7 @@ export default function Tabs() {
           id="tabs"
           name="tabs"
           defaultValue={tabs.find((tab) => tab.current).name}
-          className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
         >
           {tabs.map((tab) => (
             <option key={tab.name}>{tab.name}</option>
@@ -30,32 +42,23 @@ export default function Tabs() {
         </select>
       </div>
       <div className="hidden sm:block">
-        <div>
-          <nav aria-label="Tabs" className="-mb-px flex ">
-            {tabs.map((tab, index) => (
-              <button
+        <div className="border-b border-gray-200">
+          <nav aria-label="Tabs" className="-mb-px flex space-x-8">
+            {tabs.map((tab) => (
+              <a
                 key={tab.name}
-                type="button"
-                onClick={() =>
-                  setTabs((tabs) =>
-                    tabs.map((t) => ({ ...t, current: t.name === tab.name }))
-                  )
-                }
                 href={tab.href}
                 aria-current={tab.current ? "page" : undefined}
                 className={classNames(
                   tab.current
-                    ? "bg-gray-200 border-b border-gray-500/25 text-gray-900 rounded-t-lg"
-                    : "text-gray-500 hover:text-gray-700",
-                  index === 0
-                    ? "whitespace-nowrap px-3 py-3 text-sm font-medium rounded-tl-md"
-                    : index === tabs.length - 1
-                    ? "whitespace-nowrap px-3 py-3 text-sm font-medium rounded-tr-md"
-                    : "whitespace-nowrap px-3 py-3 text-sm font-medium"
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                  "whitespace-nowrap border-b-2 px-1 py-3 text-sm font-medium",
+                  tabs.indexOf(tab) === 0 ? "pl-4" : ""
                 )}
               >
                 {tab.name}
-              </button>
+              </a>
             ))}
           </nav>
         </div>
