@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { ReactSVG } from "react-svg";
 import { Avatar } from "./components/catalyst-ui-kit/avatar";
 import {
   Dropdown,
@@ -48,6 +49,19 @@ import {
   Square2StackIcon,
   TicketIcon,
 } from "@heroicons/react/20/solid";
+
+import RenderIcon from "./components/global/RenderIcon";
+
+// FontAwesome Icons
+import HouseBlank from "./images/svgs/sharp-solid/house-blank.svg";
+import MessagingIcon from "./images/svgs/solid/messages.svg";
+import ShoppingCart from "./images/svgs/solid/cart-shopping.svg";
+import SharingIcon from "./images/svgs/solid/share-from-square.svg";
+import MarketingIcon from "./images/svgs/sharp-solid/megaphone.svg";
+import ChevronDown from "./images/svgs/regular/chevron-down.svg";
+import MobilePhone from "./images/svgs/solid/mobile-screen-button.svg";
+import Users from "./images/svgs/solid/users.svg";
+import Gear from "./images/svgs/solid/gear.svg";
 
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
@@ -150,58 +164,63 @@ export default function AppLayout() {
                   selectedTab === "home" ? "bg-gray-200" : ""
                 } rounded-lg cursor-pointer`}
               >
-                <SidebarItem onClick={() => setSelectedTab("home")}>
-                  <HomeIcon />
+                <SidebarItem>
+                  <RenderIcon path={HouseBlank} />
                   <SidebarLabel>Home</SidebarLabel>
                 </SidebarItem>
               </div>
-              {selectedTab === "home" && (
-                <SidebarSection className="pl-8 overflow-hidden ">
-                  <SidebarItem href="/home/sub1">
-                    <SidebarLabel>Sub Item 1</SidebarLabel>
-                  </SidebarItem>
-                  <SidebarItem href="/home/sub2">
-                    <SidebarLabel>Sub Item 2</SidebarLabel>
-                  </SidebarItem>
-                </SidebarSection>
-              )}
               <div
                 className={`${
                   selectedTab === "messaging" ? "bg-gray-200" : ""
                 } rounded-lg cursor-pointer`}
               >
-                <SidebarItem onClick={() => setSelectedTab("messaging")}>
-                  <Square2StackIcon />
+                <SidebarItem
+                  onClick={() => {
+                    selectedTab === "messaging"
+                      ? setSelectedTab(null)
+                      : setSelectedTab("messaging");
+                  }}
+                >
+                  <RenderIcon path={MessagingIcon} />
                   <SidebarLabel>Messaging</SidebarLabel>
                 </SidebarItem>
               </div>
-              {selectedTab === "messaging" && (
-                <SidebarSection className="pl-8">
-                  <SidebarItem href="/messaging/sub1">
-                    <SidebarLabel>Sub Item 1</SidebarLabel>
-                  </SidebarItem>
-                  <SidebarItem href="/messaging/sub2">
-                    <SidebarLabel>Sub Item 2</SidebarLabel>
-                  </SidebarItem>
-                </SidebarSection>
-              )}
               <div
                 className={`${
                   selectedTab === "orders" ? "bg-gray-200" : ""
                 } rounded-lg cursor-pointer`}
               >
-                <SidebarItem onClick={() => setSelectedTab("orders")}>
-                  <TicketIcon />
-                  <SidebarLabel>Sharing</SidebarLabel>
+                <SidebarItem
+                  onClick={() => {
+                    selectedTab === "orders"
+                      ? setSelectedTab(null)
+                      : setSelectedTab("orders");
+                  }}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-4">
+                      <RenderIcon path={SharingIcon} />
+                      <SidebarLabel>Sharing</SidebarLabel>
+                    </div>
+                    <div>
+                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                    </div>
+                  </div>
                 </SidebarItem>
               </div>
               {selectedTab === "orders" && (
                 <SidebarSection className="pl-8">
                   <SidebarItem href="/orders/sub1">
-                    <SidebarLabel>Sub Item 1</SidebarLabel>
+                    <SidebarLabel>Media</SidebarLabel>
                   </SidebarItem>
                   <SidebarItem href="/orders/sub2">
-                    <SidebarLabel>Sub Item 2</SidebarLabel>
+                    <SidebarLabel>Pages</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/orders/sub2">
+                    <SidebarLabel>Enrollments</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/orders/sub2">
+                    <SidebarLabel>Playlists</SidebarLabel>
                   </SidebarItem>
                 </SidebarSection>
               )}
@@ -210,9 +229,22 @@ export default function AppLayout() {
                   selectedTab === "shopping" ? "bg-gray-200" : ""
                 } rounded-lg cursor-pointer`}
               >
-                <SidebarItem onClick={() => setSelectedTab("shopping")}>
-                  <Cog6ToothIcon />
-                  <SidebarLabel>Shopping</SidebarLabel>
+                <SidebarItem
+                  onClick={() => {
+                    selectedTab === "shopping"
+                      ? setSelectedTab(null)
+                      : setSelectedTab("shopping");
+                  }}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-4">
+                      <RenderIcon path={ShoppingCart} />
+                      <SidebarLabel>Shopping</SidebarLabel>
+                    </div>
+                    <div>
+                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                    </div>
+                  </div>
                 </SidebarItem>
               </div>
               {selectedTab === "shopping" && (
@@ -221,27 +253,100 @@ export default function AppLayout() {
                     <SidebarLabel>Orders</SidebarLabel>
                   </SidebarItem>
                   <SidebarItem href="/settings/sub2">
-                    <SidebarLabel>Sub Item 2</SidebarLabel>
+                    <SidebarLabel>Products</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/settings/sub2">
+                    <SidebarLabel>Promo Codes</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/settings/sub2">
+                    <SidebarLabel>Preferences</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/settings/sub2">
+                    <SidebarLabel>Pending Enrollments</SidebarLabel>
                   </SidebarItem>
                 </SidebarSection>
               )}
               <div
                 className={`${
-                  selectedTab === "marketing2" ? "bg-gray-200" : ""
+                  selectedTab === "marketing" ? "bg-gray-200" : ""
                 } rounded-lg cursor-pointer`}
               >
-                <SidebarItem onClick={() => setSelectedTab("marketing2")}>
-                  <MegaphoneIcon />
-                  <SidebarLabel>Marketing</SidebarLabel>
+                <SidebarItem
+                  onClick={() => {
+                    selectedTab === "marketing"
+                      ? setSelectedTab(null)
+                      : setSelectedTab("marketing");
+                  }}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-4">
+                      <RenderIcon path={MarketingIcon} />
+                      <SidebarLabel>Marketing</SidebarLabel>
+                    </div>
+                    <div>
+                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                    </div>
+                  </div>
                 </SidebarItem>
               </div>
-              {selectedTab === "marketing2" && (
+              {selectedTab === "marketing" && (
                 <SidebarSection className="pl-8">
-                  <SidebarItem href="/marketing2/sub1">
-                    <SidebarLabel>Sub Item 1</SidebarLabel>
+                  <SidebarItem href="/marketing/sub1">
+                    <SidebarLabel>Pop Ups</SidebarLabel>
                   </SidebarItem>
-                  <SidebarItem href="/marketing2/sub2">
-                    <SidebarLabel>Sub Item 2</SidebarLabel>
+                  <SidebarItem href="/marketing/sub2">
+                    <SidebarLabel>Banners</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/marketing/sub2">
+                    <SidebarLabel>Chat</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/marketing/sub2">
+                    <SidebarLabel>Contacts</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/marketing/sub2">
+                    <SidebarLabel>Reviews</SidebarLabel>
+                  </SidebarItem>
+                </SidebarSection>
+              )}
+              <div
+                className={`${
+                  selectedTab === "mobile" ? "bg-gray-200" : ""
+                } rounded-lg cursor-pointer`}
+              >
+                <SidebarItem
+                  onClick={() => {
+                    selectedTab === "mobile"
+                      ? setSelectedTab(null)
+                      : setSelectedTab("mobile");
+                  }}
+                >
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-4">
+                      <RenderIcon path={MobilePhone} size={"h-4 w-4"} />
+                      <SidebarLabel>Mobile App</SidebarLabel>
+                    </div>
+                    <div>
+                      <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
+                    </div>
+                  </div>
+                </SidebarItem>
+              </div>
+              {selectedTab === "mobile" && (
+                <SidebarSection className="pl-8">
+                  <SidebarItem href="/mobile/sub1">
+                    <SidebarLabel>Announcements</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/mobile/sub2">
+                    <SidebarLabel>Training</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/mobile/sub2">
+                    <SidebarLabel>Events</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/mobile/sub2">
+                    <SidebarLabel>Tiles</SidebarLabel>
+                  </SidebarItem>
+                  <SidebarItem href="/mobile/sub2">
+                    <SidebarLabel>Mobile Views</SidebarLabel>
                   </SidebarItem>
                 </SidebarSection>
               )}
@@ -274,11 +379,11 @@ export default function AppLayout() {
             <SidebarSpacer />
             <SidebarSection>
               <SidebarItem href="/support">
-                <QuestionMarkCircleIcon />
+                <RenderIcon path={Users} />
                 <SidebarLabel>Users</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/changelog">
-                <SparklesIcon />
+                <RenderIcon path={Gear} />
                 <SidebarLabel>Settings</SidebarLabel>
               </SidebarItem>
             </SidebarSection>

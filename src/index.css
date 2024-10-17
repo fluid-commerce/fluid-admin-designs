@@ -17,39 +17,6 @@ code {
     monospace;
 }
 
-.slide-in-container {
-  overflow: hidden;
-  width: 200px;
-  border: 1px solid #ccc;
-  transition: height 0.5s ease-out; /* Add transition for height */
-}
-
-.slide-in-content {
-  animation: slideIn 0.4s ease-out forwards;
-}
-
-.slide-out-content {
-  animation: slideOut 0.5s ease-out forwards;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-80%); /* Start above the container */
-    opacity: 0; /* Optional: start with no opacity */
-  }
-  to {
-    transform: translateY(0); /* End at the original position */
-    opacity: 1; /* Optional: end with full opacity */
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+.gray-icons {
+  @apply fill-gray-500;
 }
