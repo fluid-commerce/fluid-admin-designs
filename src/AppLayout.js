@@ -67,7 +67,10 @@ import Gear from "./images/svgs/solid/gear.svg";
 
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
-  const [selectedCompany, setSelectedCompany] = useState(null);
+  const [selectedCompany, setSelectedCompany] = useState({
+    name: "Neumi",
+    logo: "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM",
+  });
   return (
     <SidebarLayout
       navbar={
@@ -118,10 +121,18 @@ export default function AppLayout() {
             <Dropdown>
               <DropdownButton as={SidebarItem} className="lg:mb-2.5">
                 <div className="flex flex-row justify-between w-full items-center">
-                  <div className="flex flex-row gap-3">
-                    <Avatar src="/tailwind-logo.svg" />
+                  <div className="flex flex-row gap-3 items-center justify-center">
+                    <Avatar
+                      slot="icon"
+                      className="w-8"
+                      src={
+                        selectedCompany
+                          ? selectedCompany.logo
+                          : "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM"
+                      }
+                    />
                     <SidebarLabel>
-                      {selectedCompany ? selectedCompany : "Neumi"}
+                      {selectedCompany ? selectedCompany.name : "Neumi"}
                     </SidebarLabel>
                   </div>
                   <div className="flex flex-col gap-[-0.5rem]">
@@ -134,27 +145,75 @@ export default function AppLayout() {
                 anchor="bottom start"
               >
                 <DropdownItem
-                  onClick={() => setSelectedCompany("Neumi")}
+                  onClick={() =>
+                    setSelectedCompany({
+                      name: "Neumi",
+                      logo: "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM",
+                    })
+                  }
                   // href="/teams/1"
                 >
-                  <Avatar slot="icon" src="/tailwind-logo.svg" />
+                  <Avatar
+                    slot="icon"
+                    src="https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM"
+                  />
                   <DropdownLabel>Neumi</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem
-                  onClick={() => setSelectedCompany("Asea")}
+                  onClick={() =>
+                    setSelectedCompany({
+                      name: "Asea",
+                      logo: "https://media.licdn.com/dms/image/v2/C560BAQFw5K2lEjqUaw/company-logo_200_200/company-logo_200_200/0/1647972264763/asea_llc_logo?e=1736985600&v=beta&t=c-pKlEQaoeI8D_pTAOKefowLhtLLe_xDNCifb5te5Ss",
+                    })
+                  }
                   // href="/teams/2"
                 >
                   <Avatar
                     slot="icon"
                     initials="WC"
+                    src="https://media.licdn.com/dms/image/v2/C560BAQFw5K2lEjqUaw/company-logo_200_200/company-logo_200_200/0/1647972264763/asea_llc_logo?e=1736985600&v=beta&t=c-pKlEQaoeI8D_pTAOKefowLhtLLe_xDNCifb5te5Ss"
                     className="bg-purple-500 text-white"
                   />
                   <DropdownLabel>Asea</DropdownLabel>
                 </DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    setSelectedCompany({
+                      name: "Fluid",
+                      logo: "https://media.licdn.com/dms/image/v2/C560BAQGkxo7qbjaiiA/company-logo_200_200/company-logo_200_200/0/1630649730956?e=1736985600&v=beta&t=-0IOz-1BLf0D5R8TGDXErgidnFa5ukRArVkbj-ELhW8",
+                    })
+                  }
+                  // href="/teams/2"
+                >
+                  <Avatar
+                    slot="icon"
+                    initials="WC"
+                    src="https://media.licdn.com/dms/image/v2/C560BAQGkxo7qbjaiiA/company-logo_200_200/company-logo_200_200/0/1630649730956?e=1736985600&v=beta&t=-0IOz-1BLf0D5R8TGDXErgidnFa5ukRArVkbj-ELhW8"
+                    className="bg-purple-500 text-white"
+                  />
+                  <DropdownLabel>Fluid</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    setSelectedCompany({
+                      name: "Dotera",
+                      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFhZEOXO0ZEiw/company-logo_100_100/company-logo_100_100/0/1631337805878?e=1736985600&v=beta&t=ikVahnX8p-tHhIjLKaXqwp9gubmZbmA1D8AW7I_MYtE",
+                    })
+                  }
+                  // href="/teams/2"
+                >
+                  <Avatar
+                    slot="icon"
+                    initials="WC"
+                    src="https://media.licdn.com/dms/image/v2/C4E0BAQFhZEOXO0ZEiw/company-logo_100_100/company-logo_100_100/0/1631337805878?e=1736985600&v=beta&t=ikVahnX8p-tHhIjLKaXqwp9gubmZbmA1D8AW7I_MYtE"
+                    className="bg-purple-500 text-white"
+                  />
+                  <DropdownLabel>Dotera</DropdownLabel>
+                </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="/teams/create">
                   <PlusIcon />
-                  <DropdownLabel>New team&hellip;</DropdownLabel>
+                  <DropdownLabel>Add Company&hellip;</DropdownLabel>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -411,11 +470,11 @@ export default function AppLayout() {
             <SidebarSpacer />
             <SidebarSection>
               <SidebarItem href="/support">
-                <RenderIcon path={Users} />
+                <RenderIcon path={Users} type={"nav"} />
                 <SidebarLabel>Users</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/changelog">
-                <RenderIcon path={Gear} />
+                <RenderIcon path={Gear} type={"nav"} />
                 <SidebarLabel>Settings</SidebarLabel>
               </SidebarItem>
             </SidebarSection>

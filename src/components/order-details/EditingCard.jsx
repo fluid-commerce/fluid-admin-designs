@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import ImageUpload from "../global/ImageUpload";
 import TextDropdown from "../global/TextDropdown";
@@ -6,13 +6,10 @@ import Dropdown from "../global/Dropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
 
 export default function EditingCard() {
+  const [productTitle, setProductTitle] = useState("Apple Vision Pro");
+  console.log(productTitle);
   return (
     <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg">
-      {/* <div className="flex flex-row justify-between border-b border-gray-200 pb-4 mb-4">
-        <h2 className="text-base font-semibold leading-6 text-gray-900">
-          Editing
-        </h2>
-      </div> */}
       <div className="flex flex-col space-y-2">
         <label
           htmlFor="title"
@@ -23,9 +20,11 @@ export default function EditingCard() {
         <input
           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
           placeholder="Apple Vision Pro"
-          type="text"
-          name="title"
-          id="title"
+          value={productTitle}
+          onChange={(e) => {
+            console.log(e.target.value);
+            setProductTitle(e.target.value);
+          }}
         />
       </div>
       <div className="flex flex-col space-y-2">

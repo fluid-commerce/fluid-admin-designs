@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { PhotoIcon } from "@heroicons/react/24/outline";
 import TextDropdown from "../global/TextDropdown";
 
@@ -20,6 +20,7 @@ const categories = [
 ];
 
 export default function ProductDetails() {
+  const [productTitle, setProductTitle] = useState("Apple Vision Pro");
   return (
     <form>
       <div className="grid p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
@@ -38,7 +39,8 @@ export default function ProductDetails() {
                 type="text"
                 placeholder="Apple Vision Pro"
                 autoComplete="username"
-                value="Apple Vision Pro"
+                value={productTitle}
+                onChange={(e) => setProductTitle(e.target.value)}
                 className="w-full block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
               />
             </div>

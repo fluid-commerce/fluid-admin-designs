@@ -65,6 +65,7 @@ export default function VarientsTable() {
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState([]);
+  const [inputs, setInputs] = useState(variants);
   const [selectedLanguage, setSelectedLanguage] = useState("Select Type");
   const languages = [
     {
@@ -159,7 +160,7 @@ export default function VarientsTable() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {variants.map((variant) => (
+                  {inputs?.map((variant, index) => (
                     <tr
                       key={variant.name}
                       className={classNames(
@@ -196,7 +197,15 @@ export default function VarientsTable() {
                           name="inventory"
                           id="inventory"
                           value={variant.inventory}
-                          className="w-full rounded-md border-0 bg-white py-1 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                          onChange={(e) => {
+                            const newInputs = [...inputs];
+                            newInputs[index] = {
+                              ...newInputs[index],
+                              inventory: e.target.value,
+                            };
+                            setInputs(newInputs);
+                          }}
+                          className="w-full rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
@@ -206,7 +215,15 @@ export default function VarientsTable() {
                           id="sku"
                           placeholder="SKU"
                           value={variant.sku}
-                          className="w-full rounded-md border-0 bg-white py-1 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                          onChange={(e) => {
+                            const newInputs = [...inputs];
+                            newInputs[index] = {
+                              ...newInputs[index],
+                              sku: e.target.value,
+                            };
+                            setInputs(newInputs);
+                          }}
+                          className="w-[4rem] rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 text-right text-sm font-medium sm:pr-3">
