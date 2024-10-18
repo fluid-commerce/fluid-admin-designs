@@ -38,33 +38,27 @@ import {
   ShieldCheckIcon,
   UserIcon,
 } from "@heroicons/react/16/solid";
-import {
-  Cog6ToothIcon,
-  HomeIcon,
-  InboxIcon,
-  MagnifyingGlassIcon,
-  MegaphoneIcon,
-  QuestionMarkCircleIcon,
-  SparklesIcon,
-  Square2StackIcon,
-  TicketIcon,
-} from "@heroicons/react/20/solid";
+import { InboxIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
 import RenderIcon from "./components/global/RenderIcon";
 
 // FontAwesome Icons
-import HouseBlank from "./images/navIcons/home.svg";
-import MessagingIcon from "./images/navIcons/messages.svg";
-import ShoppingCart from "./images/navIcons/cart-shopping.svg";
-import SharingIcon from "./images/navIcons/rectangle-history-circle-user.svg";
-import MarketingIcon from "./images/navIcons/bullhorn.svg";
+import HouseBlank from "./images/svgs/regular/house.svg";
+import MessagingIcon from "./images/svgs/regular/messages.svg";
+import ShoppingCart from "./images/svgs/regular/cart-shopping.svg";
+import SharingIcon from "./images/svgs/regular/rectangle-history-circle-user.svg";
+import MarketingIcon from "./images/svgs/regular/bullhorn.svg";
 import ChevronDown from "./images/svgs/solid/chevron-down.svg";
 import ChevronUp from "./images/svgs/solid/chevron-up.svg";
 import ChevronRight from "./images/svgs/solid/chevron-right.svg";
-import MobilePhone from "./images/navIcons/mobile.svg";
-import Users from "./images/navIcons/users.svg";
-import Gear from "./images/navIcons/cog.svg";
-
+import MobilePhone from "./images/svgs/regular/mobile.svg";
+import Users from "./images/svgs/regular/users.svg";
+import Gear from "./images/svgs/regular/gear.svg";
+import User from "./images/svgs/solid/user.svg";
+import FullGear from "./images/svgs/solid/gear.svg";
+import LightBulb from "./images/svgs/solid/lightbulb.svg";
+import Logout from "./images/svgs/solid/arrow-right-from-bracket.svg";
+import ShieldCheck from "./images/svgs/solid/shield-check.svg";
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
   const [selectedCompany, setSelectedCompany] = useState({
@@ -89,7 +83,7 @@ export default function AppLayout() {
               </DropdownButton>
               <DropdownMenu className="min-w-64" anchor="bottom end">
                 <DropdownItem href="/my-profile">
-                  <UserIcon />
+                  <RenderIcon path={User} type={"nav"} size={"w-3"} />
                   <DropdownLabel>My profile</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem href="/settings">
@@ -381,7 +375,11 @@ export default function AppLayout() {
                 >
                   <div className="flex items-center justify-between w-full">
                     <div className="flex items-center gap-3">
-                      <RenderIcon path={MarketingIcon} type={"nav"} />
+                      <RenderIcon
+                        path={MarketingIcon}
+                        type={"nav"}
+                        size={"w-3 h-3"}
+                      />
                       <SidebarLabel>Marketing</SidebarLabel>
                     </div>
                     <div>
@@ -436,7 +434,11 @@ export default function AppLayout() {
                 >
                   <div className="flex items-center justify-between w-full">
                     <div className="flex items-center gap-3">
-                      <RenderIcon path={MobilePhone} type={"nav"} />
+                      <RenderIcon
+                        path={MobilePhone}
+                        type={"nav"}
+                        size={"w-3 h-3"}
+                      />
                       <SidebarLabel>Mobile App</SidebarLabel>
                     </div>
                     <div>
@@ -476,32 +478,7 @@ export default function AppLayout() {
                   </SidebarItem>
                 </SidebarSection>
               )}
-              {/* <SidebarItem href="/marketing">
-                <Square2StackIcon />
-                <SidebarLabel>Messaging</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/orders">
-                <TicketIcon />
-                <SidebarLabel>Sharing</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/settings">
-                <Cog6ToothIcon />
-                <SidebarLabel>Shopping</SidebarLabel>
-              </SidebarItem>
-              <SidebarItem href="/marketing">
-                <MegaphoneIcon />
-                <SidebarLabel>Marketing</SidebarLabel>
-              </SidebarItem> */}
             </SidebarSection>
-            {/* <SidebarSection className="max-lg:hidden">
-              <SidebarHeading>Upcoming Events</SidebarHeading>
-              <SidebarItem href="/events/1">
-                Bear Hug: Live in Concert
-              </SidebarItem>
-              <SidebarItem href="/events/2">Viking People</SidebarItem>
-              <SidebarItem href="/events/3">Six Fingers — DJ Set</SidebarItem>
-              <SidebarItem href="/events/4">We All Look The Same</SidebarItem>
-            </SidebarSection> */}
             <SidebarSpacer />
             <SidebarSection>
               <SidebarItem href="/support">
@@ -537,11 +514,11 @@ export default function AppLayout() {
               </DropdownButton>
               <DropdownMenu className="min-w-64" anchor="top start">
                 <DropdownItem href="/my-profile">
-                  <UserIcon />
+                  <RenderIcon path={User} size={"w-2.5"} />
                   <DropdownLabel>My profile</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem href="/settings">
-                  <Cog8ToothIcon />
+                  <RenderIcon path={FullGear} size={"w-2.5"} />
                   <DropdownLabel>Settings</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
@@ -550,12 +527,12 @@ export default function AppLayout() {
                   <DropdownLabel>Privacy policy</DropdownLabel>
                 </DropdownItem>
                 <DropdownItem href="/share-feedback">
-                  <LightBulbIcon />
+                  <RenderIcon path={LightBulb} size={"w-2.5"} />
                   <DropdownLabel>Share feedback</DropdownLabel>
                 </DropdownItem>
                 <DropdownDivider />
                 <DropdownItem href="/logout">
-                  <ArrowRightStartOnRectangleIcon />
+                  <RenderIcon path={Logout} size={"w-3"} type={"nav-menu"} />
                   <DropdownLabel>Sign out</DropdownLabel>
                 </DropdownItem>
               </DropdownMenu>
