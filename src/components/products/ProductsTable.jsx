@@ -17,24 +17,29 @@ import Plus from "../../images/svgs/solid/plus.svg";
 import RenderIcon from "../global/RenderIcon";
 import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 import ProductTabs from "./ProductTabs";
+import PaginationFooter from "../global/PaginationFooter";
+
 const variants = [
   {
     name: "One",
     inventory: "0",
     sku: "",
     type: "Type",
+    status: "active",
   },
   {
     name: "Two",
     inventory: "0",
     sku: "",
     type: "Type",
+    status: "inactive",
   },
   {
     name: "Three",
     inventory: "0",
     sku: "",
     type: "Type",
+    status: "draft",
   },
 ];
 
@@ -67,25 +72,6 @@ export default function VarientsTable() {
   const [indeterminate, setIndeterminate] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState([]);
   const [inputs, setInputs] = useState(variants);
-  const [selectedLanguage, setSelectedLanguage] = useState("Select Type");
-  const languages = [
-    {
-      name: "Size",
-      id: 1,
-    },
-    {
-      name: "Material",
-      id: 2,
-    },
-    {
-      name: "Color",
-      id: 2,
-    },
-    {
-      name: "Style",
-      id: 2,
-    },
-  ];
 
   useLayoutEffect(() => {
     const isIndeterminate =
@@ -94,7 +80,6 @@ export default function VarientsTable() {
     setIndeterminate(isIndeterminate);
 
     if (checkbox.current) {
-      // Add a null check here
       checkbox.current.indeterminate = isIndeterminate;
     }
   }, [selectedVariants]);
@@ -107,11 +92,11 @@ export default function VarientsTable() {
 
   return (
     <div>
-      <div className="p-3 sm:flex sm:items-center">
+      <div className="relative p-3 sm:flex sm:items-center">
         <div className="flex flex-row items-center justify-between w-full">
           <div>
-            <div className="relative rounded-md shadow-sm">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <div className="rounded-md shadow-sm">
+              <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center pl-3">
                 <RenderIcon path={MagnifyingGlass} size={"w-4"} />
               </div>
               <input
@@ -119,8 +104,44 @@ export default function VarientsTable() {
                 name="search"
                 type="search"
                 placeholder="Search Products"
-                className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 h-28px pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
               />
+              {selectedVariants.length > 0 && (
+                <div className="absolute top-0.5 flex h-12 items-center space-x-3 bg-white sm:left-64">
+                  <span className="hidden sm:block">
+                    <button
+                      type="button"
+                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                    >
+                      Set as Active
+                    </button>
+                  </span>
+                  <span className="hidden sm:block">
+                    <button
+                      type="button"
+                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                    >
+                      Set as Draft
+                    </button>
+                  </span>
+                  <span className="hidden sm:block">
+                    <button
+                      type="button"
+                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                    >
+                      Set as Archived
+                    </button>
+                  </span>
+                  <span className="hidden sm:block">
+                    <button
+                      type="button"
+                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                    >
+                      Delete
+                    </button>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
           <ProductTabs />
@@ -136,7 +157,7 @@ export default function VarientsTable() {
                     <th scope="col" className="relative px-7 sm:w-12 sm:px-6">
                       <input
                         type="checkbox"
-                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
                         ref={checkbox}
                         checked={checked}
                         onChange={toggleAll}
@@ -144,55 +165,55 @@ export default function VarientsTable() {
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Product
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Status
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Inventory
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Sales Channels
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Markets
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       B2B Categories
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Category
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Type
                     </th>
                     <th
                       scope="col"
-                      className="w-1/9 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/9 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Vendors
                     </th>
@@ -210,28 +231,24 @@ export default function VarientsTable() {
                       onClick={() => (window.location.href = "/orders")}
                     >
                       <td className="relative px-7 sm:w-12 sm:px-6">
-                        {/* {selectedPeople.includes(person) && (
-                          <div className="absolute inset-y-0 left-0 w-0.5 bg-indigo-600" />
-                        )} */}
                         <input
                           type="checkbox"
-                          className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                          // value={person.email}
-                          // checked={selectedPeople.includes(person)}
-                          // onChange={(e) =>
-                          //   setSelectedPeople(
-                          //     e.target.checked
-                          //       ? [...selectedPeople, person]
-                          //       : selectedPeople.filter((p) => p !== person)
-                          //   )
-                          // }
+                          className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
+                          checked={selectedVariants.includes(variant)}
+                          onChange={(e) =>
+                            setSelectedVariants(
+                              e.target.checked
+                                ? [...selectedVariants, variant]
+                                : selectedVariants.filter((v) => v !== variant)
+                            )
+                          }
                         />
                       </td>
                       <td
                         className={classNames(
                           "whitespace-nowrap py-2 px-4 text-sm font-medium",
                           selectedVariants.includes(variant)
-                            ? "text-indigo-600"
+                            ? "text-blue-600"
                             : "text-gray-900"
                         )}
                       >
@@ -246,29 +263,41 @@ export default function VarientsTable() {
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        Type
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                        {variant.status === "active" ? (
+                          <span className="inline-flex items-center rounded-full bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700">
+                            Active
+                          </span>
+                        ) : variant.status === "inactive" ? (
+                          <span class="inline-flex items-center rounded-full bg-blue-100 px-1.5 py-0.5 text-xs font-medium text-blue-700">
+                            Inactive
+                          </span>
+                        ) : variant.status === "draft" ? (
+                          <span class="inline-flex items-center rounded-full bg-yellow-100 px-1.5 py-0.5 text-xs font-medium text-yellow-800">
+                            Draft
+                          </span>
+                        ) : null}
                       </td>
-                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
-                        Active
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-900">
+                        10
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                         2,650 in stock for 3 variants
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                         2
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                         0
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        Beverages
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                        Electronics
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        Root Beer
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                        Apple Vision Pro
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        Root Beer Club
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                        Apple Vision Pro
                       </td>
                     </tr>
                   ))}
@@ -278,6 +307,7 @@ export default function VarientsTable() {
           </div>
         </div>
       </div>
+      <PaginationFooter />
     </div>
   );
 }

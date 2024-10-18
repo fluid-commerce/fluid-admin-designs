@@ -71,8 +71,8 @@ export function SidebarLayout({ navbar, sidebar, children }) {
       </header>
 
       {/* Content */}
-      <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-64 lg:pr-2 lg:pt-2 bg-gray-20">
-        <div className="grow lg:rounded-lg bg-gray-50 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 light:lg:bg-zinc-900 light:lg:ring-white/10">
+      <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-64 lg:pr-2 lg:pt-2 bg-navColor">
+        <div className="grow lg:rounded-lg bg-gray-100 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 light:lg:bg-zinc-900 light:lg:ring-white/10">
           <div className="">{children}</div>
         </div>
       </main>

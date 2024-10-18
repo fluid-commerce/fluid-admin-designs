@@ -60,6 +60,7 @@ import CardContainer from "../../components/order-details/CardContainer";
 import Edit from "../../images/svgs/regular/pencil.svg";
 import RenderIcon from "../../components/global/RenderIcon";
 import PromptsTable from "../../components/order-details/PromptsTable";
+import SideDrawer from "../../components/global/SideDrawer";
 const statusOptions = [
   { id: 1, name: "Active" },
   { id: 2, name: "Inactive" },
@@ -175,7 +176,7 @@ function classNames(...classes) {
 export default function OrderDetails() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selected, setSelected] = useState(moods[5]);
-
+  const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
       <main>
@@ -327,7 +328,10 @@ export default function OrderDetails() {
                       <div className="flex flex-col space-y-2">
                         <div className="flex flex-row justify-between items-center py-2 text-lg/6 font-medium sm:text-sm">
                           Search Engine Listing
-                          <div className="cursor-pointer rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
+                          <div
+                            className="cursor-pointer rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
+                            onClick={() => setOpenDrawer(true)}
+                          >
                             <RenderIcon
                               path={Edit}
                               size={"h-4 w-4"}
@@ -367,6 +371,7 @@ export default function OrderDetails() {
             </div>
           </div>
         </div>
+        <SideDrawer open={openDrawer} setOpen={setOpenDrawer} />
       </main>
     </>
   );

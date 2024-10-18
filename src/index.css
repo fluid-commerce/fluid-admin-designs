@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gray-100;
+  @apply bg-navColor;
 }
 
 code {
@@ -18,7 +18,8 @@ code {
 }
 
 .nav-icons {
-  @apply fill-iconGray group-hover:fill-blue-500;
+  color: #9ca3af;
+  @apply fill-gray-400;
 }
 
 .gray-icons {

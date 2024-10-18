@@ -127,19 +127,19 @@ export default function PromptsTable() {
                   <tr>
                     <th
                       scope="col"
-                      className="w-1/12 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/12 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Type
                     </th>
                     <th
                       scope="col"
-                      className="w-10/12 py-2 px-4 text-left text-sm font-medium text-gray-900"
+                      className="w-10/12 py-2 px-4 text-left text-xs font-medium text-gray-500"
                     >
                       Prompt
                     </th>
                     <th
                       scope="col"
-                      className="w-1/12 px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-1/12 px-3 py-2 text-left text-xs font-medium text-gray-500"
                     ></th>
                   </tr>
                 </thead>
@@ -153,7 +153,7 @@ export default function PromptsTable() {
                           : "hover:bg-gray-50 cursor-pointer"
                       )}
                     >
-                      <td className="w-1/12 whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="w-1/12 whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                         Type
                       </td>
                       <td

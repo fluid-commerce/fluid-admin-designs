@@ -33,7 +33,7 @@ import Check from "../../images/svgs/solid/check.svg";
 import ChevronRight from "../../images/svgs/solid/chevron-right.svg";
 export default function Header() {
   return (
-    <header className="p-6 bg-white relative isolate z-50 rounded-t-lg">
+    <header className="px-6 py-1.5 bg-white relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div
@@ -79,7 +79,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="max-w-7xl py-2">
+      <div className="max-w-7xl py-1">
         <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img
@@ -91,7 +91,7 @@ export default function Header() {
               <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 ">
                 Apple Vision Pro
               </h1>
-              <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 text-xs font-medium text-green-700">
+              <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 text-xs font-medium text-green-700 leading-none">
                 <svg
                   class="h-1.5 w-1.5 fill-green-500"
                   viewBox="0 0 6 6"

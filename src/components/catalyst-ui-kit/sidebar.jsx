@@ -104,28 +104,11 @@ export const SidebarItem = forwardRef(function SidebarItem(
   { current, className, active, children, ...props },
   ref
 ) {
-  console.log(active);
   let classes = clsx(
-    // Base
-    "flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5",
-    // Leading icon/icon-only
-    "data-[slot=icon]:*:size-6 data-[slot=icon]:*:shrink-0 data-[slot=icon]:*:fill-zinc-500 sm:data-[slot=icon]:*:size-5",
-    // Trailing icon (down chevron or similar)
-    "data-[slot=icon]:last:*:ml-auto data-[slot=icon]:last:*:size-5 sm:data-[slot=icon]:last:*:size-4",
-    // Avatar
-    "data-[slot=avatar]:*:-m-0.5 data-[slot=avatar]:*:size-7 data-[slot=avatar]:*:[--ring-opacity:10%] sm:data-[slot=avatar]:*:size-6",
-    // Hover
-    !active &&
-      "data-[hover]:bg-zinc-950/5 data-[slot=icon]:*:data-[hover]:fill-zinc-950",
-    // Active
-    "data-[active]:bg-zinc-950/5 data-[slot=icon]:*:data-[active]:fill-zinc-950",
-    // Current
-    "data-[slot=icon]:*:data-[current]:fill-zinc-950",
-    // Dark mode
-    "dark:text-white dark:data-[slot=icon]:*:fill-zinc-400",
-    "dark:data-[hover]:bg-white/5 dark:data-[slot=icon]:*:data-[hover]:fill-white",
-    "dark:data-[active]:bg-white/5 dark:data-[slot=icon]:*:data-[active]:fill-white",
-    "dark:data-[slot=icon]:*:data-[current]:fill-white"
+    active
+      ? "bg-gray-800 text-white"
+      : "text-gray-400 hover:bg-gray-800 hover:text-white",
+    "group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 w-full"
   );
 
   return (

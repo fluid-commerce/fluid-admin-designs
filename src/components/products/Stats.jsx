@@ -28,12 +28,15 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+// bg-gray-50
+// bg-gray-100
+
 export default function Stats() {
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-gray-50">
       <dl className="grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg md:grid-cols-3 md:divide-x md:divide-y-0">
         {stats.map((item) => (
-          <div key={item.name} className="px-4 py-5 sm:p-6 hover:opacity-75">
+          <div key={item.name} className="px-6 py-2.5 hover:opacity-75">
             <dt className="text-base text-sm font-normal text-gray-900">
               {item.name}
             </dt>

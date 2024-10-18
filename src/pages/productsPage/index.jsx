@@ -13,7 +13,7 @@ export default function ProductsPage() {
             <Header />
           </div>
         </div>
-        <div className="bg-white rounded-t-lg border-b border-gray-900/10 relative">
+        <div className="bg-gray-50 border-b border-gray-900/10 relative">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"

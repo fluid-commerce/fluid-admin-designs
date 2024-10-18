@@ -53,17 +53,17 @@ import {
 import RenderIcon from "./components/global/RenderIcon";
 
 // FontAwesome Icons
-import HouseBlank from "./images/svgs/sharp-solid/house-blank.svg";
-import MessagingIcon from "./images/svgs/solid/messages.svg";
-import ShoppingCart from "./images/svgs/solid/cart-shopping.svg";
-import SharingIcon from "./images/svgs/solid/share-from-square.svg";
-import MarketingIcon from "./images/svgs/sharp-solid/megaphone.svg";
+import HouseBlank from "./images/navIcons/home.svg";
+import MessagingIcon from "./images/navIcons/messages.svg";
+import ShoppingCart from "./images/navIcons/cart-shopping.svg";
+import SharingIcon from "./images/navIcons/rectangle-history-circle-user.svg";
+import MarketingIcon from "./images/navIcons/bullhorn.svg";
 import ChevronDown from "./images/svgs/solid/chevron-down.svg";
 import ChevronUp from "./images/svgs/solid/chevron-up.svg";
 import ChevronRight from "./images/svgs/solid/chevron-right.svg";
-import MobilePhone from "./images/svgs/solid/mobile-screen-button.svg";
-import Users from "./images/svgs/solid/users.svg";
-import Gear from "./images/svgs/solid/gear.svg";
+import MobilePhone from "./images/navIcons/mobile.svg";
+import Users from "./images/navIcons/users.svg";
+import Gear from "./images/navIcons/cog.svg";
 
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
@@ -136,7 +136,7 @@ export default function AppLayout() {
                     </SidebarLabel>
                   </div>
                   <div className="flex flex-col gap-[-0.5rem]">
-                    <RenderIcon path={ChevronDown} size={"w-3"} />
+                    <RenderIcon path={ChevronDown} type={"nav"} size={"w-3"} />
                   </div>
                 </div>
               </DropdownButton>
@@ -252,7 +252,7 @@ export default function AppLayout() {
                       : setSelectedTab("messaging");
                   }}
                 >
-                  <RenderIcon path={MessagingIcon} size={"w-4"} type={"nav"} />
+                  <RenderIcon path={MessagingIcon} type={"nav"} />
                   <SidebarLabel>Messaging</SidebarLabel>
                 </SidebarItem>
               </div>
@@ -269,16 +269,24 @@ export default function AppLayout() {
                   }}
                   active={selectedTab === "sharing"}
                 >
-                  <div className="flex items-center justify-between w-full">
+                  <div className="flex flex-row items-center justify-between w-full">
                     <div className="flex items-center gap-3">
                       <RenderIcon path={SharingIcon} type={"nav"} />
                       <SidebarLabel>Sharing</SidebarLabel>
                     </div>
                     <div>
                       {selectedTab !== "sharing" ? (
-                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                        <RenderIcon
+                          path={ChevronRight}
+                          type={"nav"}
+                          size={"w-2"}
+                        />
                       ) : (
-                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                        <RenderIcon
+                          path={ChevronDown}
+                          type={"nav"}
+                          size={"w-3"}
+                        />
                       )}
                     </div>
                   </div>
@@ -320,9 +328,17 @@ export default function AppLayout() {
                     </div>
                     <div>
                       {selectedTab !== "shopping" ? (
-                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                        <RenderIcon
+                          path={ChevronRight}
+                          type={"nav"}
+                          size={"w-2"}
+                        />
                       ) : (
-                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                        <RenderIcon
+                          path={ChevronDown}
+                          type={"nav"}
+                          size={"w-3"}
+                        />
                       )}
                     </div>
                   </div>
@@ -367,9 +383,17 @@ export default function AppLayout() {
                     </div>
                     <div>
                       {selectedTab !== "marketing" ? (
-                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                        <RenderIcon
+                          path={ChevronRight}
+                          type={"nav"}
+                          size={"w-2"}
+                        />
                       ) : (
-                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                        <RenderIcon
+                          path={ChevronDown}
+                          type={"nav"}
+                          size={"w-3"}
+                        />
                       )}
                     </div>
                   </div>
@@ -414,9 +438,17 @@ export default function AppLayout() {
                     </div>
                     <div>
                       {selectedTab !== "mobile" ? (
-                        <RenderIcon path={ChevronRight} size={"w-2"} />
+                        <RenderIcon
+                          path={ChevronRight}
+                          type={"nav"}
+                          size={"w-2"}
+                        />
                       ) : (
-                        <RenderIcon path={ChevronDown} size={"w-3"} />
+                        <RenderIcon
+                          path={ChevronDown}
+                          type={"nav"}
+                          size={"w-3"}
+                        />
                       )}
                     </div>
                   </div>
@@ -490,15 +522,15 @@ export default function AppLayout() {
                     alt=""
                   />
                   <span className="min-w-0">
-                    <span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">
+                    <span className="block text-left truncate text-sm/5 font-medium text-white">
                       Erica
                     </span>
-                    <span className="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">
+                    <span className="block truncate text-xs/5 font-normal text-zinc-400">
                       erica@example.com
                     </span>
                   </span>
                 </span>
-                <ChevronUpIcon />
+                <RenderIcon path={ChevronUp} type={"nav"} size={"w-3"} />
               </DropdownButton>
               <DropdownMenu className="min-w-64" anchor="top start">
                 <DropdownItem href="/my-profile">

@@ -129,25 +129,25 @@ export default function VarientsTable() {
                   <tr>
                     <th
                       scope="col"
-                      className="w-full py-2 px-4 text-left text-sm font-medium text-gray-900"
+                      className="w-full py-2 px-4 text-left text-xs font-medium text-gray-500"
                     >
                       Variant
                     </th>
                     <th
                       scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-auto px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Type
                     </th>
                     <th
                       scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-auto px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       Inventory
                     </th>
                     <th
                       scope="col"
-                      className="w-auto px-3 py-2 text-left text-sm font-medium text-gray-900"
+                      className="w-auto px-3 py-2 text-left text-xs font-medium text-gray-500"
                     >
                       SKU
                     </th>
@@ -188,7 +188,7 @@ export default function VarientsTable() {
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                         Type
                       </td>
                       <td className="whitespace-nowrap px-3 text-sm text-gray-500">
