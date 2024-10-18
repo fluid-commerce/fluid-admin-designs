@@ -3,7 +3,11 @@ import React from "react";
 import RenderIcon from "../global/RenderIcon";
 import Plus from "../../images/svgs/solid/plus.svg";
 
-export default function Header() {
+export default function Header({
+  title,
+  actionButtonText,
+  setOpenActiveDrawer,
+}) {
   return (
     <header className="px-6 py-4 relative isolate z-50">
       {/* <div
@@ -32,34 +36,44 @@ export default function Header() {
                 /> */}
             <div className="flex flex-row space-x-3 justify-center align-center">
               <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 ">
-                Products
+                {title}
               </h1>
             </div>
           </div>
           <div className="flex items-center gap-x-2 sm:gap-x-2">
+            {title === "Products" && (
+              <span className="hidden sm:block">
+                <button
+                  type="button"
+                  className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                >
+                  Export
+                </button>
+              </span>
+            )}
             <span className="hidden sm:block">
-              <button
-                type="button"
-                className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
-              >
-                Export
-              </button>
-            </span>
-            <span className="hidden sm:block">
-              <button
-                type="button"
-                className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
-              >
-                Import
-              </button>
+              {title === "URL Redirects" ? (
+                <label className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 cursor-pointer">
+                  Import
+                  <input type="file" className="hidden" />
+                </label>
+              ) : (
+                <button
+                  type="button"
+                  className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                >
+                  Import
+                </button>
+              )}
             </span>
             <span>
               <button
                 type="button"
                 className="inline-flex items-center rounded-md bg-blue-600 px-3 py-1 gap-1 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                onClick={() => setOpenActiveDrawer(true)}
               >
                 <RenderIcon path={Plus} size={"w-3"} type={"save"} />
-                Add Product
+                {actionButtonText}
               </button>
             </span>
           </div>

@@ -1,19 +1,8 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  TrashIcon,
-  PencilIcon,
-  PlusIcon,
-} from "@heroicons/react/20/solid";
-import { ComboboxInput, Combobox } from "@headlessui/react";
 
-import TextDropdown from "../global/TextDropdown";
-import Dropdown from "../global/Dropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
-import Plus from "../../images/svgs/solid/plus.svg";
 import RenderIcon from "../global/RenderIcon";
 import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 import ProductTabs from "./ProductTabs";

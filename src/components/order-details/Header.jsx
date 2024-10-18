@@ -31,6 +31,19 @@ import Archive from "../../images/svgs/solid/box-archive.svg";
 import Trash from "../../images/svgs/solid/trash-can.svg";
 import Check from "../../images/svgs/solid/check.svg";
 import ChevronRight from "../../images/svgs/solid/chevron-right.svg";
+
+const languages = [
+  { id: 1, name: "English (EN)" },
+  { id: 2, name: "Spanish (ES)" },
+  { id: 3, name: "French (FR)" },
+  { id: 4, name: "German (DE)" },
+  { id: 5, name: "Italian (IT)" },
+  { id: 6, name: "Portuguese (PT)" },
+  { id: 7, name: "Russian (RU)" },
+  { id: 8, name: "Chinese (ZH)" },
+  { id: 9, name: "Japanese (JA)" },
+];
+
 export default function Header() {
   return (
     <header className="px-6 py-1.5 bg-white relative isolate z-50 rounded-t-lg">
@@ -104,7 +117,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center gap-x-2 sm:gap-x-2">
-            <Dropdown />
+            <Dropdown options={languages} />
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <MenuButton className="inline-flex w-full justify-center items-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">

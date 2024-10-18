@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/products/Header";
 import Stats from "../../components/products/Stats";
 import CardContainer from "../../components/order-details/CardContainer";
-import ProductsTable from "../../components/products/ProductsTable";
+import UrlRedirectsTable from "../../components/urlRedirects/UrlRedirectsTable";
+import SideDrawer from "../../components/global/SideDrawer";
 
-export default function ProductsPage() {
+export default function () {
+  const [openActiveDrawer, setOpenActiveDrawer] = useState(false);
   return (
     <>
       <main>
         <div className="bg-white rounded-t-lg border-b border-gray-900/10">
           <div className="mx-auto max-w-7xl">
-            <Header title={"Products"} actionButtonText={"Add Product"} />
+            <Header
+              title={"URL Redirects"}
+              actionButtonText={"Add"}
+              setOpenActiveDrawer={setOpenActiveDrawer}
+            />
           </div>
         </div>
         <div className="bg-gray-50 border-b border-gray-900/10 relative">
@@ -29,17 +35,15 @@ export default function ProductsPage() {
             </div>
             <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
           </div> */}
-          <div className="mx-auto max-w-7xl">
-            <Stats />
-          </div>
         </div>
         <div className="p-6">
           <div className="mx-auto max-w-7xl">
             <CardContainer>
-              <ProductsTable />
+              <UrlRedirectsTable />
             </CardContainer>
           </div>
         </div>
+        <SideDrawer open={openActiveDrawer} setOpen={setOpenActiveDrawer} />
       </main>
     </>
   );
