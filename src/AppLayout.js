@@ -333,7 +333,7 @@ export default function AppLayout() {
                   <SidebarItem href="/orders">
                     <SidebarLabel>Orders</SidebarLabel>
                   </SidebarItem>
-                  <SidebarItem href="/settings/sub2">
+                  <SidebarItem href="/products">
                     <SidebarLabel>Products</SidebarLabel>
                   </SidebarItem>
                   <SidebarItem href="/settings/sub2">
@@ -484,7 +484,7 @@ export default function AppLayout() {
               <DropdownButton as={SidebarItem}>
                 <span className="flex min-w-0 items-center gap-3">
                   <Avatar
-                    src="/profile-photo.jpg"
+                    src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/357419653_10159177522595598_4485332528001871041_n.jpg?stp=dst-jpg_s480x480&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=BDd3ABdipr8Q7kNvgE1pjii&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AUyBQS26CGHc4t7mLOElMXP&oh=00_AYBfTNxQXAvN6ngsHrbeUUTGffsVuD7oSvGInlvApgUbDA&oe=67173E59"
                     className="size-10"
                     square
                     alt=""

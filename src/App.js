@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OrderDetails from "./pages/orderDetails/index";
 import Marketing from "./pages/marketing";
 import AppLayout from "./AppLayout";
-
+import ProductsPage from "./pages/productsPage";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -14,7 +14,7 @@ function App() {
           <Route index element={<OrderDetails />} />
           <Route path="marketing" element={<Marketing />} />
           <Route path="orders" element={<OrderDetails />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="products" element={<ProductsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

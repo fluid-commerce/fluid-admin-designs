@@ -30,6 +30,7 @@ import Duplicate from "../../images/svgs/solid/copy.svg";
 import Archive from "../../images/svgs/solid/box-archive.svg";
 import Trash from "../../images/svgs/solid/trash-can.svg";
 import Check from "../../images/svgs/solid/check.svg";
+import ChevronRight from "../../images/svgs/solid/chevron-right.svg";
 export default function Header() {
   return (
     <header className="p-6 bg-white relative isolate z-50 rounded-t-lg">
@@ -61,17 +62,17 @@ export default function Header() {
             <span className="isolate inline-flex rounded-md">
               <button
                 type="button"
-                className="relative inline-flex items-center rounded-l-md px-1 py-1 bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                className="relative inline-flex items-center rounded-l-md p-2 bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
               >
                 <span className="sr-only">Previous</span>
-                <ChevronLeftIcon aria-hidden="true" className="h-4 w-4" />
+                <RenderIcon path={ChevronLeft} size={"w-1.5"} />
               </button>
               <button
                 type="button"
-                className="relative -ml-px inline-flex items-center px-1 py-1 rounded-r-md bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                className="relative -ml-px inline-flex items-center p-2 rounded-r-md bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
               >
                 <span className="sr-only">Next</span>
-                <ChevronRightIcon aria-hidden="true" className="h-4 w-4" />
+                <RenderIcon path={ChevronRight} size={"w-1.5"} />
               </button>
             </span>
           </div>

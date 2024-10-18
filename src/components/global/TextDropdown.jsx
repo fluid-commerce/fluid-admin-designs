@@ -10,6 +10,9 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
+import ChevronDown from "../../images/svgs/solid/chevron-down.svg";
+import ChevronUp from "../../images/svgs/solid/chevron-up.svg";
+import RenderIcon from "./RenderIcon";
 
 export default function TextDropdown({ options }) {
   const [query, setQuery] = useState("");
@@ -40,11 +43,13 @@ export default function TextDropdown({ options }) {
           displayValue={(option) => option?.name}
           value={selectedOption ? selectedOption?.name : options[0]?.name}
         />
-        <ComboboxButton className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
-          <ChevronUpDownIcon
+        <ComboboxButton className="absolute flex flex-col justify-center inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
+          {/* <ChevronUpDownIcon
             className="h-5 w-5 text-gray-400"
             aria-hidden="true"
-          />
+          /> */}
+          <RenderIcon path={ChevronUp} size={"w-2.5"} type={"chevron-up"} />
+          <RenderIcon path={ChevronDown} size={"w-2.5"} type={"chevron-down"} />
         </ComboboxButton>
 
         {filteredOptions?.length > 0 && (
