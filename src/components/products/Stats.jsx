@@ -33,50 +33,18 @@ function classNames(...classes) {
 
 export default function Stats() {
   return (
-    <div className="relative bg-gray-50">
-      <dl className="grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg md:grid-cols-3 md:divide-x md:divide-y-0">
+    <div>
+      <dl className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         {stats.map((item) => (
-          <div key={item.name} className="px-6 py-2.5 hover:opacity-75">
-            <dt className="text-base text-sm font-normal text-gray-900">
+          <div
+            key={item.name}
+            className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm ring-1 ring-gray-300 sm:p-4 "
+          >
+            <dt className="truncate text-xs font-medium text-gray-500">
               {item.name}
             </dt>
-            <dd className="mt-1 flex items-baseline justify-between md:block lg:flex">
-              <div className="flex items-baseline text-2xl font-semibold text-gray-900">
-                {item.stat}
-                <span className="ml-2 text-sm font-medium text-gray-500">
-                  {item.previousStat}
-                </span>
-              </div>
-
-              {/* <div
-                className={classNames(
-                  item.changeType === "increase"
-                    ? "bg-green-100 text-green-800"
-                    : "bg-red-100 text-red-800",
-                  "inline-flex items-baseline rounded-full px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0"
-                )}
-              >
-                {item.changeType === "increase" ? (
-                  <ArrowUpIcon
-                    aria-hidden="true"
-                    className="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-green-500"
-                  />
-                ) : (
-                  <ArrowDownIcon
-                    aria-hidden="true"
-                    className="-ml-1 mr-0.5 h-5 w-5 flex-shrink-0 self-center text-red-500"
-                  />
-                )}
-
-                <span className="sr-only">
-                  {" "}
-                  {item.changeType === "increase"
-                    ? "Increased"
-                    : "Decreased"}{" "}
-                  by{" "}
-                </span>
-                {item.change}
-              </div> */}
+            <dd className="mt-1 text-2xl font-semibold tracking-tight text-gray-900">
+              {item.stat}
             </dd>
           </div>
         ))}

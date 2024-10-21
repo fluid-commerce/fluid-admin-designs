@@ -2,6 +2,13 @@ import React from "react";
 
 import RenderIcon from "../global/RenderIcon";
 import Plus from "../../images/svgs/solid/plus.svg";
+import ShoppingIcon from "../../images/sideNavIcons/size=sm, color=gray, type=shopping-bag.svg";
+
+const breadCrumbs = [
+  { name: "Shopping", icon: ShoppingIcon, href: "#", current: true },
+  { name: "Products", href: "#", current: false },
+  { name: "Product Details", href: "#", current: false },
+];
 
 export default function Header({
   title,
@@ -35,9 +42,7 @@ export default function Header({
                   className="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 /> */}
             <div className="flex flex-row space-x-3 justify-center align-center">
-              <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 ">
-                {title}
-              </h1>
+              <h1 className="text-3xl font-semibold text-zinc-950">{title}</h1>
             </div>
           </div>
           <div className="flex items-center gap-x-2 sm:gap-x-2">

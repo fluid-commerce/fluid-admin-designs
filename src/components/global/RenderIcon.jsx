@@ -5,7 +5,7 @@ export default function RenderSvg({ path, size, type }) {
   return (
     <ReactSVG
       src={path}
-      className={`${size ? size : "w-4"} ${
+      className={`${size ? size : ""} ${
         type === "destructive"
           ? "destructive-icons"
           : type === "save"

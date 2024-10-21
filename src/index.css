@@ -9,7 +9,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-navColor;
+  background-image: url("./images/backgrounds/bodyBackground.jpg");
+  background-size: cover;
+  background-position: right bottom;
+  /* @apply bg-navColor; */
 }
 
 code {

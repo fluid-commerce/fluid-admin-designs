@@ -11,7 +11,7 @@ export function Sidebar({ className, ...props }) {
   return (
     <nav
       {...props}
-      className={clsx(className, "flex h-full min-h-0 flex-col")}
+      className={clsx(className, "flex h-full min-h-0 flex-col w-full")}
     />
   );
 }
@@ -60,7 +60,7 @@ export function SidebarSection({ className, ...props }) {
       <div
         {...props}
         data-slot="section"
-        className={clsx(className, "flex flex-col gap-0.5")}
+        className={clsx(className, "flex flex-col gap-2")}
       />
     </LayoutGroup>
   );
@@ -105,9 +105,7 @@ export const SidebarItem = forwardRef(function SidebarItem(
   ref
 ) {
   let classes = clsx(
-    active
-      ? "bg-gray-800 text-white"
-      : "text-gray-400 hover:bg-gray-800 hover:text-white",
+    active ? "bg-gray-50 text-gray-700" : "text-gray-700 hover:bg-gray-50",
     "group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 w-full"
   );
 

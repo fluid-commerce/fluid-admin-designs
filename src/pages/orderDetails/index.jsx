@@ -61,6 +61,7 @@ import Edit from "../../images/svgs/regular/pencil.svg";
 import RenderIcon from "../../components/global/RenderIcon";
 import PromptsTable from "../../components/order-details/PromptsTable";
 import SideDrawer from "../../components/global/SideDrawer";
+
 const statusOptions = [
   { id: 1, name: "Active" },
   { id: 2, name: "Inactive" },
@@ -180,7 +181,7 @@ export default function OrderDetails() {
   return (
     <>
       <main>
-        <div className="bg-white rounded-t-lg border-b border-gray-900/10 mb-6">
+        <div className="rounded-t-lg">
           <div className="mx-auto max-w-7xl">
             <Header />
           </div>
@@ -206,17 +207,17 @@ export default function OrderDetails() {
             </div>
             {/* Right Column */}
             <div className="lg:col-start-3 space-y-6">
-              <div className="-mx-4 p-4 rounded-lg border border-gray-200 bg-white shadow-sm shadow-sm sm:mx-0">
+              <div className="-mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
                 <div className="font-medium sm:text-sm">Status</div>
                 <TextDropdown options={statusOptions} />
               </div>
-              <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg ">
+              <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
                 <div className="text-lg/6 font-medium sm:text-sm">
                   Purchase Options
                 </div>
                 <TextDropdown options={purchaseOptions} />
               </div>
-              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg ">
+              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
                 <div>
                   <div className="text-lg/6 font-medium sm:text-sm">
                     USA Tax Category
@@ -238,7 +239,7 @@ export default function OrderDetails() {
                 </div>
               </div>
               <SettingsCard />
-              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow">
+              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm ring-1 ring-gray-300">
                 <div className="p-3">
                   {/* Content goes here */}
                   {/* We use less vertical padding on card headers on desktop than on body sections */}
@@ -281,7 +282,7 @@ export default function OrderDetails() {
                   </ul>
                 </div>
               </div>
-              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow">
+              <div className="divide-y divide-gray-200 rounded-lg bg-white ring-1 ring-gray-300 shadow-sm">
                 <div className="p-3">
                   {/* Content goes here */}
                   {/* We use less vertical padding on card headers on desktop than on body sections */}

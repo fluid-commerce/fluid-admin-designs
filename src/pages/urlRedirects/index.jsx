@@ -10,7 +10,7 @@ export default function () {
   return (
     <>
       <main>
-        <div className="bg-white rounded-t-lg border-b border-gray-900/10">
+        <div className="rounded-t-lg">
           <div className="mx-auto max-w-7xl">
             <Header
               title={"URL Redirects"}
@@ -19,7 +19,7 @@ export default function () {
             />
           </div>
         </div>
-        <div className="bg-gray-50 border-b border-gray-900/10 relative">
+        <div className="bg-gray-50 relative">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"
@@ -36,8 +36,8 @@ export default function () {
             <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
           </div> */}
         </div>
-        <div className="p-6">
-          <div className="mx-auto max-w-7xl">
+        <div className="px-6">
+          <div className="mx-auto max-w-7xl px-6">
             <CardContainer>
               <UrlRedirectsTable />
             </CardContainer>

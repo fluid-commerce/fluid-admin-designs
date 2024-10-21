@@ -4,6 +4,32 @@ import * as Headless from "@headlessui/react";
 import React, { useState } from "react";
 import { NavbarItem } from "./navbar";
 
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownMenu,
+  DropdownItem,
+  DropdownLabel,
+  DropdownDivider,
+} from "./dropdown";
+
+import { SidebarItem, SidebarLabel, SidebarSection } from "./sidebar";
+import { Avatar } from "./avatar";
+
+import RenderIcon from "../../components/global/RenderIcon";
+import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
+import FluidLogo from "../../images/sideNavIcons/Fluid Full Logo.svg";
+import Users from "../../images/svgs/regular/users.svg";
+import Gear from "../../images/svgs/regular/gear.svg";
+import ChevronDown from "../../images/svgs/solid/chevron-down.svg";
+import User from "../../images/svgs/solid/user.svg";
+import FullGear from "../../images/svgs/solid/gear.svg";
+import LightBulb from "../../images/svgs/solid/lightbulb.svg";
+import Logout from "../../images/svgs/solid/arrow-right-from-bracket.svg";
+import ShieldCheck from "../../images/svgs/solid/shield-check.svg";
+import UsersIcon from "../../images/sideNavIcons/size=sm, color=gray, type=users.svg";
+import SettingsIcon from "../../images/sideNavIcons/size=sm, color=gray, type=settings.svg";
+
 function OpenMenuIcon() {
   return (
     <svg data-slot="icon" viewBox="0 0 20 20" aria-hidden="true">
@@ -31,7 +57,7 @@ function MobileSidebar({ open, close, children }) {
         transition
         className="fixed inset-y-0 w-full max-w-80 p-2 transition duration-300 ease-in-out data-[closed]:-translate-x-full"
       >
-        <div className="flex h-full flex-col rounded-lg bg-white shadow-sm ring-1 ring-zinc-950/5 light:bg-zinc-900 light:ring-white/10">
+        <div className="flex h-full flex-col rounded-lg bg-white shadow-sm ring-1 ring-gray-300 light:bg-zinc-900">
           <div className="-mb-3 px-4 pt-3">
             <Headless.CloseButton as={NavbarItem} aria-label="Close navigation">
               <CloseMenuIcon />
@@ -48,7 +74,7 @@ export function SidebarLayout({ navbar, sidebar, children }) {
   let [showSidebar, setShowSidebar] = useState(false);
 
   return (
-    <div className="relative isolate flex min-h-svh w-full bg-white max-lg:flex-col lg:bg-zinc-100 light:bg-zinc-900 light:lg:bg-zinc-950">
+    <div className="relative isolate flex min-h-svh w-full max-lg:flex-col">
       {/* Sidebar on desktop */}
       <div className="fixed inset-y-0 left-0 max-lg:hidden">{sidebar}</div>
 
@@ -71,8 +97,81 @@ export function SidebarLayout({ navbar, sidebar, children }) {
       </header>
 
       {/* Content */}
-      <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-64 lg:pr-2 lg:pt-2 bg-navColor">
-        <div className="grow lg:rounded-lg bg-gray-100 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 light:lg:bg-zinc-900 light:lg:ring-white/10">
+      <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-64 lg:pr-2">
+        <div className="flex flex-row items-center justify-between">
+          {/* <RenderIcon path={FluidLogo} size={"w-4"} /> */}
+          <div className="relative flex flex-row items-center">
+            <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center pl-3">
+              <RenderIcon path={MagnifyingGlass} size={"w-4"} />
+            </div>
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Search Fluid"
+              className="block w-[30rem] overflow-x-auto rounded-[9px] border-0 h-28px pl-10 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <Dropdown>
+              <div className="flex flex-row items-center justify-between">
+                <SidebarItem href="/support">
+                  <RenderIcon path={UsersIcon} type={"nav"} />
+                </SidebarItem>
+                <SidebarItem href="/changelog">
+                  <RenderIcon path={SettingsIcon} />
+                </SidebarItem>
+              </div>
+              <DropdownButton as={SidebarItem}>
+                <span className="flex min-w-0 items-center gap-1">
+                  <Avatar
+                    src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/357419653_10159177522595598_4485332528001871041_n.jpg?stp=dst-jpg_s480x480&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=BDd3ABdipr8Q7kNvgE1pjii&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AUyBQS26CGHc4t7mLOElMXP&oh=00_AYBfTNxQXAvN6ngsHrbeUUTGffsVuD7oSvGInlvApgUbDA&oe=67173E59"
+                    className="size-8"
+                    square
+                    alt=""
+                  />
+                  <span className="min-w-0">
+                    {/* <span className="block text-left truncate text-sm/5 font-medium text-white">
+                      Erica
+                    </span> */}
+                    <span className="block truncate text-xs/5 font-normal text-zinc-400">
+                      Erica
+                    </span>
+                  </span>
+                </span>
+                <RenderIcon path={ChevronDown} type={"nav"} size={"w-3"} />
+              </DropdownButton>
+              <DropdownMenu
+                className="min-w-64 gap-x-3 hover:text-white"
+                anchor="top start"
+              >
+                <DropdownItem href="/my-profile">
+                  <RenderIcon path={User} size={"w-3"} />
+                  <DropdownLabel>My profile</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem href="/settings">
+                  <RenderIcon path={FullGear} size={"w-3"} />
+                  <DropdownLabel>Settings</DropdownLabel>
+                </DropdownItem>
+                <DropdownDivider />
+                <DropdownItem href="/privacy-policy">
+                  <RenderIcon path={ShieldCheck} size={"w-3"} />
+                  <DropdownLabel>Privacy policy</DropdownLabel>
+                </DropdownItem>
+                <DropdownItem href="/share-feedback">
+                  <RenderIcon path={LightBulb} size={"w-2.5"} />
+                  <DropdownLabel>Share feedback</DropdownLabel>
+                </DropdownItem>
+                <DropdownDivider />
+                <DropdownItem href="/logout">
+                  <RenderIcon path={Logout} size={"w-3"} type={"nav-menu"} />
+                  <DropdownLabel>Sign out</DropdownLabel>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+        </div>
+        <div className="grow lg:rounded-lg bg-gray-100 lg:shadow-sm lg:ring-1 light:lg:bg-zinc-900 ring-gray-300">
           <div className="">{children}</div>
         </div>
       </main>

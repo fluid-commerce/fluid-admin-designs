@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SettingsCard() {
   return (
-    <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg space-y-2 shadow-sm ring-1 ring-gray-900/5 sm:mx-0 sm:rounded-lg ">
+    <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg space-y-2 shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
       <div className="text-lg/6 font-medium sm:text-sm">Publish Options</div>
       <fieldset>
         <legend className="sr-only">Notifications</legend>

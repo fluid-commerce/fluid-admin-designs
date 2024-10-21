@@ -31,6 +31,7 @@ import Archive from "../../images/svgs/solid/box-archive.svg";
 import Trash from "../../images/svgs/solid/trash-can.svg";
 import Check from "../../images/svgs/solid/check.svg";
 import ChevronRight from "../../images/svgs/solid/chevron-right.svg";
+import BreadCrumbs from "../global/BreadCrumbs";
 
 const languages = [
   { id: 1, name: "English (EN)" },
@@ -46,7 +47,7 @@ const languages = [
 
 export default function Header() {
   return (
-    <header className="px-6 py-1.5 bg-white relative isolate z-50 rounded-t-lg">
+    <header className="px-6 py-6 relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div
@@ -62,13 +63,13 @@ export default function Header() {
 
       <div aria-hidden="true" className="inset-8 -z-10 overflow-hidden">
         <div className="flex flex-row justify-between items-center">
-          <div className="flex flex-row items-center cursor-pointer">
+          <div className="flex flex-row items-center justify-center cursor-pointer">
             <a
               href="#"
-              className="flex items-center gap-2 text-sm/6 text-zinc-500"
+              className="flex items-center gap-x-2 text-xs text-zinc-500"
             >
-              <RenderIcon path={ChevronLeft} size={"w-1.5"} />
-              Orders
+              <RenderIcon path={ChevronLeft} size={"w-1.5 h-2"} />
+              All Products
             </a>
           </div>
           <div>
@@ -101,7 +102,7 @@ export default function Header() {
                   className="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 /> */}
             <div className="flex flex-row space-x-3 justify-center align-center">
-              <h1 className="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8 ">
+              <h1 className="text-3xl font-semibold text-zinc-950">
                 Apple Vision Pro
               </h1>
               <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 text-xs font-medium text-green-700 leading-none">
