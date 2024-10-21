@@ -13,7 +13,7 @@ export default function ProductsPage() {
             <Header title={"Products"} actionButtonText={"Add Product"} />
           </div>
         </div>
-        <div className="relative">
+        <div className="relative p-6">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"
