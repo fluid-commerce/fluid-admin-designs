@@ -54,14 +54,14 @@ import TextDropdown from "../../components/global/TextDropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
 import Tabs from "../../components/global/Tabs";
 import VarientsTable from "../../components/order-details/VarientsTable";
-import ProductDetails from "../../components/order-details/ProductDetails";
+import ProductInfo from "../../components/order-details/ProductInfo";
 import Header from "../../components/order-details/Header";
 import CardContainer from "../../components/order-details/CardContainer";
 import Edit from "../../images/svgs/regular/pencil.svg";
 import RenderIcon from "../../components/global/RenderIcon";
 import PromptsTable from "../../components/order-details/PromptsTable";
 import SideDrawer from "../../components/global/SideDrawer";
-
+import OrdersFeed from "../../components/orders/OrdersFeed";
 const statusOptions = [
   { id: 1, name: "Active" },
   { id: 2, name: "Inactive" },
@@ -181,9 +181,9 @@ export default function OrderDetails() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
+        <div className="rounded-t-lg px-6">
           <div className="mx-auto max-w-7xl">
-            <Header />
+            <Header title={"R68745"} type={"Orders"} />
           </div>
         </div>
         <div className="mx-auto max-w-7xl px-6 pb-6">
@@ -192,181 +192,197 @@ export default function OrderDetails() {
             <div className="lg:col-span-2 space-y-6">
               {/* Product Details */}
               <CardContainer>
-                <ProductDetails />
+                <div className="flex flex-col p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-col">
+                      <div className="text-xs font-medium text-gray-500">
+                        Location
+                      </div>
+                      <div className="text-sm font-medium text-gray-900">
+                        United States
+                      </div>
+                    </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      $33.00
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="text-xs font-medium text-gray-500">
+                      Delivery Method
+                    </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      Economy
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-x-2">
+                    <img
+                      src={dummyProductImage}
+                      alt="Product Image"
+                      className="h-16 w-16 flex-none rounded-md object-cover object-center"
+                    />
+                    <div className="flex flex-col">
+                      <div className="text-sm text-gray-900">
+                        Apple Vision Pro
+                      </div>
+                      <div className="text-xs font-medium text-gray-500">
+                        SKU: V05555{" "}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CardContainer>
 
               {/* Varients Table */}
               <CardContainer>
-                <VarientsTable />
+                <div className="flex flex-col p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-col">
+                      <div className="text-xs font-medium text-gray-500">
+                        Location
+                      </div>
+                      <div className="text-sm font-medium text-gray-900">
+                        United States
+                      </div>
+                    </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      $33.00
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="text-xs font-medium text-gray-500">
+                      Delivery Method
+                    </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      Economy
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-x-2">
+                    <img
+                      src={dummyProductImage}
+                      alt="Product Image"
+                      className="h-16 w-16 flex-none rounded-md object-cover object-center"
+                    />
+                    <div className="flex flex-col">
+                      <div className="text-sm text-gray-900">
+                        Apple Vision Pro
+                      </div>
+                      <div className="text-xs font-medium text-gray-500">
+                        SKU: V05555{" "}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CardContainer>
 
-              {/* Prompts Table */}
               <CardContainer>
-                <PromptsTable />
+                <div className="flex flex-col p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                  <div className="flex flex-row justify-between">
+                    <div className="text-xs font-medium text-gray-500">
+                      Subtotal
+                    </div>
+                    <div className="text-xs font-medium text-gray-500">
+                      3 items
+                    </div>
+                    <div className="text-xs font-medium text-gray-500">
+                      $99.00
+                    </div>
+                  </div>
+                  <div className="flex flex-row justify-between">
+                    <div className="text-xs font-medium text-gray-500">
+                      Shipping
+                    </div>
+                    <div className="text-xs font-medium text-gray-500">
+                      Economy (54.0lb)
+                    </div>
+                    <div className="text-xs font-medium text-gray-500">
+                      $15.00
+                    </div>
+                  </div>
+                  <div className="flex flex-row justify-between">
+                    <div className="text-sm font-medium text-gray-900">
+                      Total
+                    </div>
+                    <div className="text-sm font-medium text-gray-900">
+                      $114.00
+                    </div>
+                  </div>
+                </div>
+              </CardContainer>
+
+              {/* Timeline */}
+              <CardContainer>
+                <div className="flex flex-col p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
+                  <OrdersFeed />
+                </div>
               </CardContainer>
             </div>
             {/* Right Column */}
             <div className="lg:col-start-3 space-y-6">
-              <div className="-mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
-                <div className="font-medium sm:text-sm">Status</div>
-                <TextDropdown options={statusOptions} />
-              </div>
-              <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
-                <div className="text-lg/6 font-medium sm:text-sm">
-                  Purchase Options
+              <div className="flex flex-col space-y-2 -mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
+                <div className="font-medium sm:text-sm">Notes</div>
+                <div className="font-medium text-xs text-gray-500">
+                  No notes from customer.
                 </div>
-                <TextDropdown options={purchaseOptions} />
+              </div>
+              <div className="flex flex-col space-y-2 -mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
+                <div className="text-lg/6 font-medium sm:text-sm">Customer</div>
+                <div className="flex flex-col">
+                  <div className="text-xs font-medium text-gray-500">
+                    Felipe Lee
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    felipe@gmail.com
+                  </div>
+                </div>
+                <div className="text-lg/6 font-medium sm:text-sm">
+                  Shipping Address
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-xs font-medium text-gray-500">
+                    Felipe Lee
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    123 S. Main St.
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    Orem UT, 84057
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    United States
+                  </div>
+                </div>
+                <div className="text-lg/6 font-medium sm:text-sm">
+                  Billing Address
+                </div>
+                <div className="flex flex-col">
+                  <div className="text-xs font-medium text-gray-500">
+                    Felipe Lee
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    123 S. Main St.
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    Orem UT, 84057
+                  </div>
+                  <div className="text-xs font-medium text-gray-500">
+                    United States
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-2 -mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
+                <div className="font-medium sm:text-sm">
+                  Conversation Summary
+                </div>
+                <div className="font-medium text-xs text-gray-500">
+                  No conversation details available for this order.
+                </div>
               </div>
               <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
                 <div>
-                  <div className="text-lg/6 font-medium sm:text-sm">
-                    USA Tax Category
-                  </div>
-                  <TextDropdown options={usaTaxTypes} />
-                  <p className="text-xs/6 text-slate-500">
-                    Determines US Tax Rates
-                  </p>
-                </div>
-                <div>
                   <div className="flex flex-row items-center text-lg/6 font-medium sm:text-sm relative group">
-                    International Tax Type{" "}
-                    <InformationCircleIcon className="h-4 w-5 text-slate-400" />
-                    <span className="absolute hidden group-hover:inline-block bg-gray-800 text-white text-xs rounded py-1 px-2 -mt-8 -ml-2 z-10">
-                      International Tax Type Category
-                    </span>
+                    Tags{" "}
                   </div>
-                  <TextDropdown options={internationalTaxTypes} />
-                </div>
-              </div>
-              <SettingsCard />
-              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm ring-1 ring-gray-300">
-                <div className="p-3">
-                  {/* Content goes here */}
-                  {/* We use less vertical padding on card headers on desktop than on body sections */}
-                  <div className="text-sm font-medium sm:text-sm">
-                    Product Organization
-                  </div>
-                </div>
-                <div className="py-5 px-3">
-                  {/* Content goes here */}
-                  <ul
-                    role="list"
-                    className="divide-y divide-gray-200 space-y-4"
-                  >
-                    <li>
-                      <div>
-                        <div className="text-sm">Theme</div>
-                        <TextDropdown options={themes} />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div className="pt-2 text-sm sm:text-sm">
-                          Product Collection
-                        </div>
-                        <TextDropdown options={[]} />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div className="pt-2 text-sm sm:text-sm">Tags</div>
-                        <TextDropdown options={tags} />
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div className="pt-2 text-sm sm:text-sm">Label</div>
-                        <TextDropdown options={labels} />
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="divide-y divide-gray-200 rounded-lg bg-white ring-1 ring-gray-300 shadow-sm">
-                <div className="p-3">
-                  {/* Content goes here */}
-                  {/* We use less vertical padding on card headers on desktop than on body sections */}
-                  <div className="text-lg/6 font-medium sm:text-sm">SEO</div>
-                </div>
-                <div className="py-5 px-3">
-                  {/* Content goes here */}
-                  <ul
-                    role="list"
-                    className="divide-y divide-gray-200 space-y-4"
-                  >
-                    <li>
-                      <fieldset className="space-y-2">
-                        <legend className="text-lg/6 font-medium sm:text-sm">
-                          Search Engines
-                        </legend>
-                        <div className="space-y-6 space-x-5 sm:flex sm:items-center sm:space-y-0">
-                          {notificationMethods.map((notificationMethod) => (
-                            <div
-                              key={notificationMethod.id}
-                              className="flex items-center"
-                            >
-                              <input
-                                defaultChecked={
-                                  notificationMethod.id === "email"
-                                }
-                                id={notificationMethod.id}
-                                name="notification-method"
-                                type="radio"
-                                className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600"
-                              />
-                              <label
-                                htmlFor={notificationMethod.id}
-                                className="ml-3 block text-sm leading-6 text-gray-900"
-                              >
-                                {notificationMethod.title}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </fieldset>
-                    </li>
-                    <li>
-                      <div className="flex flex-col space-y-2">
-                        <div className="flex flex-row justify-between items-center py-2 text-lg/6 font-medium sm:text-sm">
-                          Search Engine Listing
-                          <div
-                            className="cursor-pointer rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
-                            onClick={() => setOpenDrawer(true)}
-                          >
-                            <RenderIcon
-                              path={Edit}
-                              size={"h-4 w-4"}
-                              type={"black"}
-                            />
-                          </div>
-                        </div>
-                        <div className="flex flex-col space-y-2">
-                          <div className="flex flex-row space-x-2">
-                            <img
-                              src={dummyProductImage}
-                              alt="Product Image"
-                              className="h-16 w-16 flex-none rounded-md object-cover object-center"
-                            />
-                            <div>
-                              <h4 className="text-sm/5 font-medium text-zinc-950">
-                                Apple Vision Pro
-                              </h4>
-                              <a
-                                href=""
-                                className="text-xs/5 font-normal text-blue-600 underline"
-                              >
-                                productlink.com/apple-vision-pro
-                              </a>
-                            </div>
-                          </div>
-                          <p className="text-xs/5 font-normal text-zinc-500">
-                            Apple Vision Pro is apples first 3D vision camera.
-                            You can capture magical spacial photos and...
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                  <TextDropdown options={[]} />
                 </div>
               </div>
             </div>

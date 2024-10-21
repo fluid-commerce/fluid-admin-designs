@@ -15,16 +15,16 @@ export default function SideDrawer({ open, setOpen }) {
             >
               <form className="flex h-full flex-col divide-y divide-gray-200 bg-white shadow-xl">
                 <div className="h-0 flex-1 overflow-y-auto">
-                  <div className="bg-blue-700 px-4 py-6 sm:px-6">
+                  <div className="border-b border-gray-300 px-4 py-4 sm:px-6">
                     <div className="flex items-center justify-between">
-                      <DialogTitle className="text-base font-semibold leading-6 text-white">
+                      <DialogTitle className="text-base font-semibold leading-6 text-gray-900">
                         Add URL Redirect
                       </DialogTitle>
                       <div className="ml-3 flex h-7 items-center">
                         <button
                           type="button"
                           onClick={() => setOpen(false)}
-                          className="relative rounded-md bg-blue-700 text-blue-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                          className="relative rounded-md text-gray-900 hover:text-gray-500"
                         >
                           <span className="absolute -inset-2.5" />
                           <span className="sr-only">Close panel</span>

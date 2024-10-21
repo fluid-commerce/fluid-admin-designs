@@ -51,6 +51,13 @@ const typeOptions = [
   },
 ];
 
+const tabs = [
+  { name: "All", href: "#", current: true },
+  { name: "Active", href: "#", current: false },
+  { name: "Draft", href: "#", current: false },
+  { name: "Archived", href: "#", current: false },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -133,7 +140,7 @@ export default function VarientsTable() {
               )}
             </div>
           </div>
-          <ProductTabs />
+          <ProductTabs tabs={tabs} />
         </div>
       </div>
       <div className="flow-root">
@@ -217,7 +224,9 @@ export default function VarientsTable() {
                           ? "bg-gray-50"
                           : "hover:bg-gray-50 cursor-pointer"
                       )}
-                      onClick={() => (window.location.href = "/orders")}
+                      onClick={() =>
+                        (window.location.href = "/products/details")
+                      }
                     >
                       <td className="relative px-7 sm:w-12 sm:px-6">
                         <input

@@ -156,53 +156,56 @@ export default function AppLayout() {
         </div>
       </div> */}
       <SidebarLayout
-        navbar={
-          <Navbar>
-            <NavbarSpacer />
-            <NavbarSection>
-              <NavbarItem href="/search" aria-label="Search">
-                <MagnifyingGlassIcon />
-              </NavbarItem>
-              <NavbarItem href="/inbox" aria-label="Inbox">
-                <InboxIcon />
-              </NavbarItem>
-              <Dropdown>
-                <DropdownButton as={NavbarItem}>
-                  <Avatar src="/profile-photo.jpg" square />
-                </DropdownButton>
-                <DropdownMenu className="min-w-64" anchor="bottom end">
-                  <DropdownItem href="/my-profile">
-                    <RenderIcon path={User} type={"nav"} size={"w-3"} />
-                    <DropdownLabel>My profile</DropdownLabel>
-                  </DropdownItem>
-                  <DropdownItem href="/settings">
-                    <Cog8ToothIcon />
-                    <DropdownLabel>Settings</DropdownLabel>
-                  </DropdownItem>
-                  <DropdownDivider />
-                  <DropdownItem href="/privacy-policy">
-                    <ShieldCheckIcon />
-                    <DropdownLabel>Privacy policy</DropdownLabel>
-                  </DropdownItem>
-                  <DropdownItem href="/share-feedback">
-                    <LightBulbIcon />
-                    <DropdownLabel>Share feedback</DropdownLabel>
-                  </DropdownItem>
-                  <DropdownDivider />
-                  <DropdownItem href="/logout">
-                    <ArrowRightStartOnRectangleIcon />
-                    <DropdownLabel>Sign out</DropdownLabel>
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </NavbarSection>
-          </Navbar>
-        }
+        // navbar={
+        //   <Navbar>
+        //     <NavbarSpacer />
+        //     <NavbarSection>
+        //       <NavbarItem href="/search" aria-label="Search">
+        //         <MagnifyingGlassIcon />
+        //       </NavbarItem>
+        //       <NavbarItem href="/inbox" aria-label="Inbox">
+        //         <InboxIcon />
+        //       </NavbarItem>
+        //       <Dropdown>
+        //         <DropdownButton as={NavbarItem}>
+        //           <Avatar src="/profile-photo.jpg" square />
+        //         </DropdownButton>
+        //         <DropdownMenu className="min-w-64" anchor="bottom end">
+        //           <DropdownItem href="/my-profile">
+        //             <RenderIcon path={User} type={"nav"} size={"w-3"} />
+        //             <DropdownLabel>My profile</DropdownLabel>
+        //           </DropdownItem>
+        //           <DropdownItem href="/settings">
+        //             <Cog8ToothIcon />
+        //             <DropdownLabel>Settings</DropdownLabel>
+        //           </DropdownItem>
+        //           <DropdownDivider />
+        //           <DropdownItem href="/privacy-policy">
+        //             <ShieldCheckIcon />
+        //             <DropdownLabel>Privacy policy</DropdownLabel>
+        //           </DropdownItem>
+        //           <DropdownItem href="/share-feedback">
+        //             <LightBulbIcon />
+        //             <DropdownLabel>Share feedback</DropdownLabel>
+        //           </DropdownItem>
+        //           <DropdownDivider />
+        //           <DropdownItem href="/logout">
+        //             <ArrowRightStartOnRectangleIcon />
+        //             <DropdownLabel>Sign out</DropdownLabel>
+        //           </DropdownItem>
+        //         </DropdownMenu>
+        //       </Dropdown>
+        //     </NavbarSection>
+        //   </Navbar>
+        // }
         sidebar={
           <Sidebar>
             <SidebarHeader>
-              <Dropdown>
-                <div className="flex flex-row items-center px-2 mb-6 ml-1">
+              <div className="flex flex-row items-center px-2 mb-6 ml-1 mt-1">
+                <RenderIcon path={FluidLogo} size={"w-4"} />
+              </div>
+              {/* <Dropdown>
+                <div className="flex flex-row items-center px-2 mb-6 ml-1 mt-1">
                   <RenderIcon path={FluidLogo} size={"w-4"} />
                 </div>
                 <DropdownButton as={SidebarItem} className="lg:mb-2.5">
@@ -306,7 +309,7 @@ export default function AppLayout() {
                     <DropdownLabel>Add Company&hellip;</DropdownLabel>
                   </DropdownItem>
                 </DropdownMenu>
-              </Dropdown>
+              </Dropdown> */}
               {/* <SidebarSection className="max-lg:hidden">
               <SidebarItem href="/search">
                 <MagnifyingGlassIcon />
@@ -319,6 +322,110 @@ export default function AppLayout() {
             </SidebarSection> */}
             </SidebarHeader>
             <SidebarBody>
+              <Dropdown>
+                <DropdownButton as={SidebarItem}>
+                  <div className="flex flex-row justify-between w-full items-center">
+                    <div className="flex flex-row gap-3 items-center justify-center">
+                      <Avatar
+                        slot="icon"
+                        className="w-8"
+                        src={
+                          selectedCompany
+                            ? selectedCompany.logo
+                            : "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM"
+                        }
+                      />
+                      <SidebarLabel>
+                        {selectedCompany ? selectedCompany.name : "Neumi"}
+                      </SidebarLabel>
+                    </div>
+                    <div className="flex flex-col gap-[-0.5rem]">
+                      <RenderIcon
+                        path={ChevronDown}
+                        type={"nav"}
+                        size={"w-3"}
+                      />
+                    </div>
+                  </div>
+                </DropdownButton>
+                <DropdownMenu
+                  className="min-w-80 lg:min-w-64"
+                  anchor="bottom start"
+                >
+                  <DropdownItem
+                    onClick={() =>
+                      setSelectedCompany({
+                        name: "Neumi",
+                        logo: "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM",
+                      })
+                    }
+                    // href="/teams/1"
+                  >
+                    <Avatar
+                      slot="icon"
+                      src="https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM"
+                    />
+                    <DropdownLabel>Neumi</DropdownLabel>
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={() =>
+                      setSelectedCompany({
+                        name: "Asea",
+                        logo: "https://media.licdn.com/dms/image/v2/C560BAQFw5K2lEjqUaw/company-logo_200_200/company-logo_200_200/0/1647972264763/asea_llc_logo?e=1736985600&v=beta&t=c-pKlEQaoeI8D_pTAOKefowLhtLLe_xDNCifb5te5Ss",
+                      })
+                    }
+                    // href="/teams/2"
+                  >
+                    <Avatar
+                      slot="icon"
+                      initials="WC"
+                      src="https://media.licdn.com/dms/image/v2/C560BAQFw5K2lEjqUaw/company-logo_200_200/company-logo_200_200/0/1647972264763/asea_llc_logo?e=1736985600&v=beta&t=c-pKlEQaoeI8D_pTAOKefowLhtLLe_xDNCifb5te5Ss"
+                      className="bg-purple-500 text-white"
+                    />
+                    <DropdownLabel>Asea</DropdownLabel>
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={() =>
+                      setSelectedCompany({
+                        name: "Fluid",
+                        logo: "https://media.licdn.com/dms/image/v2/C560BAQGkxo7qbjaiiA/company-logo_200_200/company-logo_200_200/0/1630649730956?e=1736985600&v=beta&t=-0IOz-1BLf0D5R8TGDXErgidnFa5ukRArVkbj-ELhW8",
+                      })
+                    }
+                    // href="/teams/2"
+                  >
+                    <Avatar
+                      slot="icon"
+                      initials="WC"
+                      src="https://media.licdn.com/dms/image/v2/C560BAQGkxo7qbjaiiA/company-logo_200_200/company-logo_200_200/0/1630649730956?e=1736985600&v=beta&t=-0IOz-1BLf0D5R8TGDXErgidnFa5ukRArVkbj-ELhW8"
+                      className="bg-purple-500 text-white"
+                    />
+                    <DropdownLabel>Fluid</DropdownLabel>
+                  </DropdownItem>
+                  <DropdownItem
+                    onClick={() =>
+                      setSelectedCompany({
+                        name: "Dotera",
+                        logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFhZEOXO0ZEiw/company-logo_100_100/company-logo_100_100/0/1631337805878?e=1736985600&v=beta&t=ikVahnX8p-tHhIjLKaXqwp9gubmZbmA1D8AW7I_MYtE",
+                      })
+                    }
+                    // href="/teams/2"
+                  >
+                    <Avatar
+                      slot="icon"
+                      initials="WC"
+                      src="https://media.licdn.com/dms/image/v2/C4E0BAQFhZEOXO0ZEiw/company-logo_100_100/company-logo_100_100/0/1631337805878?e=1736985600&v=beta&t=ikVahnX8p-tHhIjLKaXqwp9gubmZbmA1D8AW7I_MYtE"
+                      className="bg-purple-500 text-white"
+                    />
+                    <DropdownLabel>Dotera</DropdownLabel>
+                  </DropdownItem>
+                  <DropdownDivider />
+                  <DropdownItem href="/teams/create">
+                    <PlusIcon />
+                    <DropdownLabel>Add Company&hellip;</DropdownLabel>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+              <DropdownDivider />
               <SidebarSection>
                 <div
                   className={`${

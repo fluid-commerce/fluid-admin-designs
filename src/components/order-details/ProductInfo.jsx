@@ -19,7 +19,7 @@ const categories = [
   { id: 10, name: "Pet Supplies" },
 ];
 
-export default function ProductDetails() {
+export default function ProductInfo() {
   const [productTitle, setProductTitle] = useState("Apple Vision Pro");
   return (
     <form>

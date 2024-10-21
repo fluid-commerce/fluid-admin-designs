@@ -12,18 +12,12 @@
   }
   ```
 */
-const tabs = [
-  { name: "All", href: "#", current: true },
-  { name: "Active", href: "#", current: false },
-  { name: "Draft", href: "#", current: false },
-  { name: "Archived", href: "#", current: false },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function ProductTabs({ tabs }) {
   return (
     <div>
       <div className="sm:hidden">

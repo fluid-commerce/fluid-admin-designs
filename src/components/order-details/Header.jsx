@@ -45,7 +45,7 @@ const languages = [
   { id: 9, name: "Japanese (JA)" },
 ];
 
-export default function Header() {
+export default function Header({ title, type }) {
   return (
     <header className="px-6 py-6 relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
@@ -69,7 +69,7 @@ export default function Header() {
               className="flex items-center gap-x-2 text-xs text-zinc-500"
             >
               <RenderIcon path={ChevronLeft} size={"w-1.5 h-2"} />
-              All Products
+              {`All ${type}`}
             </a>
           </div>
           <div>
@@ -102,9 +102,7 @@ export default function Header() {
                   className="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 /> */}
             <div className="flex flex-row space-x-3 justify-center align-center">
-              <h1 className="text-3xl font-semibold text-zinc-950">
-                Apple Vision Pro
-              </h1>
+              <h1 className="text-3xl font-semibold text-zinc-950">{title}</h1>
               <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 text-xs font-medium text-green-700 leading-none">
                 <svg
                   class="h-1.5 w-1.5 fill-green-500"

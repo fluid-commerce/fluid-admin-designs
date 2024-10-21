@@ -8,12 +8,12 @@ export default function ProductsPage() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
+        <div className="rounded-t-lg px-6">
           <div className="mx-auto max-w-7xl">
             <Header title={"Products"} actionButtonText={"Add Product"} />
           </div>
         </div>
-        <div className="relative p-6">
+        <div className="relative p-6 pb-0">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"

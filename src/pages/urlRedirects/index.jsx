@@ -10,7 +10,7 @@ export default function () {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
+        <div className="rounded-t-lg px-6">
           <div className="mx-auto max-w-7xl">
             <Header
               title={"URL Redirects"}

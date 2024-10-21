@@ -22,7 +22,7 @@ export function SidebarHeader({ className, ...props }) {
       {...props}
       className={clsx(
         className,
-        "flex flex-col border-zinc-950/5 p-4 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5"
+        "flex flex-col border-zinc-950/5 p-4 pb-0 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5"
       )}
     />
   );
@@ -34,7 +34,7 @@ export function SidebarBody({ className, ...props }) {
       {...props}
       className={clsx(
         className,
-        "flex flex-1 flex-col overflow-y-auto p-4 [&>[data-slot=section]+[data-slot=section]]:mt-8"
+        "flex flex-1 flex-col overflow-y-auto p-4 pt-0 [&>[data-slot=section]+[data-slot=section]]:mt-8"
       )}
     />
   );
