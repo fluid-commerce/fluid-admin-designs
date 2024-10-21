@@ -16,7 +16,7 @@ export default function Header({
   setOpenActiveDrawer,
 }) {
   return (
-    <header className="px-6 py-4 relative isolate z-50">
+    <header className="py-4 relative isolate z-50">
       {/* <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 overflow-hidden"
@@ -33,7 +33,7 @@ export default function Header({
         <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
       </div> */}
 
-      <div className="max-w-7xl py-1.5">
+      <div className="max-w-7xl py-1.5 px-6">
         <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img

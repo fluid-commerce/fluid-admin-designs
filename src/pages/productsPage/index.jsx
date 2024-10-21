@@ -8,12 +8,12 @@ export default function ProductsPage() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg px-6">
+        <div className="rounded-t-lg">
           <div className="mx-auto max-w-7xl">
             <Header title={"Products"} actionButtonText={"Add Product"} />
           </div>
         </div>
-        <div className="relative p-6 pb-0">
+        <div className="mx-auto max-w-7xl px-6 pb-6">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"
@@ -29,16 +29,12 @@ export default function ProductsPage() {
             </div>
             <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
           </div> */}
-          <div className="mx-auto max-w-7xl px-6">
-            <Stats />
-          </div>
+          <Stats />
         </div>
-        <div className="p-6">
-          <div className="mx-auto max-w-7xl px-6">
-            <CardContainer>
-              <ProductsTable />
-            </CardContainer>
-          </div>
+        <div className="mx-auto max-w-7xl px-6 pb-6">
+          <CardContainer>
+            <ProductsTable />
+          </CardContainer>
         </div>
       </main>
     </>

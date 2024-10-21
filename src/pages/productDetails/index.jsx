@@ -181,7 +181,7 @@ export default function ProductDetails() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg px-6">
+        <div className="rounded-t-lg">
           <div className="mx-auto max-w-7xl">
             <Header title={"Apple Vision Pro"} type={"Products"} />
           </div>

@@ -23,7 +23,7 @@ export default function OrdersPage() {
         <div className="mx-auto max-w-7xl px-6 pb-6">
           <OrderStats />
         </div>
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-6 pb-6">
           <CardContainer>
             <OrdersTable />
           </CardContainer>

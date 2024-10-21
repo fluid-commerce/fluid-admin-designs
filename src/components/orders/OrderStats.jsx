@@ -52,7 +52,7 @@ function classNames(...classes) {
 export default function OrderStats() {
   return (
     <div>
-      <dl className="flex flex-wrap rounded-lg bg-white shadow">
+      <dl className="flex flex-wrap rounded-lg bg-white shadow-sm ring-1 ring-gray-300">
         {stats.map((item) => (
           <div
             key={item.name}

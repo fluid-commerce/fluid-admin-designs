@@ -179,13 +179,13 @@ export default function Example() {
                   )}
                 </div>
                 <p className="flex-auto py-0.5 text-xs leading-5 text-gray-500">
-                  <span className="font-medium text-gray-900">
+                  <span className="text-sm font-medium text-gray-900">
                     {activityItem.info}
                   </span>
                 </p>
                 <time
                   dateTime={activityItem.dateTime}
-                  className="flex-none py-0.5 text-xs leading-5 text-gray-500"
+                  className="flex-none py-0.5 text-xs font-medium leading-5 text-gray-500"
                 >
                   {activityItem.date}
                 </time>

@@ -10,7 +10,7 @@ export default function () {
   return (
     <>
       <main>
-        <div className="rounded-t-lg px-6">
+        <div className="rounded-t-lg">
           <div className="mx-auto max-w-7xl">
             <Header
               title={"URL Redirects"}
@@ -36,12 +36,10 @@ export default function () {
             <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
           </div> */}
         </div>
-        <div className="px-6">
-          <div className="mx-auto max-w-7xl px-6">
-            <CardContainer>
-              <UrlRedirectsTable />
-            </CardContainer>
-          </div>
+        <div className="mx-auto max-w-7xl px-6 pb-6">
+          <CardContainer>
+            <UrlRedirectsTable />
+          </CardContainer>
         </div>
         <SideDrawer open={openActiveDrawer} setOpen={setOpenActiveDrawer} />
       </main>
