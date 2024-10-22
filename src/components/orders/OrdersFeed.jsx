@@ -172,7 +172,7 @@ export default function Example() {
                   {activityItem.type === "paid" ? (
                     <CheckCircleIcon
                       aria-hidden="true"
-                      className="h-6 w-6 text-indigo-600"
+                      className="h-6 w-6 text-blue-600"
                     />
                   ) : (
                     <div className="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300" />
@@ -203,7 +203,7 @@ export default function Example() {
           className="h-6 w-6 flex-none rounded-full bg-gray-50"
         />
         <form action="#" className="relative flex-auto">
-          <div className="overflow-hidden rounded-lg pb-12 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
+          <div className="overflow-hidden rounded-lg pb-12 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-blue-600">
             <label htmlFor="comment" className="sr-only">
               Add your comment
             </label>

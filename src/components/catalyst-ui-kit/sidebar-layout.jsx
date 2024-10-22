@@ -131,9 +131,6 @@ export function SidebarLayout({ navbar, sidebar, children }) {
                     alt=""
                   />
                   <span className="min-w-0">
-                    {/* <span className="block text-left truncate text-sm/5 font-medium text-white">
-                      Erica
-                    </span> */}
                     <span className="block truncate text-xs/5 font-normal text-zinc-400">
                       Erica
                     </span>

@@ -55,7 +55,7 @@ export default function ProductInfo() {
             >
               Description
             </label> */}
-          <div className=" overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+          <div className="overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
             <div id="hs-editor-tiptap">
               <div className="flex align-middle gap-x-0.5 p-2 border-b border-gray-300 dark:border-neutral-700">
                 <button

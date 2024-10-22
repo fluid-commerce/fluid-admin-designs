@@ -759,10 +759,7 @@ export default function AppLayout() {
           </Sidebar>
         }
       >
-        {/* Add a border around the Outlet content */}
-        {/* <div className="border border-gray-300 rounded-md"> */}
         <Outlet />
-        {/* </div> */}
       </SidebarLayout>
     </>
   );
