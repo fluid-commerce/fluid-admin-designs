@@ -6,7 +6,6 @@ import ProductsPage from "./pages/productsPage";
 import UrlRedirects from "./pages/urlRedirects";
 import OrdersPage from "./pages/orders";
 import OrderDetails from "./pages/orderDetails";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {

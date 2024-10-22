@@ -14,6 +14,8 @@ import TextDropdown from "../global/TextDropdown";
 import Dropdown from "../global/Dropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
 import Plus from "../../images/svgs/solid/plus.svg";
+import Trash from "../../images/svgs/solid/trash-can.svg";
+import Pencil from "../../images/svgs/solid/pencil.svg";
 import RenderIcon from "../global/RenderIcon";
 
 const variants = [
@@ -249,9 +251,9 @@ export default function VarientsTable() {
                               <MenuItem>
                                 <a
                                   href="#"
-                                  className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
+                                  className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-gray-500 data-[focus]:bg-gray-100"
                                 >
-                                  <PencilIcon className="w-4 h-4 text-gray-400" />
+                                  <RenderIcon path={Pencil} size={"w-3"} />
                                   Edit
                                 </a>
                               </MenuItem>
@@ -259,9 +261,13 @@ export default function VarientsTable() {
                               <MenuItem>
                                 <a
                                   href="#"
-                                  className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-red-700 data-[focus]:bg-gray-100 data-[focus]:text-red-900"
+                                  className="flex flex-row items-center gap-2 px-4 py-2 text-sm text-red-500 data-[focus]:bg-gray-100"
                                 >
-                                  <TrashIcon className="w-4 h-4 text-red-400 group-hover:text-red-500" />
+                                  <RenderIcon
+                                    path={Trash}
+                                    size={"w-3"}
+                                    type={"destructive"}
+                                  />
                                   Delete
                                 </a>
                               </MenuItem>

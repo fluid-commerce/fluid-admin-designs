@@ -131,7 +131,7 @@ export default function VarientsTable() {
                   <span className="hidden sm:block">
                     <button
                       type="button"
-                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                      className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-red-50 hover:text-red-600"
                     >
                       Delete
                     </button>

@@ -66,9 +66,10 @@ export default function Header({ title, type }) {
           <div className="flex flex-row items-center justify-center cursor-pointer">
             <a
               href="#"
+              onClick={() => window.history.back()}
               className="flex items-center gap-x-2 text-xs text-zinc-500"
             >
-              <RenderIcon path={ChevronLeft} size={"w-1.5 h-2"} />
+              <RenderIcon path={ChevronLeft} size={"w-1.5"} />
               {`All ${type}`}
             </a>
           </div>
@@ -231,7 +232,7 @@ export default function Header({ title, type }) {
                   <MenuItem>
                     <a
                       href="#"
-                      className="block flex items-center px-4 py-2 gap-4 text-sm text-red-700 data-[focus]:bg-gray-100 data-[focus]:text-red-900"
+                      className="block flex items-center px-4 py-2 gap-4 text-sm text-red-500 data-[focus]:bg-gray-100 data-[focus]:text-red-500"
                     >
                       <RenderIcon
                         path={Trash}

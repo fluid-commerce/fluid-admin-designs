@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../../components/products/Header";
-import Stats from "../../components/products/Stats";
 import CardContainer from "../../components/order-details/CardContainer";
 import OrdersTable from "../../components/orders/OrdersTable";
 import SideDrawer from "../../components/global/SideDrawer";

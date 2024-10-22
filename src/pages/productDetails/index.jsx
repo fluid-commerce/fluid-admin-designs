@@ -1,58 +1,9 @@
 import { useState } from "react";
-import {
-  Dialog,
-  DialogPanel,
-  Label,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import {
-  ArrowLeftCircleIcon,
-  Bars3Icon,
-  CalendarDaysIcon,
-  CreditCardIcon,
-  EllipsisVerticalIcon,
-  FaceFrownIcon,
-  FaceSmileIcon,
-  FireIcon,
-  HandThumbUpIcon,
-  HeartIcon,
-  PaperClipIcon,
-  UserCircleIcon,
-  XMarkIcon as XMarkIconMini,
-  PencilIcon,
-  LinkIcon,
-  CheckIcon,
-  ShareIcon,
-  ChevronDownIcon,
-  PencilSquareIcon,
-  DocumentDuplicateIcon,
-  ArchiveBoxIcon,
-  ArrowRightCircleIcon,
-  UserPlusIcon,
-  TrashIcon,
-  PrinterIcon,
-  ChevronLeftIcon,
-  PhotoIcon,
-  ChevronRightIcon,
-  ArrowUpIcon,
-  ArchiveBoxXMarkIcon,
-} from "@heroicons/react/20/solid";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
 
-import EditingCard from "../../components/order-details/EditingCard";
-import OptionsCard from "../../components/order-details/OptionsCard";
 import SettingsCard from "../../components/order-details/SettingsCard";
-import Dropdown from "../../components/global/Dropdown";
 import TextDropdown from "../../components/global/TextDropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
-import Tabs from "../../components/global/Tabs";
 import VarientsTable from "../../components/order-details/VarientsTable";
 import ProductInfo from "../../components/order-details/ProductInfo";
 import Header from "../../components/order-details/Header";
@@ -118,65 +69,16 @@ const themes = [{ id: 1, name: "Default" }];
 
 const tags = [{ id: 1, name: "Promotion" }];
 
-const labels = [{ id: 1, name: "Live Shop" }];
+const collections = [{ id: 1, name: "Technology" }];
 
-const moods = [
-  {
-    name: "Excited",
-    value: "excited",
-    icon: FireIcon,
-    iconColor: "text-white",
-    bgColor: "bg-red-500",
-  },
-  {
-    name: "Loved",
-    value: "loved",
-    icon: HeartIcon,
-    iconColor: "text-white",
-    bgColor: "bg-pink-400",
-  },
-  {
-    name: "Happy",
-    value: "happy",
-    icon: FaceSmileIcon,
-    iconColor: "text-white",
-    bgColor: "bg-green-400",
-  },
-  {
-    name: "Sad",
-    value: "sad",
-    icon: FaceFrownIcon,
-    iconColor: "text-white",
-    bgColor: "bg-yellow-400",
-  },
-  {
-    name: "Thumbsy",
-    value: "thumbsy",
-    icon: HandThumbUpIcon,
-    iconColor: "text-white",
-    bgColor: "bg-blue-500",
-  },
-  {
-    name: "I feel nothing",
-    value: null,
-    icon: XMarkIconMini,
-    iconColor: "text-gray-400",
-    bgColor: "bg-transparent",
-  },
-];
+const labels = [{ id: 1, name: "Live Shop" }];
 
 const notificationMethods = [
   { id: "email", title: "Allow" },
   { id: "sms", title: "Block" },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function ProductDetails() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selected, setSelected] = useState(moods[5]);
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
@@ -264,7 +166,7 @@ export default function ProductDetails() {
                         <div className="pt-2 text-sm sm:text-sm">
                           Product Collection
                         </div>
-                        <TextDropdown options={[]} />
+                        <TextDropdown options={collections} />
                       </div>
                     </li>
                     <li>

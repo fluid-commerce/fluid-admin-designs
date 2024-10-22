@@ -1,14 +1,6 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import {
-  ChevronDownIcon,
-  TrashIcon,
-  PencilIcon,
-  PlusIcon,
-} from "@heroicons/react/20/solid";
-import { ComboboxInput, Combobox } from "@headlessui/react";
 
 import TextDropdown from "../global/TextDropdown";
 import Dropdown from "../global/Dropdown";

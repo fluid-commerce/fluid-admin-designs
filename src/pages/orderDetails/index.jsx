@@ -1,50 +1,13 @@
 import { useState } from "react";
+
 import {
-  Dialog,
-  DialogPanel,
-  Label,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import {
-  ArrowLeftCircleIcon,
-  Bars3Icon,
-  CalendarDaysIcon,
-  CreditCardIcon,
-  EllipsisVerticalIcon,
   FaceFrownIcon,
   FaceSmileIcon,
   FireIcon,
   HandThumbUpIcon,
   HeartIcon,
-  PaperClipIcon,
-  UserCircleIcon,
   XMarkIcon as XMarkIconMini,
-  PencilIcon,
-  LinkIcon,
-  CheckIcon,
-  ShareIcon,
-  ChevronDownIcon,
-  PencilSquareIcon,
-  DocumentDuplicateIcon,
-  ArchiveBoxIcon,
-  ArrowRightCircleIcon,
-  UserPlusIcon,
-  TrashIcon,
-  PrinterIcon,
-  ChevronLeftIcon,
-  PhotoIcon,
-  ChevronRightIcon,
-  ArrowUpIcon,
-  ArchiveBoxXMarkIcon,
 } from "@heroicons/react/20/solid";
-import { InformationCircleIcon } from "@heroicons/react/20/solid";
 
 import EditingCard from "../../components/order-details/EditingCard";
 import OptionsCard from "../../components/order-details/OptionsCard";
@@ -57,9 +20,7 @@ import VarientsTable from "../../components/order-details/VarientsTable";
 import ProductInfo from "../../components/order-details/ProductInfo";
 import Header from "../../components/order-details/Header";
 import CardContainer from "../../components/order-details/CardContainer";
-import Edit from "../../images/svgs/regular/pencil.svg";
 import RenderIcon from "../../components/global/RenderIcon";
-import PromptsTable from "../../components/order-details/PromptsTable";
 import SideDrawer from "../../components/global/SideDrawer";
 import OrdersFeed from "../../components/orders/OrdersFeed";
 const statusOptions = [
@@ -101,82 +62,7 @@ const internationalTaxTypes = [
   { id: 27, name: "Wine" },
 ];
 
-const usaTaxTypes = [
-  { id: 1, name: "Administrative And Support Services" },
-  { id: 2, name: "Clothing" },
-  { id: 3, name: "Construction And Real Property" },
-  { id: 4, name: "Digital Products" },
-  { id: 5, name: "Fees, Coupons, Dues And Charges" },
-  { id: 6, name: "Food And Beverage" },
-  { id: 7, name: "Freight" },
-  { id: 8, name: "Health And Wellness" },
-  { id: 9, name: "Information Technology" },
-  { id: 10, name: "Medical Care" },
-];
-
-const themes = [{ id: 1, name: "Default" }];
-
-const tags = [{ id: 1, name: "Promotion" }];
-
-const labels = [{ id: 1, name: "Live Shop" }];
-
-const moods = [
-  {
-    name: "Excited",
-    value: "excited",
-    icon: FireIcon,
-    iconColor: "text-white",
-    bgColor: "bg-red-500",
-  },
-  {
-    name: "Loved",
-    value: "loved",
-    icon: HeartIcon,
-    iconColor: "text-white",
-    bgColor: "bg-pink-400",
-  },
-  {
-    name: "Happy",
-    value: "happy",
-    icon: FaceSmileIcon,
-    iconColor: "text-white",
-    bgColor: "bg-green-400",
-  },
-  {
-    name: "Sad",
-    value: "sad",
-    icon: FaceFrownIcon,
-    iconColor: "text-white",
-    bgColor: "bg-yellow-400",
-  },
-  {
-    name: "Thumbsy",
-    value: "thumbsy",
-    icon: HandThumbUpIcon,
-    iconColor: "text-white",
-    bgColor: "bg-blue-500",
-  },
-  {
-    name: "I feel nothing",
-    value: null,
-    icon: XMarkIconMini,
-    iconColor: "text-gray-400",
-    bgColor: "bg-transparent",
-  },
-];
-
-const notificationMethods = [
-  { id: "email", title: "Allow" },
-  { id: "sms", title: "Block" },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function OrderDetails() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selected, setSelected] = useState(moods[5]);
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
