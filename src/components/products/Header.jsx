@@ -16,7 +16,7 @@ export default function Header({
   setOpenActiveDrawer,
 }) {
   return (
-    <header className="py-4 relative isolate z-50">
+    <header className="relative isolate z-50">
       {/* <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 overflow-hidden"
@@ -33,7 +33,7 @@ export default function Header({
         <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
       </div> */}
 
-      <div className="max-w-7xl py-1.5 px-6">
+      <div className="max-w-7xl py-8 px-10">
         <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img
@@ -42,7 +42,9 @@ export default function Header({
                   className="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 /> */}
             <div className="flex flex-row space-x-3 justify-center align-center">
-              <h1 className="text-3xl font-semibold text-zinc-950">{title}</h1>
+              <h1 className="text-4xl font-custom font-bold text-gray-900">
+                {title}
+              </h1>
             </div>
           </div>
           <div className="flex items-center gap-x-2 sm:gap-x-2">
@@ -50,7 +52,7 @@ export default function Header({
               <span className="hidden sm:block">
                 <button
                   type="button"
-                  className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                  className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600"
                 >
                   Export
                 </button>
@@ -58,14 +60,14 @@ export default function Header({
             )}
             <span className="hidden sm:block">
               {title === "URL Redirects" ? (
-                <label className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 cursor-pointer">
+                <label className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-semibold text-gray-900 hover:bg-blue-50 hover:text-blue-600 cursor-pointer">
                   Import
                   <input type="file" className="hidden" />
                 </label>
               ) : (
                 <button
                   type="button"
-                  className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                  className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600"
                 >
                   Import
                 </button>
@@ -74,7 +76,7 @@ export default function Header({
             <span>
               <button
                 type="button"
-                className="inline-flex items-center rounded-md bg-blue-600 px-3 py-1 gap-1 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="inline-flex items-center rounded-md bg-blue-600 px-4 py-3 gap-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 onClick={() => setOpenActiveDrawer(true)}
               >
                 <RenderIcon path={Plus} size={"w-3"} type={"save"} />

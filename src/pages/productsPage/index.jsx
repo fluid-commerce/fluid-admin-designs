@@ -13,7 +13,7 @@ export default function ProductsPage() {
             <Header title={"Products"} actionButtonText={"Add Product"} />
           </div>
         </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
+        <div className="mx-auto max-w-7xl px-10">
           {/* <div
             aria-hidden="true"
             className="absolute inset-0 z-50 overflow-hidden"
@@ -31,7 +31,7 @@ export default function ProductsPage() {
           </div> */}
           <Stats />
         </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
+        <div className="mx-auto max-w-7xl px-10 py-8">
           <CardContainer>
             <ProductsTable />
           </CardContainer>

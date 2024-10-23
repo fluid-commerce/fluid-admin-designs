@@ -82,6 +82,12 @@ module.exports = {
       height: {
         "28px": "28px",
       },
+      fontFamily: {
+        custom: ["CustomFont", "sans-serif"],
+      },
+      borderRadius: {
+        md: "12px",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

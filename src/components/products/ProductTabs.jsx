@@ -1,18 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -37,20 +22,23 @@ export default function ProductTabs({ tabs }) {
         </select>
       </div>
       <div className="hidden sm:block">
-        <nav aria-label="Tabs" className="flex space-x-4">
-          {tabs.map((tab) => (
+        <nav
+          aria-label="Tabs"
+          className="isolate flex divide-x divide-gray-200 rounded-lg shadow ring-1 ring-gray-300"
+        >
+          {tabs.map((tab, tabIdx) => (
             <a
               key={tab.name}
               href={tab.href}
               aria-current={tab.current ? "page" : undefined}
               className={classNames(
-                tab.current
-                  ? "bg-gray-100 text-gray-900"
-                  : "text-gray-900 hover:text-gray-700",
-                "rounded-md px-3 py-1 text-sm font-medium"
+                tab.current ? "bg-gray-100" : "hover:text-gray-700",
+                tabIdx === 0 ? "rounded-l-lg" : "",
+                tabIdx === tabs.length - 1 ? "rounded-r-lg" : "",
+                "group relative min-w-0 overflow-hidden bg-white px-4 py-2 text-center text-sm font-medium hover:bg-gray-50 focus:z-10"
               )}
             >
-              {tab.name}
+              <span>{tab.name}</span>
             </a>
           ))}
         </nav>

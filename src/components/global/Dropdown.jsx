@@ -7,13 +7,13 @@ import RenderIcon from "./RenderIcon";
 import Sidebar from "../../images/svgs/solid/sidebar.svg";
 
 export default function Dropdown({ options }) {
-  const [selectedLanguage, setSelectedLanguage] = useState("English (EN)");
+  const [selectedLanguage, setSelectedLanguage] = useState(options?.[0]?.name);
 
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <MenuButton className="inline-flex w-full justify-center items-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
-          {options[0].name}
+        <MenuButton className="inline-flex gap-2 items-center bg-white rounded-md px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
+          {selectedLanguage}
           <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
         </MenuButton>
       </div>

@@ -35,15 +35,24 @@ export default function Stats() {
   return (
     <div>
       <dl className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-        {stats.map((item) => (
+        {stats.map((item, index) => (
           <div
             key={item.name}
-            className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm ring-1 ring-gray-300 sm:p-4 "
+            className={classNames(
+              "overflow-hidden rounded-md",
+              index === 0
+                ? "p-0 space-y-2"
+                : "bg-white shadow-sm ring-1 ring-gray-100 px-4 py-6"
+            )}
           >
-            <dt className="truncate text-xs font-medium text-gray-500">
+            <dt className="truncate text-sm font-medium text-gray-600">
               {item.name}
             </dt>
-            <dd className="mt-1 text-2xl font-semibold tracking-tight text-gray-900">
+            <dd
+              className={`mt-1 text-3xl ${
+                index === 0 ? "text-5xl" : "font-semibold"
+              } tracking-tight text-gray-900 font-custom font-bold`}
+            >
               {item.stat}
             </dd>
           </div>

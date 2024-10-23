@@ -7,7 +7,7 @@ import RenderIcon from "../global/RenderIcon";
 import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 import ProductTabs from "./ProductTabs";
 import PaginationFooter from "../global/PaginationFooter";
-
+import Dropdown from "../global/Dropdown";
 const variants = [
   {
     name: "One",
@@ -58,6 +58,13 @@ const tabs = [
   { name: "Archived", href: "#", current: false },
 ];
 
+const locationFilters = [
+  {
+    name: "All Countries",
+    id: 1,
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -90,19 +97,25 @@ export default function VarientsTable() {
     <div>
       <div className="relative p-3 sm:flex sm:items-center">
         <div className="flex flex-row items-center justify-between w-full">
-          <div>
-            <div className="rounded-md shadow-sm">
-              <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center pl-3">
-                <RenderIcon path={MagnifyingGlass} size={"w-4"} />
+          <ProductTabs tabs={tabs} />
+
+          <div className="flex flex-row items-center gap-4">
+            <div className="relative rounded-md shadow-sm">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <RenderIcon
+                  path={MagnifyingGlass}
+                  size={"w-4"}
+                  type={"black"}
+                />
               </div>
               <input
                 id="search"
                 name="search"
                 type="search"
                 placeholder="Search Products"
-                className="block w-full rounded-md border-0 h-28px pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 pl-10 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
               />
-              {selectedVariants.length > 0 && (
+              {/* {selectedVariants.length > 0 && (
                 <div className="absolute top-0.5 flex h-12 items-center space-x-3 bg-white sm:left-64">
                   <span className="hidden sm:block">
                     <button
@@ -137,20 +150,53 @@ export default function VarientsTable() {
                     </button>
                   </span>
                 </div>
-              )}
+              )} */}
             </div>
+            <Dropdown options={locationFilters} />
           </div>
-          <ProductTabs tabs={tabs} />
         </div>
       </div>
-      <div className="flow-root">
+      <div className="flow-root overflow-hidden">
         <div className="inline-block w-full">
           <div className="inline-block min-w-full align-middle">
             <div className="inline-block w-full">
+              <div className="relative">
+                {selectedVariants.length > 0 && (
+                  <div className="absolute left-20 top-0 flex h-12 items-center space-x-3 bg-gray-50 w-full sm:left-12 border-t border-gray-200">
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                    >
+                      Set as Active
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                    >
+                      Set as Draft
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                    >
+                      Set as Archived
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-red-50 hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                )}
+              </div>
               <table className="min-w-full table-fixed divide-y divide-gray-200">
                 <thead className="bg-gray-50 border-t border-gray-200">
                   <tr>
-                    <th scope="col" className="relative px-7 sm:w-12 sm:px-6">
+                    <th
+                      scope="col"
+                      className="relative px-7 py-6 sm:w-12 sm:px-6"
+                    >
                       <input
                         type="checkbox"
                         className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
@@ -261,7 +307,7 @@ export default function VarientsTable() {
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {variant.status === "active" ? (
                           <span className="inline-flex items-center rounded-full bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700">
                             Active
@@ -276,25 +322,25 @@ export default function VarientsTable() {
                           </span>
                         ) : null}
                       </td>
-                      <td className="whitespace-nowrap px-3 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         10
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         2,650 in stock for 3 variants
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         2
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         0
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         Electronics
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         Apple Vision Pro
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         Apple Vision Pro
                       </td>
                     </tr>

@@ -115,7 +115,7 @@ export default function VarientsTable() {
           </h1>
           <button
             type="button"
-            className="inline-flex items-center bg-gray-100 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
+            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
           >
             <RenderIcon path={Plus} size={"w-3"} />
             Add Variant
@@ -161,7 +161,7 @@ export default function VarientsTable() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
+                <tbody className="divide-y divide-gray-200">
                   {inputs?.map((variant, index) => (
                     <tr
                       key={variant.name}
@@ -173,7 +173,7 @@ export default function VarientsTable() {
                     >
                       <td
                         className={classNames(
-                          "whitespace-nowrap py-2 px-4 text-sm font-medium min-w-[10rem]",
+                          "whitespace-nowrap py-6 px-4 text-sm font-medium min-w-[10rem]",
                           selectedVariants.includes(variant)
                             ? "text-indigo-600"
                             : "text-gray-900"
@@ -183,17 +183,17 @@ export default function VarientsTable() {
                           <img
                             src={dummyProductImage}
                             alt="Product Image"
-                            className="h-16 w-16 flex-none rounded-md object-cover object-center"
+                            className="h-12 w-12 flex-none rounded-md object-cover object-center"
                           />
                           <div className="text-sm font-medium">
                             {variant.name}
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         Type
                       </td>
-                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         <input
                           type="text"
                           name="inventory"
@@ -210,7 +210,7 @@ export default function VarientsTable() {
                           className="w-full rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
                         <input
                           type="text"
                           name="sku"
@@ -228,7 +228,7 @@ export default function VarientsTable() {
                           className="w-[4rem] rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
-                      <td className="whitespace-nowrap py-4 pl-3 text-right text-sm font-medium sm:pr-3">
+                      <td className="whitespace-nowrap py-10 pl-3 text-right text-sm font-medium sm:pr-3">
                         {/* <a
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
@@ -239,7 +239,7 @@ export default function VarientsTable() {
                           as="div"
                           className="relative inline-block text-left"
                         >
-                          <div className="text-gray-600 hover:text-gray-900">
+                          <div className="text-gray-500 hover:text-gray-900">
                             <MenuButton className="">...</MenuButton>
                           </div>
 

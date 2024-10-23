@@ -13,9 +13,9 @@
   ```
 */
 const tabs = [
-  { name: "Full Description", href: "#", current: false },
+  { name: "Full Description", href: "#", current: true },
   { name: "Short Description", href: "#", current: false },
-  { name: "Features", href: "#", current: true },
+  { name: "Features", href: "#", current: false },
 ];
 
 function classNames(...classes) {

@@ -111,7 +111,7 @@ export default function PromptsTable() {
           </h1>
           <button
             type="button"
-            className="inline-flex items-center bg-gray-100 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
+            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
           >
             <RenderIcon path={Plus} size={"w-3"} />
             Add Prompt
@@ -143,7 +143,7 @@ export default function PromptsTable() {
                     ></th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
+                <tbody className="divide-y divide-gray-200">
                   {variants.map((variant) => (
                     <tr
                       key={variant.name}
@@ -153,7 +153,7 @@ export default function PromptsTable() {
                           : "hover:bg-gray-50 cursor-pointer"
                       )}
                     >
-                      <td className="w-1/12 whitespace-nowrap px-3 py-4 text-sm text-gray-900">
+                      <td className="w-1/12 whitespace-nowrap px-3 py-10 text-sm text-gray-900">
                         Type
                       </td>
                       <td
@@ -171,7 +171,7 @@ export default function PromptsTable() {
                         </div>
                       </td>
 
-                      <td className="w-1/12 whitespace-nowrap py-4 pl-3 text-sm font-medium sm:pr-3">
+                      <td className="w-1/12 whitespace-nowrap py-10 pl-3 text-sm font-medium sm:pr-3">
                         {/* <a
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
@@ -179,7 +179,7 @@ export default function PromptsTable() {
                           ...<span className="sr-only">, {variant.name}</span>
                         </a> */}
                         <Menu as="div" className="relative inline-block">
-                          <div className="text-gray-600 hover:text-gray-900">
+                          <div className="text-gray-500 hover:text-gray-900">
                             <MenuButton className="">...</MenuButton>
                           </div>
 

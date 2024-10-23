@@ -88,8 +88,8 @@ export default function ProductDetails() {
             <Header title={"Apple Vision Pro"} type={"Products"} />
           </div>
         </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-6 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-10 pb-6">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-6 gap-y-6 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-6">
               {/* Product Details */}
@@ -109,17 +109,17 @@ export default function ProductDetails() {
             </div>
             {/* Right Column */}
             <div className="lg:col-start-3 space-y-6">
-              <div className="-mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
+              <div className="-mx-4 p-4 rounded-lg shadow-sm bg-white sm:mx-0">
                 <div className="font-medium sm:text-sm">Status</div>
                 <TextDropdown options={statusOptions} />
               </div>
-              <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
+              <div className="-mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm sm:mx-0 sm:rounded-lg ">
                 <div className="text-lg/6 font-medium sm:text-sm">
                   Purchase Options
                 </div>
                 <TextDropdown options={purchaseOptions} />
               </div>
-              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
+              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm sm:mx-0 sm:rounded-lg ">
                 <div>
                   <div className="text-lg/6 font-medium sm:text-sm">
                     USA Tax Category
@@ -141,7 +141,7 @@ export default function ProductDetails() {
                 </div>
               </div>
               <SettingsCard />
-              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm ring-1 ring-gray-300">
+              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm">
                 <div className="p-3">
                   {/* Content goes here */}
                   {/* We use less vertical padding on card headers on desktop than on body sections */}
@@ -184,7 +184,7 @@ export default function ProductDetails() {
                   </ul>
                 </div>
               </div>
-              <div className="divide-y divide-gray-200 rounded-lg bg-white ring-1 ring-gray-300 shadow-sm">
+              <div className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm">
                 <div className="p-3">
                   {/* Content goes here */}
                   {/* We use less vertical padding on card headers on desktop than on body sections */}

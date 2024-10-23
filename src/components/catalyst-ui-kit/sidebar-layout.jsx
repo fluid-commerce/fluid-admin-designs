@@ -118,9 +118,9 @@ export function SidebarLayout({ navbar, sidebar, children }) {
                 <SidebarItem href="/support">
                   <RenderIcon path={UsersIcon} type={"nav"} />
                 </SidebarItem>
-                <SidebarItem href="/changelog">
+                {/* <SidebarItem href="/changelog">
                   <RenderIcon path={SettingsIcon} />
-                </SidebarItem>
+                </SidebarItem> */}
               </div>
               <DropdownButton as={SidebarItem}>
                 <span className="flex min-w-0 items-center gap-1">
@@ -128,7 +128,7 @@ export function SidebarLayout({ navbar, sidebar, children }) {
                     src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/357419653_10159177522595598_4485332528001871041_n.jpg?stp=dst-jpg_s480x480&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=BDd3ABdipr8Q7kNvgE1pjii&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AUyBQS26CGHc4t7mLOElMXP&oh=00_AYBfTNxQXAvN6ngsHrbeUUTGffsVuD7oSvGInlvApgUbDA&oe=67173E59"
                     className="size-8"
                     square
-                    alt=""
+                    alt="Profile picture"
                   />
                   <span className="min-w-0">
                     <span className="block truncate text-xs/5 font-normal text-zinc-400">
@@ -168,8 +168,11 @@ export function SidebarLayout({ navbar, sidebar, children }) {
             </Dropdown>
           </div>
         </div>
-        <div className="grow lg:rounded-lg bg-gray-100 lg:shadow-sm lg:ring-1 light:lg:bg-zinc-900 ring-gray-300">
-          <div className="">{children}</div>
+        <div className="grow lg:rounded-lg lg:ring-1 ring-gray-200 gradient-container">
+          <div className="gradient-container">
+            <div className="pink-gradient-overlay"></div>
+            <div className="relative">{children}</div>
+          </div>
         </div>
       </main>
     </div>

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./font.css";
 
 body {
   margin: 0;
@@ -9,10 +10,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./images/backgrounds/bodyBackground.jpg");
+  /* background-image: url("./images/backgrounds/bodyBackground.jpg");
+  background-size: cover;
+  background-position: right bottom; */
+  /* @apply bg-navColor; */
+}
+
+.content-background {
+  background-image: url("./images/backgrounds/Background+Shadow.svg");
   background-size: cover;
   background-position: right bottom;
-  /* @apply bg-navColor; */
 }
 
 code {
@@ -43,4 +50,43 @@ code {
 
 .nav-menu-icons {
   @apply group-hover:fill-white;
+}
+
+.gradient-container {
+  position: relative;
+  background-color: #fcfcfd;
+  border-radius: 12px;
+}
+
+.pink-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      oklab(99.999999% 0 0 / 0.25),
+      oklab(99.999999% 0 0 / 0) 40%
+    ),
+    radial-gradient(
+      oklab(87.835683% 0.003366 0.14967) 30%,
+      oklab(67.83255% 0.157095 -0.003474),
+      oklab(67.83255% 0.157095 -0.003474 / 0.4) 41%,
+      oklab(67.83255% 0.157095 -0.003474 / 0) 52%
+    ),
+    radial-gradient(
+      oklab(58.984582% 0.14704 -0.231127) 37%,
+      oklab(58.984582% 0.14704 -0.231127 / 0) 46%
+    ),
+    linear-gradient(
+      155deg,
+      oklab(76.355294% -0.174894 0.102381 / 0) 65%,
+      oklab(76.355294% -0.174894 0.102381 / 1) 95%
+    ),
+    linear-gradient(
+      45deg,
+      oklab(53.548175% -0.040251 -0.199701),
+      oklab(63.951656% -0.055073 -0.189536)
+    );
+  opacity: 0.04;
+  filter: blur(5px);
+  background-size: 200% 200%, 285% 500%, 285% 500%, cover, cover;
+  background-position: bottom left, 109% 68%, 109% 68%, center, center;
 }

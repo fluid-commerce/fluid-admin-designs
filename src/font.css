@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/Extratype\ -\ Eina\ 03\ Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/Extratype\ -\ Eina\ 03\ Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/Extratype\ -\ Eina\ 03\ RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-style: italic;
+}

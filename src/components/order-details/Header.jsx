@@ -1,18 +1,5 @@
 import React from "react";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronDownIcon,
-  CheckIcon,
-  EllipsisVerticalIcon,
-  LinkIcon,
-  PrinterIcon,
-  HeartIcon,
-  ArrowUpIcon,
-  DocumentDuplicateIcon,
-  ArchiveBoxXMarkIcon,
-  TrashIcon,
-} from "@heroicons/react/20/solid";
+import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 
 import RenderIcon from "../global/RenderIcon";
@@ -31,7 +18,6 @@ import Archive from "../../images/svgs/solid/box-archive.svg";
 import Trash from "../../images/svgs/solid/trash-can.svg";
 import Check from "../../images/svgs/solid/check.svg";
 import ChevronRight from "../../images/svgs/solid/chevron-right.svg";
-import BreadCrumbs from "../global/BreadCrumbs";
 
 const languages = [
   { id: 1, name: "English (EN)" },
@@ -47,7 +33,7 @@ const languages = [
 
 export default function Header({ title, type }) {
   return (
-    <header className="px-6 py-6 relative isolate z-50 rounded-t-lg">
+    <header className="px-10 py-6 relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div
@@ -77,14 +63,14 @@ export default function Header({ title, type }) {
             <span className="isolate inline-flex rounded-md">
               <button
                 type="button"
-                className="relative inline-flex items-center rounded-l-md p-2 bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                className="relative inline-flex items-center rounded-l-md p-2 px-3 bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
               >
                 <span className="sr-only">Previous</span>
                 <RenderIcon path={ChevronLeft} size={"w-1.5"} />
               </button>
               <button
                 type="button"
-                className="relative -ml-px inline-flex items-center p-2 rounded-r-md bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                className="relative -ml-px inline-flex items-center p-2 px-3 rounded-r-md bg-white text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
               >
                 <span className="sr-only">Next</span>
                 <RenderIcon path={ChevronRight} size={"w-1.5"} />
@@ -95,16 +81,18 @@ export default function Header({ title, type }) {
       </div>
 
       <div className="max-w-7xl py-1">
-        <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
+        <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 py-3 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img
                   alt=""
                   src="https://tailwindui.com/plus/img/logos/48x48/tuple.svg"
                   className="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
                 /> */}
-            <div className="flex flex-row space-x-3 justify-center align-center">
-              <h1 className="text-3xl font-semibold text-zinc-950">{title}</h1>
-              <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 text-xs font-medium text-green-700 leading-none">
+            <div className="flex flex-row space-x-3 justify-center items-center">
+              <h1 className="text-4xl font-custom font-bold text-zinc-950">
+                {title}
+              </h1>
+              <p className="inline-flex items-center gap-x-1.5 rounded-md bg-green-100 px-2 py-1 text-xs font-semibold text-green-500 mt-1 leading-none">
                 <svg
                   class="h-1.5 w-1.5 fill-green-500"
                   viewBox="0 0 6 6"
@@ -120,7 +108,7 @@ export default function Header({ title, type }) {
             <Dropdown options={languages} />
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <MenuButton className="inline-flex w-full justify-center items-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
+                <MenuButton className="inline-flex gap-2 items-center bg-white rounded-md px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
                   Share
                   <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
                 </MenuButton>
@@ -189,7 +177,7 @@ export default function Header({ title, type }) {
             </Menu>
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <MenuButton className="inline-flex w-full items-center justify-center gap-x-1.5 bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group">
+                <MenuButton className="inline-flex gap-2 items-center bg-white rounded-md px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
                   Actions
                   <RenderIcon path={ChevronDown} size={"h-3 w-3"} />
                 </MenuButton>
@@ -249,7 +237,7 @@ export default function Header({ title, type }) {
             <span className="hidden sm:block">
               <button
                 type="button"
-                className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600"
+                className="inline-flex gap-2 items-center bg-white rounded-md px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600"
               >
                 Preview
               </button>
@@ -257,7 +245,7 @@ export default function Header({ title, type }) {
             <span>
               <button
                 type="button"
-                className="inline-flex items-center rounded-md bg-blue-600 px-3 py-1 gap-1 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="flex flex-row inline-flex gap-2 items-center bg-blue-600 shadow-sm rounded-md px-4 text-white py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-blue-50 hover:text-blue-600"
               >
                 <RenderIcon path={Check} size={"w-3"} type={"save"} />
                 Save

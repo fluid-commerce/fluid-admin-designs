@@ -43,6 +43,7 @@ import { InboxIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import MagnifyingGlass from "./images/svgs/solid/magnifying-glass.svg";
 import FluidLogo from "./images/sideNavIcons/Fluid Full Logo.svg";
 import RenderIcon from "./components/global/RenderIcon";
+import AseaLogo from "./images/logos/Logo.svg";
 
 // FontAwesome Icons
 import HouseBlank from "./images/svgs/regular/house.svg";
@@ -71,6 +72,7 @@ import MarketingIcon from "./images/sideNavIcons/size=sm, color=gray, type=marke
 import MarketingIconPrimary from "./images/sideNavIcons/size=sm, color=primary, type=marketing.svg";
 import MobileIcon from "./images/sideNavIcons/size=sm, color=gray, type=mobile app.svg";
 import MobileIconPrimary from "./images/sideNavIcons/size=sm, color=primary, type=mobile app.svg";
+import SettingsIcon from "./images/sideNavIcons/size=sm, color=gray, type=settings.svg";
 
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
@@ -326,7 +328,7 @@ export default function AppLayout() {
                 <DropdownButton as={SidebarItem}>
                   <div className="flex flex-row justify-between w-full items-center">
                     <div className="flex flex-row gap-3 items-center justify-center">
-                      <Avatar
+                      {/* <Avatar
                         slot="icon"
                         className="w-8"
                         src={
@@ -337,7 +339,8 @@ export default function AppLayout() {
                       />
                       <SidebarLabel>
                         {selectedCompany ? selectedCompany.name : "Neumi"}
-                      </SidebarLabel>
+                      </SidebarLabel> */}
+                      <RenderIcon path={AseaLogo} type={"nav"} size={"w-8"} />
                     </div>
                     <div className="flex flex-col gap-[-0.5rem]">
                       <RenderIcon
@@ -425,7 +428,6 @@ export default function AppLayout() {
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-              <DropdownDivider />
               <SidebarSection>
                 <div
                   className={`${
@@ -706,8 +708,14 @@ export default function AppLayout() {
                 </SidebarItem>
               </SidebarSection> */}
             </SidebarBody>
-            {/* <SidebarFooter className="max-lg:hidden">
-              <Dropdown>
+            <SidebarFooter className="max-lg:hidden">
+              <SidebarSection>
+                <SidebarItem href="/changelog">
+                  <RenderIcon path={SettingsIcon} />
+                  <SidebarLabel>Settings</SidebarLabel>
+                </SidebarItem>
+              </SidebarSection>
+              {/* <Dropdown>
                 <DropdownButton as={SidebarItem}>
                   <span className="flex min-w-0 items-center gap-3">
                     <Avatar
@@ -754,8 +762,8 @@ export default function AppLayout() {
                     <DropdownLabel>Sign out</DropdownLabel>
                   </DropdownItem>
                 </DropdownMenu>
-              </Dropdown>
-            </SidebarFooter> */}
+              </Dropdown> */}
+            </SidebarFooter>
           </Sidebar>
         }
       >
