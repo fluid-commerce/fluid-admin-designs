@@ -33,7 +33,7 @@ const languages = [
 
 export default function Header({ title, type }) {
   return (
-    <header className="py-6 relative isolate z-50 rounded-t-lg">
+    <header className="relative isolate z-50 rounded-t-lg">
       {/* <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div
@@ -81,7 +81,7 @@ export default function Header({ title, type }) {
       </div>
 
       <div className="max-w-7xl py-1">
-        <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 py-3 lg:mx-0 lg:max-w-none">
+        <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img
                   alt=""

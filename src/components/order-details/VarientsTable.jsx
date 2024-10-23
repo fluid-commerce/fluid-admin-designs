@@ -115,7 +115,7 @@ export default function VarientsTable() {
           </h1>
           <button
             type="button"
-            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
+            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
           >
             <RenderIcon path={Plus} size={"w-3"} />
             Add Variant
@@ -168,12 +168,13 @@ export default function VarientsTable() {
                       className={classNames(
                         selectedVariants.includes(variant)
                           ? "bg-gray-50"
-                          : "hover:bg-gray-50 cursor-pointer"
+                          : "hover:bg-gray-50 cursor-pointer",
+                        "h-[77px]"
                       )}
                     >
                       <td
                         className={classNames(
-                          "whitespace-nowrap py-6 px-4 text-sm font-medium min-w-[10rem]",
+                          "whitespace-nowrap px-4 text-sm font-medium min-w-[10rem]",
                           selectedVariants.includes(variant)
                             ? "text-indigo-600"
                             : "text-gray-900"
@@ -190,10 +191,10 @@ export default function VarientsTable() {
                           </div>
                         </div>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         Type
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         <input
                           type="text"
                           name="inventory"
@@ -207,10 +208,10 @@ export default function VarientsTable() {
                             };
                             setInputs(newInputs);
                           }}
-                          className="w-full rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                          className="w-full rounded-md border-0 bg-white pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         <input
                           type="text"
                           name="sku"
@@ -225,10 +226,10 @@ export default function VarientsTable() {
                             };
                             setInputs(newInputs);
                           }}
-                          className="w-[4rem] rounded-md border-0 bg-white py-1 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                          className="w-[4rem] rounded-md border-0 bg-white pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                         />
                       </td>
-                      <td className="whitespace-nowrap py-10 pl-3 text-right text-sm font-medium sm:pr-3">
+                      <td className="whitespace-nowrap py-7 pl-3 text-right text-sm font-medium sm:pr-3">
                         {/* <a
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
@@ -247,7 +248,7 @@ export default function VarientsTable() {
                             transition
                             className="absolute z-50 right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                           >
-                            <div className="py-1">
+                            <div>
                               <MenuItem>
                                 <a
                                   href="#"

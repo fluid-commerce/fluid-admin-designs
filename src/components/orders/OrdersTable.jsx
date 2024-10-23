@@ -203,7 +203,8 @@ export default function OrdersTable() {
                       className={classNames(
                         selectedVariants.includes(row)
                           ? "bg-gray-50"
-                          : "hover:bg-gray-50 cursor-pointer"
+                          : "hover:bg-gray-50 cursor-pointer",
+                        "h-[77px]"
                       )}
                       onClick={() => (window.location.href = "/orders/details")}
                     >
@@ -221,37 +222,37 @@ export default function OrdersTable() {
                           }
                         />
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.order}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.date}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.customer}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.channel}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.total}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.paymentStatus}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.fulfillmentStatus}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.items}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.deliveryStatus}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.deliveryMethod}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {row.tags}
                       </td>
                     </tr>

@@ -168,7 +168,8 @@ export default function UrlRedirectsTable() {
                       className={classNames(
                         selectedVariants.includes(url)
                           ? "bg-gray-50"
-                          : "hover:bg-gray-50 cursor-pointer"
+                          : "hover:bg-gray-50 cursor-pointer",
+                        "h-[77px]"
                       )}
                     >
                       <td className="relative px-7 sm:w-12 sm:px-6">
@@ -185,10 +186,10 @@ export default function UrlRedirectsTable() {
                           }
                         />
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {url.oldPath}
                       </td>
-                      <td className="whitespace-nowrap py-2 px-4 text-sm text-gray-900">
+                      <td className="whitespace-nowrap px-4 text-sm text-gray-900">
                         {url.newPath}
                       </td>
                     </tr>

@@ -268,7 +268,8 @@ export default function VarientsTable() {
                       className={classNames(
                         selectedVariants.includes(variant)
                           ? "bg-gray-50"
-                          : "hover:bg-gray-50 cursor-pointer"
+                          : "hover:bg-gray-50 cursor-pointer",
+                        "h-[77px]"
                       )}
                       onClick={() =>
                         (window.location.href = "/products/details")
@@ -325,22 +326,22 @@ export default function VarientsTable() {
                       <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         10
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         2,650 in stock for 3 variants
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         2
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         0
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         Electronics
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         Apple Vision Pro
                       </td>
-                      <td className="whitespace-nowrap px-3 py-10 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-3 text-sm text-gray-500">
                         Apple Vision Pro
                       </td>
                     </tr>

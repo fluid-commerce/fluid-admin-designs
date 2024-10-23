@@ -40,9 +40,7 @@ export default function Stats() {
             key={item.name}
             className={classNames(
               "overflow-hidden rounded-md",
-              index === 0
-                ? "p-0 space-y-2"
-                : "bg-white shadow-sm ring-1 ring-gray-100 px-4 py-6"
+              index === 0 ? "p-0 space-y-2" : "bg-white shadow-sm px-4 py-6"
             )}
           >
             <dt className="truncate text-sm font-medium text-gray-600">

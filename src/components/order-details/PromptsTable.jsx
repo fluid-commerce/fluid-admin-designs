@@ -150,10 +150,11 @@ export default function PromptsTable() {
                       className={classNames(
                         selectedVariants.includes(variant)
                           ? "bg-gray-50"
-                          : "hover:bg-gray-50 cursor-pointer"
+                          : "hover:bg-gray-50 cursor-pointer",
+                        "h-[77px]"
                       )}
                     >
-                      <td className="w-1/12 whitespace-nowrap px-3 py-10 text-sm text-gray-900">
+                      <td className="w-1/12 whitespace-nowrap px-3 text-sm text-gray-900">
                         Type
                       </td>
                       <td
@@ -171,7 +172,7 @@ export default function PromptsTable() {
                         </div>
                       </td>
 
-                      <td className="w-1/12 whitespace-nowrap py-10 pl-3 text-sm font-medium sm:pr-3">
+                      <td className="w-1/12 whitespace-nowrap pl-3 text-sm font-medium sm:pr-3">
                         {/* <a
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
