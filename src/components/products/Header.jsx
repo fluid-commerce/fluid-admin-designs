@@ -33,7 +33,7 @@ export default function Header({
         <div className="absolute inset-x-0 bottom-0 h-px bg-gray-900/5" />
       </div> */}
 
-      <div className="max-w-7xl py-8 px-10">
+      <div>
         <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
             {/* <img
@@ -60,7 +60,7 @@ export default function Header({
             )}
             <span className="hidden sm:block">
               {title === "URL Redirects" ? (
-                <label className="inline-flex items-center bg-gray-100 rounded-md px-3 py-1 text-sm font-semibold text-gray-900 hover:bg-blue-50 hover:text-blue-600 cursor-pointer">
+                <label className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
                   Import
                   <input type="file" className="hidden" />
                 </label>

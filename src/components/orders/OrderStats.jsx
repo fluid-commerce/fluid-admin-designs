@@ -36,13 +36,13 @@ const stats = [
     change: "4.05%",
     changeType: "decrease",
   },
-  {
-    name: "Time to Fulfill",
-    stat: "24.57%",
-    previousStat: "28.62%",
-    change: "4.05%",
-    changeType: "decrease",
-  },
+  // {
+  //   name: "Time to Fulfill",
+  //   stat: "24.57%",
+  //   previousStat: "28.62%",
+  //   change: "4.05%",
+  //   changeType: "decrease",
+  // },
 ];
 
 function classNames(...classes) {
@@ -52,12 +52,9 @@ function classNames(...classes) {
 export default function OrderStats() {
   return (
     <div>
-      <dl className="flex flex-wrap rounded-lg bg-white shadow-sm ring-1 ring-gray-300">
+      <dl className="flex flex-wrap rounded-lg bg-white shadow-sm">
         {stats.map((item) => (
-          <div
-            key={item.name}
-            className="flex-1 min-w-[200px] px-4 py-5 sm:p-6"
-          >
+          <div key={item.name} className="flex-1 min-w-[200px] px-4 sm:p-6">
             <dt className="truncate text-xs font-medium text-gray-500">
               {item.name}
             </dt>

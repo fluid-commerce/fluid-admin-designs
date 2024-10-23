@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Dropdown from "../../components/global/Dropdown";
+import PageContainer from "../../components/global/PageContainer";
 import TextDropdown from "../../components/global/TextDropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
 import Header from "../../components/order-details/Header";
@@ -14,16 +14,12 @@ export default function OrderDetails() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
-          <div className="mx-auto max-w-7xl">
-            <Header title={"R68745"} type={"Orders"} />
-          </div>
-        </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
+        <PageContainer>
+          <Header title={"R68745"} type={"Orders"} />
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-6 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Product Details */}
+              {/* Order Details */}
               <CardContainer>
                 <div className="flex flex-col p-4 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                   <div className="flex flex-row justify-between">
@@ -150,13 +146,13 @@ export default function OrderDetails() {
             </div>
             {/* Right Column */}
             <div className="lg:col-start-3 space-y-6">
-              <div className="flex flex-col space-y-1 -mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
+              <div className="flex flex-col space-y-1 -mx-4 p-4 rounded-lg shadow-sm bg-white sm:mx-0">
                 <div className="font-medium sm:text-sm">Notes</div>
                 <div className="font-medium text-xs text-gray-500">
                   No notes from customer.
                 </div>
               </div>
-              <div className="flex flex-col space-y-1 -mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg ">
+              <div className="flex flex-col space-y-1 -mx-4 p-4 bg-white shadow sm:rounded-lg shadow-sm sm:mx-0 sm:rounded-lg ">
                 <div className="text-lg/6 font-medium sm:text-sm">Customer</div>
                 <div className="flex flex-col">
                   <div className="text-xs font-medium text-gray-500">
@@ -201,7 +197,7 @@ export default function OrderDetails() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col space-y-1 -mx-4 p-4 rounded-lg shadow-sm ring-1 ring-gray-300 bg-white sm:mx-0">
+              <div className="flex flex-col space-y-1 -mx-4 p-4 rounded-lg shadow-sm bg-white sm:mx-0">
                 <div className="font-medium sm:text-sm">
                   Conversation Summary
                 </div>
@@ -209,7 +205,7 @@ export default function OrderDetails() {
                   No conversation details available for this order.
                 </div>
               </div>
-              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg">
+              <div className="-mx-4 p-4 space-y-4 bg-white shadow sm:rounded-lg shadow-sm sm:mx-0 sm:rounded-lg">
                 <div>
                   <div className="flex flex-row items-center text-lg/6 font-medium sm:text-sm relative group">
                     Tags{" "}
@@ -219,7 +215,7 @@ export default function OrderDetails() {
               </div>
             </div>
           </div>
-        </div>
+        </PageContainer>
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} />
       </main>
     </>

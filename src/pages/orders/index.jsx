@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import PageContainer from "../../components/global/PageContainer";
 import Header from "../../components/products/Header";
 import CardContainer from "../../components/order-details/CardContainer";
 import OrdersTable from "../../components/orders/OrdersTable";
@@ -10,23 +12,17 @@ export default function OrdersPage() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
-          <div className="mx-auto max-w-7xl">
-            <Header
-              title={"Orders"}
-              actionButtonText={"Add"}
-              setOpenActiveDrawer={setOpenActiveDrawer}
-            />
-          </div>
-        </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
+        <PageContainer>
+          <Header
+            title={"Orders"}
+            actionButtonText={"Add"}
+            setOpenActiveDrawer={setOpenActiveDrawer}
+          />
           <OrderStats />
-        </div>
-        <div className="mx-auto max-w-7xl px-6 pb-6">
           <CardContainer>
             <OrdersTable />
           </CardContainer>
-        </div>
+        </PageContainer>
         <SideDrawer open={openActiveDrawer} setOpen={setOpenActiveDrawer} />
       </main>
     </>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
 
+import PageContainer from "../../components/global/PageContainer";
 import SettingsCard from "../../components/order-details/SettingsCard";
 import TextDropdown from "../../components/global/TextDropdown";
 import dummyProductImage from "../../images/apple-vision-pro.png";
@@ -83,12 +84,9 @@ export default function ProductDetails() {
   return (
     <>
       <main>
-        <div className="rounded-t-lg">
-          <div className="mx-auto max-w-7xl">
-            <Header title={"Apple Vision Pro"} type={"Products"} />
-          </div>
-        </div>
-        <div className="mx-auto max-w-7xl px-10 pb-6">
+        <PageContainer>
+          <Header title={"Apple Vision Pro"} type={"Products"} />
+
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-6 gap-y-6 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-6">
@@ -273,7 +271,7 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-        </div>
+        </PageContainer>
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} />
       </main>
     </>

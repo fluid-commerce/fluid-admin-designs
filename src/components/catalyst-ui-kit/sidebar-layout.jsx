@@ -169,10 +169,8 @@ export function SidebarLayout({ navbar, sidebar, children }) {
           </div>
         </div>
         <div className="grow lg:rounded-lg lg:ring-1 ring-gray-200 gradient-container">
-          <div className="gradient-container">
-            <div className="pink-gradient-overlay"></div>
-            <div className="relative">{children}</div>
-          </div>
+          <div className="pink-gradient-overlay"></div>
+          <div className="relative">{children}</div>
         </div>
       </main>
     </div>
