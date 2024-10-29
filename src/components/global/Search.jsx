@@ -113,6 +113,7 @@ const items = [
     name: "Mutha Body Oil",
     url: "#/images",
     type: "media",
+    mediaType: "Video",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/Mini_Body_Oil_PDP.png?v=1723480841&width=1080",
   },
@@ -121,6 +122,7 @@ const items = [
     name: "Mutha Glow Butter",
     url: "#/images",
     type: "media",
+    mediaType: "PDF",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/products/MiniBodyButter_0031-R2_3.jpg?v=1705440519&width=1080",
   },
@@ -222,6 +224,7 @@ const items = [
     name: "Mutha Candle",
     url: "#/images",
     type: "media",
+    mediaType: "Image",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/products/Blank2192x2192copy4_3.jpg?v=1665161621&width=720",
   },
@@ -295,14 +298,25 @@ export default function Search() {
                   </a>
                 ) : null}
                 <div className="ml-4 flex-auto">
-                  <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
-                    {item.name}
-                    {item.status && (
-                      <span className="inline-flex items-center rounded-full bg-green-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-green-700">
-                        {item.status}
+                  {item.mediaType ? (
+                    <div className="flex flex-row items-center justify-between">
+                      <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
+                        {item.name}
+                      </p>
+                      <span className="inline-flex items-center rounded-full bg-blue-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-blue-700">
+                        {item.mediaType}
                       </span>
-                    )}
-                  </p>
+                    </div>
+                  ) : (
+                    <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
+                      {item.name}
+                      {item.status && (
+                        <span className="inline-flex items-center rounded-full bg-green-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-green-700">
+                          {item.status}
+                        </span>
+                      )}
+                    </p>
+                  )}
                   {item.customer && (
                     <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
                       {item.customer}
