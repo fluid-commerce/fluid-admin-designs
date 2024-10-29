@@ -51,6 +51,7 @@ const items = [
     type: "product",
     color: "bg-indigo-500",
     icon: dummyProductImage,
+    mediaType: "Product",
   },
   {
     id: 2,
@@ -59,6 +60,7 @@ const items = [
     type: "page",
     color: "bg-indigo-500",
     icon: PageIcon,
+    mediaType: "Page",
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ const items = [
     type: "page",
     color: "bg-indigo-500",
     icon: PageIcon,
+    mediaType: "Page",
   },
   {
     id: 4,
@@ -75,6 +78,7 @@ const items = [
     type: "page",
     color: "bg-indigo-500",
     icon: PageIcon,
+    mediaType: "Page",
   },
   {
     id: 5,
@@ -83,6 +87,7 @@ const items = [
     type: "page",
     color: "bg-indigo-500",
     icon: PageIcon,
+    mediaType: "Page",
   },
   {
     id: 6,
@@ -91,6 +96,7 @@ const items = [
     type: "page",
     color: "bg-indigo-500",
     icon: PageIcon,
+    mediaType: "Page",
   },
   {
     id: 7,
@@ -99,6 +105,7 @@ const items = [
     type: "media",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/MUTHA_BodyButter_Glow_PDP_1.jpg?v=1712609424&width=1512",
+    mediaType: "Image",
   },
   {
     id: 8,
@@ -107,6 +114,7 @@ const items = [
     type: "media",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/Copy_of_PDP_Draft_2_cdb880d7-7db9-414b-b691-f85441f43e52.png?v=1722023609&width=1080",
+    mediaType: "Image",
   },
   {
     id: 9,
@@ -133,6 +141,7 @@ const items = [
     type: "contact",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/MUTHA_BodyButter_Glow_PDP_1.jpg?v=1712609424&width=1512",
+    mediaType: "Contact",
   },
   {
     id: 12,
@@ -145,6 +154,7 @@ const items = [
     type: "order",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/MUTHA_BodyButter_Glow_PDP_1.jpg?v=1712609424&width=1512",
+    mediaType: "Order",
   },
   {
     id: 17,
@@ -157,6 +167,7 @@ const items = [
     type: "order",
     color: "bg-red-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/Mini_Body_Oil_PDP.png?v=1723480841&width=1080",
+    mediaType: "Order",
   },
   {
     id: 18,
@@ -169,6 +180,7 @@ const items = [
     type: "order",
     color: "bg-green-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/products/MiniBodyButter_0031-R2_3.jpg?v=1705440519&width=1080",
+    mediaType: "Order",
   },
   {
     id: 19,
@@ -181,6 +193,7 @@ const items = [
     type: "order",
     color: "bg-blue-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/products/Blank2192x2192copy4_3.jpg?v=1665161621&width=720",
+    mediaType: "Order",
   },
   {
     id: 20,
@@ -193,6 +206,7 @@ const items = [
     type: "order",
     color: "bg-yellow-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/Copy_of_PDP_Draft_2_cdb880d7-7db9-414b-b691-f85441f43e52.png?v=1722023609&width=1080",
+    mediaType: "Order",
   },
   {
     id: 13,
@@ -202,6 +216,7 @@ const items = [
     type: "product",
     color: "bg-indigo-500",
     icon: dummyProductImage,
+    mediaType: "Product",
   },
   {
     id: 14,
@@ -210,6 +225,7 @@ const items = [
     type: "contact",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/MUTHA_BodyButter_Glow_PDP_1.jpg?v=1712609424&width=1512",
+    mediaType: "Contact",
   },
   {
     id: 15,
@@ -218,6 +234,7 @@ const items = [
     type: "contact",
     color: "bg-indigo-500",
     icon: "https://mutha.com/_cdn/shopify/webp/s/files/1/0108/3185/5697/files/MUTHA_BodyButter_Glow_PDP_1.jpg?v=1712609424&width=1512",
+    mediaType: "Contact",
   },
   {
     id: 16,
@@ -300,10 +317,30 @@ export default function Search() {
                 <div className="ml-4 flex-auto">
                   {item.mediaType ? (
                     <div className="flex flex-row items-center justify-between">
-                      <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
-                        {item.name}
-                      </p>
-                      <span className="inline-flex items-center rounded-full bg-blue-100 ml-2 px-1.5 py-0.5 text-xs font-medium text-blue-700">
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
+                          {item.name}
+                        </p>
+                        {item.customer && (
+                          <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
+                            {item.customer}
+                          </p>
+                        )}
+                        {item.date && item.time && (
+                          <p className="text-xs font-medium text-gray-400 group-data-[focus]:text-gray-900">
+                            {`${item.date} at ${item.time}`}
+                          </p>
+                        )}
+                        {item.type === "contact" && (
+                          <p className="text-xs font-medium text-gray-400 group-data-[focus]:text-gray-900">
+                            johndoe@email.com
+                          </p>
+                        )}
+                        <p className="text-sm text-gray-500 group-data-[focus]:text-gray-700">
+                          {item?.description}
+                        </p>
+                      </div>
+                      <span className="inline-flex items-center rounded-full bg-gray-300 ml-2 px-1.5 py-0.5 text-xs font-medium text-gray-900">
                         {item.mediaType}
                       </span>
                     </div>
@@ -317,7 +354,7 @@ export default function Search() {
                       )}
                     </p>
                   )}
-                  {item.customer && (
+                  {/* {item.customer && (
                     <p className="text-sm font-medium text-gray-700 group-data-[focus]:text-gray-900">
                       {item.customer}
                     </p>
@@ -334,7 +371,7 @@ export default function Search() {
                   )}
                   <p className="text-sm text-gray-500 group-data-[focus]:text-gray-700">
                     {item?.description}
-                  </p>
+                  </p> */}
                 </div>
               </ComboboxOption>
             ))}
