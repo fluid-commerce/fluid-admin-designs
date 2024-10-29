@@ -8,7 +8,7 @@ import OrdersPage from "./pages/orders";
 import OrderDetails from "./pages/orderDetails";
 import CustomersPage from "./pages/customers";
 import CustomerDetails from "./pages/customerDetails";
-
+import Inventory from "./pages/inventory";
 import "./App.css";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<ProductsPage />} />
+          <Route path="inventory" element={<Inventory />} />
           <Route path="marketing" element={<Marketing />} />
           <Route path="products" element={<ProductsPage />} />
           <Route path="products/details" element={<ProductDetails />} />

@@ -21,7 +21,7 @@ export default function ProductTabs({ tabs }) {
           ))}
         </select>
       </div>
-      <div className="hidden sm:block">
+      <div className="hidden z-50 sm:block">
         <nav
           aria-label="Tabs"
           className="isolate flex divide-x divide-gray-200 rounded-lg shadow ring-1 ring-gray-300"

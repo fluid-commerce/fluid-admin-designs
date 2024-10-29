@@ -10,7 +10,7 @@ export default function Dropdown({ options }) {
   const [selectedLanguage, setSelectedLanguage] = useState(options?.[0]?.name);
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left z-50">
       <div>
         <MenuButton className="inline-flex gap-2 items-center bg-white rounded-md px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
           {selectedLanguage}

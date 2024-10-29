@@ -560,6 +560,9 @@ export default function AppLayout() {
                     <SidebarItem href="/orders">
                       <SidebarLabel>Orders</SidebarLabel>
                     </SidebarItem>
+                    <SidebarItem href="/inventory">
+                      <SidebarLabel>Inventory</SidebarLabel>
+                    </SidebarItem>
                     <SidebarItem href="/products">
                       <SidebarLabel>Products</SidebarLabel>
                     </SidebarItem>

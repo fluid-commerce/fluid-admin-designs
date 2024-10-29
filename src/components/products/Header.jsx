@@ -88,17 +88,16 @@ export default function Header({
                 </MenuItems>
               </Menu>
             )}
-            {title === "Products" ||
-              (title === "Customers" && (
-                <span className="hidden sm:block">
-                  <button
-                    type="button"
-                    className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600"
-                  >
-                    Export
-                  </button>
-                </span>
-              ))}
+            {["Products", "Inventory", "Customers"].includes(title) && (
+              <span className="hidden sm:block">
+                <button
+                  type="button"
+                  className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600"
+                >
+                  Export
+                </button>
+              </span>
+            )}
             <span className="hidden sm:block">
               {title === "URL Redirects" ? (
                 <label className="inline-flex items-center bg-white rounded-md px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 shadow-sm hover:bg-blue-50 hover:text-blue-600">
