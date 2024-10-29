@@ -9,6 +9,7 @@ import OrderDetails from "./pages/orderDetails";
 import CustomersPage from "./pages/customers";
 import CustomerDetails from "./pages/customerDetails";
 import Inventory from "./pages/inventory";
+import PricingGrid from "./pages/editor/PricingGrid";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="orders/details" element={<OrderDetails />} />
           <Route path="customers" element={<CustomersPage />} />
           <Route path="customer/details" element={<CustomerDetails />} />
+          <Route path="editor" element={<PricingGrid />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -73,9 +73,9 @@ import MarketingIconPrimary from "./images/sideNavIcons/size=sm, color=primary, 
 import MobileIcon from "./images/sideNavIcons/size=sm, color=gray, type=mobile app.svg";
 import MobileIconPrimary from "./images/sideNavIcons/size=sm, color=primary, type=mobile app.svg";
 import SettingsIcon from "./images/sideNavIcons/size=sm, color=gray, type=settings.svg";
-
 export default function AppLayout() {
   const [selectedTab, setSelectedTab] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState({
     name: "Neumi",
     logo: "https://media.licdn.com/dms/image/v2/C560BAQHMD8_IBku3bg/company-logo_200_200/company-logo_200_200/0/1630670552271?e=1736985600&v=beta&t=iuGdnNIYAs1aylkMExejssN-mwYQEO65HRZ11dBG9DM",
@@ -200,6 +200,7 @@ export default function AppLayout() {
         //     </NavbarSection>
         //   </Navbar>
         // }
+        setSearchOpen={setSearchOpen}
         sidebar={
           <Sidebar>
             <SidebarHeader>

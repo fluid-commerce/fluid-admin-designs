@@ -29,6 +29,7 @@ import Logout from "../../images/svgs/solid/arrow-right-from-bracket.svg";
 import ShieldCheck from "../../images/svgs/solid/shield-check.svg";
 import UsersIcon from "../../images/sideNavIcons/size=sm, color=gray, type=users.svg";
 import SettingsIcon from "../../images/sideNavIcons/size=sm, color=gray, type=settings.svg";
+import Search from "../../components/global/Search";
 
 function OpenMenuIcon() {
   return (
@@ -70,7 +71,7 @@ function MobileSidebar({ open, close, children }) {
   );
 }
 
-export function SidebarLayout({ navbar, sidebar, children }) {
+export function SidebarLayout({ navbar, sidebar, children, setSearchOpen }) {
   let [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -101,16 +102,18 @@ export function SidebarLayout({ navbar, sidebar, children }) {
         <div className="flex flex-row items-center justify-between">
           {/* <RenderIcon path={FluidLogo} size={"w-4"} /> */}
           <div className="relative flex flex-row items-center">
-            <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center pl-3">
+            {/* <div className="pointer-events-none absolute inset-y-0 left-2 flex items-center pl-3">
               <RenderIcon path={MagnifyingGlass} size={"w-4"} />
-            </div>
-            <input
+            </div> */}
+            <Search />
+            {/* <input
               id="search"
               name="search"
               type="search"
               placeholder="Search Fluid"
               className="block w-[30rem] overflow-x-auto rounded-[9px] border-0 h-28px pl-10 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-            />
+              onFocus={() => setSearchOpen(true)}
+            /> */}
           </div>
           <div className="flex flex-row items-center justify-between">
             <Dropdown>
@@ -170,7 +173,7 @@ export function SidebarLayout({ navbar, sidebar, children }) {
         </div>
         <div className="grow lg:rounded-lg lg:ring-1 ring-gray-200 gradient-container">
           <div className="pink-gradient-overlay"></div>
-          <div className="relative">{children}</div>
+          <div className="relative z-40">{children}</div>
         </div>
       </main>
     </div>

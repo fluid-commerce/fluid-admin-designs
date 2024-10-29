@@ -13,6 +13,7 @@ import ChevronUp from "../../images/svgs/solid/chevron-up.svg";
 import ChevronDown from "../../images/svgs/solid/chevron-down.svg";
 import ArrowUp from "../../images/svgs/regular/arrow-up.svg";
 import ArrowDown from "../../images/svgs/regular/arrow-down.svg";
+import DeleteModal from "../global/DeleteModal";
 
 import InventoryInputs from "./InventoryInputs";
 
@@ -151,7 +152,7 @@ export default function InventoryTable() {
   const [indeterminate, setIndeterminate] = useState(false);
   const [selectedInventory, setSelectedInventory] = useState([]);
   const [inputs, setInputs] = useState(inventoryList);
-
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
   useLayoutEffect(() => {
     const isIndeterminate =
       selectedInventory.length > 0 &&
@@ -204,7 +205,7 @@ export default function InventoryTable() {
               <div className="relative">
                 {selectedInventory.length > 0 && (
                   <div className="absolute left-20 top-0 flex h-12 items-center space-x-3 bg-gray-50 w-full sm:left-12 border-t border-gray-200">
-                    <button
+                    {/* <button
                       type="button"
                       className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
                     >
@@ -215,16 +216,18 @@ export default function InventoryTable() {
                       className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
                     >
                       Set as Draft
-                    </button>
+                    </button> */}
                     <button
                       type="button"
                       className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                      onClick={() => (window.location.href = "/editor")}
                     >
-                      Set as Archived
+                      Bulk Edit
                     </button>
                     <button
                       type="button"
                       className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-red-50 hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white"
+                      onClick={() => setOpenDeleteModal(true)}
                     >
                       Delete
                     </button>
@@ -588,6 +591,11 @@ export default function InventoryTable() {
         </div>
       </div>
       <PaginationFooter />
+      <DeleteModal
+        open={openDeleteModal}
+        setOpen={setOpenDeleteModal}
+        item={"Inventory"}
+      />
     </div>
   );
 }

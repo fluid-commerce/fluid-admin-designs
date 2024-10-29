@@ -9,7 +9,7 @@ import {
 import TriangleExclamation from "../../images/svgs/regular/triangle-exclamation.svg";
 import RenderIcon from "./RenderIcon";
 
-export default function Example({ open, setOpen }) {
+export default function DeleteModal({ open, setOpen, item }) {
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
       <DialogBackdrop
@@ -37,13 +37,13 @@ export default function Example({ open, setOpen }) {
                     as="h3"
                     className="text-base font-semibold leading-6 text-gray-900"
                   >
-                    Delete URL Redirect?
+                    {`Delete ${item}?`}
                   </DialogTitle>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Are you sure you want to deactivate your url? All of your
+                      {` Are you sure you want to deactivate your ${item}? All of your
                       data will be permanently removed. This action cannot be
-                      undone.
+                      undone.`}{" "}
                     </p>
                   </div>
                 </div>

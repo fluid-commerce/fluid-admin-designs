@@ -10,7 +10,7 @@ import RenderIcon from "../global/RenderIcon";
 import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 // import ProductTabs from "./ProductTabs";
 import PaginationFooter from "../global/PaginationFooter";
-import Modal from "../global/Modal";
+import Modal from "../global/DeleteModal";
 const variants = [
   {
     name: "One",
@@ -201,7 +201,11 @@ export default function UrlRedirectsTable() {
         </div>
       </div>
       <PaginationFooter />
-      <Modal open={openDeleteModal} setOpen={setOpenDeleteModal} />
+      <Modal
+        open={openDeleteModal}
+        setOpen={setOpenDeleteModal}
+        item={"Url Redirect"}
+      />
     </div>
   );
 }

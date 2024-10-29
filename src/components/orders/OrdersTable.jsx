@@ -18,7 +18,7 @@ import RenderIcon from "../global/RenderIcon";
 import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 // import ProductTabs from "./ProductTabs";
 import PaginationFooter from "../global/PaginationFooter";
-import Modal from "../global/Modal";
+import Modal from "../global/DeleteModal";
 import ProductTabs from "../products/ProductTabs";
 
 const variants = [
