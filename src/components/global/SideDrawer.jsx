@@ -1,7 +1,7 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function SideDrawer({ open, setOpen }) {
+export default function SideDrawer({ open, setOpen, title }) {
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
       <div className="fixed inset-0" />
@@ -18,7 +18,7 @@ export default function SideDrawer({ open, setOpen }) {
                   <div className="border-b border-gray-300 px-4 py-4 sm:px-6">
                     <div className="flex items-center justify-between">
                       <DialogTitle className="text-base font-semibold leading-6 text-gray-900">
-                        Add URL Redirect
+                        {title}
                       </DialogTitle>
                       <div className="ml-3 flex h-7 items-center">
                         <button

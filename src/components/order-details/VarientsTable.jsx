@@ -115,7 +115,7 @@ export default function VarientsTable() {
           </h1>
           <button
             type="button"
-            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
+            className="inline-flex items-center bg-white ring-1 ring-gray-300 gap-2 rounded-md px-3 py-1 text-sm font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 group"
           >
             <RenderIcon path={Plus} size={"w-3"} />
             Add Variant

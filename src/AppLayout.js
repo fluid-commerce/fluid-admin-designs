@@ -563,6 +563,9 @@ export default function AppLayout() {
                     <SidebarItem href="/products">
                       <SidebarLabel>Products</SidebarLabel>
                     </SidebarItem>
+                    <SidebarItem href="/customers">
+                      <SidebarLabel>Customers</SidebarLabel>
+                    </SidebarItem>
                     <SidebarItem href="/url-redirects">
                       <SidebarLabel>URL Redirects</SidebarLabel>
                     </SidebarItem>

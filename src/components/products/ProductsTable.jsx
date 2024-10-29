@@ -8,6 +8,7 @@ import MagnifyingGlass from "../../images/svgs/solid/magnifying-glass.svg";
 import ProductTabs from "./ProductTabs";
 import PaginationFooter from "../global/PaginationFooter";
 import Dropdown from "../global/Dropdown";
+
 const variants = [
   {
     name: "One",
@@ -156,7 +157,7 @@ export default function VarientsTable() {
           </div>
         </div>
       </div>
-      <div className="flow-root overflow-hidden">
+      <div className="flow-root overflow-x-auto">
         <div className="inline-block w-full">
           <div className="inline-block min-w-full align-middle">
             <div className="inline-block w-full">

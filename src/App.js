@@ -6,6 +6,8 @@ import ProductsPage from "./pages/productsPage";
 import UrlRedirects from "./pages/urlRedirects";
 import OrdersPage from "./pages/orders";
 import OrderDetails from "./pages/orderDetails";
+import CustomersPage from "./pages/customers";
+import CustomerDetails from "./pages/customerDetails";
 
 import "./App.css";
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="url-redirects" element={<UrlRedirects />} />
           <Route path="orders" element={<OrdersPage />} />
           <Route path="orders/details" element={<OrderDetails />} />
+          <Route path="customers" element={<CustomersPage />} />
+          <Route path="customer/details" element={<CustomerDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

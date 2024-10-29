@@ -23,7 +23,11 @@ export default function OrdersPage() {
             <OrdersTable />
           </CardContainer>
         </PageContainer>
-        <SideDrawer open={openActiveDrawer} setOpen={setOpenActiveDrawer} />
+        <SideDrawer
+          open={openActiveDrawer}
+          setOpen={setOpenActiveDrawer}
+          title={"Add Order"}
+        />
       </main>
     </>
   );
