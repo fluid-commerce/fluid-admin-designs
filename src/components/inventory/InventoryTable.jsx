@@ -175,9 +175,9 @@ export default function InventoryTable() {
     <div>
       <div className="relative p-3 sm:flex sm:items-center">
         <div className="flex flex-row items-center justify-between w-full">
-          <ProductTabs tabs={tabs} />
+          {/* <ProductTabs tabs={tabs} /> */}
 
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-row items-center justify-end w-full gap-4">
             <div className="relative rounded-md shadow-sm">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <RenderIcon
@@ -194,7 +194,7 @@ export default function InventoryTable() {
                 className="block w-full rounded-md border-0 pl-10 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
               />
             </div>
-            <Dropdown options={productTypeFilters} />
+            {/* <Dropdown options={productTypeFilters} /> */}
           </div>
         </div>
       </div>
@@ -275,11 +275,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowUp}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               A-Z
                             </a>
                           </MenuItem>
@@ -288,11 +288,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowDown}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Z-A
                             </a>
                           </MenuItem>
@@ -331,11 +331,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowUp}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Highest-Lowest
                             </a>
                           </MenuItem>
@@ -344,11 +344,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowDown}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Lowest-Highest
                             </a>
                           </MenuItem>
@@ -381,11 +381,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowUp}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Highest-Lowest
                             </a>
                           </MenuItem>
@@ -394,11 +394,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowDown}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Lowest-Highest
                             </a>
                           </MenuItem>
@@ -431,11 +431,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowUp}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Highest-Lowest
                             </a>
                           </MenuItem>
@@ -444,11 +444,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowDown}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Lowest-Highest
                             </a>
                           </MenuItem>
@@ -481,11 +481,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowUp}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Highest-Lowest
                             </a>
                           </MenuItem>
@@ -494,11 +494,11 @@ export default function InventoryTable() {
                               href="#"
                               className="flex flex-row items-center gap-2"
                             >
-                              <RenderIcon
+                              {/* <RenderIcon
                                 path={ArrowDown}
                                 size={"w-3"}
                                 type={"black"}
-                              />
+                              /> */}
                               Lowest-Highest
                             </a>
                           </MenuItem>
