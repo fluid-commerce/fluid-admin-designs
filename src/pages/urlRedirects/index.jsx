@@ -6,7 +6,7 @@ import CardContainer from "../../components/order-details/CardContainer";
 import UrlRedirectsTable from "../../components/urlRedirects/UrlRedirectsTable";
 import SideDrawer from "../../components/global/SideDrawer";
 
-export default function () {
+export default function UrlRedirects() {
   const [openActiveDrawer, setOpenActiveDrawer] = useState(false);
   return (
     <>

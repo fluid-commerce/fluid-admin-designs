@@ -10,6 +10,7 @@ import CustomersPage from "./pages/customers";
 import CustomerDetails from "./pages/customerDetails";
 import Inventory from "./pages/inventory";
 import PricingGrid from "./pages/editor/PricingGrid";
+import Ecommerce from "./pages/eCommerce";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="customer/details" element={<CustomerDetails />} />
           <Route path="editor" element={<PricingGrid />} />
         </Route>
+        <Route path="ecommerce" element={<Ecommerce />} />
       </Routes>
     </BrowserRouter>
   );
