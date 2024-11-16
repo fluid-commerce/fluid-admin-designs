@@ -47,7 +47,7 @@ export default function Example() {
             className="col-span-4 flex-auto px-8 pb-16 pt-0 overflow-y-auto md:h-screen"
           >
             <div className="max-w-lg mx-auto md:mx-0 md:ml-auto">
-              <div className="hidden pt-10 lg:flex">
+              <div className="pt-10 flex flex-row justify-between">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
                   <img
@@ -56,11 +56,34 @@ export default function Example() {
                     className="h-8 w-auto"
                   />
                 </a>
+                <div>
+                  <label htmlFor="language" className="sr-only">
+                    Select Language
+                  </label>
+                  <select
+                    id="language"
+                    name="language"
+                    className="inputText text-sm py-2 px-3 pr-8 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                  >
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                  </select>
+                </div>
               </div>
-              <div className="flex flex-row space-x-2 justify-between items-center">
+              <div className="flex flex-row space-x-2 justify-between items-center mt-6">
                 <button
                   type="button"
-                  className="flex-1 bg-white h-10 ring-1 ring-gray-300 mt-16 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-50"
+                  className="flex-1 bg-gray-800 h-10 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
+                >
+                  <span className="sr-only">Pay with Fluid Pay</span>
+                  Fluid Pay
+                </button>
+                <button
+                  type="button"
+                  className="flex-1 bg-white h-10 ring-1 ring-gray-300  flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-50"
                 >
                   <span className="sr-only">Pay with Apple Pay</span>
                   <RenderIcon
@@ -71,7 +94,7 @@ export default function Example() {
                 </button>
                 <button
                   type="button"
-                  className="flex-1 bg-gray-800 h-10 mt-16 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
+                  className="flex-1 bg-gray-800 h-10 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
                 >
                   <span className="sr-only">Pay with Google Pay</span>
                   <RenderIcon
@@ -82,7 +105,7 @@ export default function Example() {
                 </button>
                 <button
                   type="button"
-                  className="flex-1 bg-yellow-300 h-10 mt-16 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-yellow-400"
+                  className="flex-1 bg-yellow-300 h-10 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-yellow-400"
                 >
                   <span className="sr-only">Pay with PayPal</span>
                   <RenderIcon
@@ -106,7 +129,7 @@ export default function Example() {
                 </div>
               </div>
               <div>
-                <fieldset>
+                <fieldset className="mt-4">
                   <div className="flex flex-row justify-between items-center">
                     <legend className="block text-sm/6 font-medium text-gray-900">
                       Contact
@@ -178,11 +201,14 @@ export default function Example() {
                         id="country"
                         name="country"
                         type="text"
-                        autoComplete="off"
+                        autoComplete="on"
                         onFocus={(e) => {
                           e.target.nextElementSibling.classList.remove(
                             "hidden"
                           );
+                          e.target.classList.remove("py-3");
+                          e.target.classList.add("pt-4");
+                          e.target.nextElementSibling.classList.add("top-1/4");
                         }}
                         onBlur={(e) => {
                           setTimeout(() => {
@@ -322,7 +348,7 @@ export default function Example() {
                               );
                             }
                           }}
-                          className="inputText text-sm pt-5 peer rounded-bl w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-4 peer rounded-bl w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
                         <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           City
@@ -340,13 +366,13 @@ export default function Example() {
                             e.target.nextElementSibling.classList.remove(
                               "hidden"
                             );
-                            e.target.classList.remove("py-3.5");
-                            e.target.classList.add("pt-5");
+                            e.target.classList.remove("py-3");
+                            e.target.classList.add("pt-4");
                             e.target.nextElementSibling.classList.add(
                               "top-1/4"
                             );
                           }}
-                          className="inputText text-sm py-3.5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm py-3 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         >
                           <option>Utah</option>
                           <option>California</option>
@@ -377,7 +403,7 @@ export default function Example() {
                               );
                             }
                           }}
-                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
                         <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           ZIP / Postal code
@@ -402,11 +428,11 @@ export default function Example() {
                           e.target.nextElementSibling.classList.remove(
                             "hidden"
                           );
-                          e.target.classList.remove("py-3.5");
-                          e.target.classList.add("pt-5");
+                          e.target.classList.remove("py-3");
+                          e.target.classList.add("pt-4");
                           e.target.nextElementSibling.classList.add("top-1/4");
                         }}
-                        className="inputText text-sm py-3.5 peer w-full rounded border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm py-3 peer w-full rounded border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       >
                         <option>Standard shipping - 3-5 business days</option>
                         <option>Express shipping - 2-3 business days</option>
@@ -687,7 +713,7 @@ export default function Example() {
                                 );
                               }
                             }}
-                            className="inputText text-sm pt-5 peer w-full rounded-bl border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-4 peer w-full rounded-bl border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
                           <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             City
@@ -705,13 +731,13 @@ export default function Example() {
                               e.target.nextElementSibling.classList.remove(
                                 "hidden"
                               );
-                              e.target.classList.remove("py-3.5");
-                              e.target.classList.add("pt-5");
+                              e.target.classList.remove("py-3");
+                              e.target.classList.add("pt-4");
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
                             }}
-                            className="inputText text-sm py-3.5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm py-3 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           >
                             <option>Utah</option>
                             <option>California</option>
@@ -747,7 +773,7 @@ export default function Example() {
                                 );
                               }
                             }}
-                            className="inputText text-sm pt-5 peer rounded-br w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-4 peer rounded-br w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
                           <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             ZIP / Postal code
