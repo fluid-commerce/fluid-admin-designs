@@ -214,6 +214,11 @@ export default function Example() {
                           setTimeout(() => {
                             e.target.nextElementSibling.classList.add("hidden");
                           }, 200);
+                          if (e.target.value) {
+                            document
+                              .getElementById("country-label")
+                              .classList.add("top-1/4");
+                          }
                         }}
                         onChange={(e) => {
                           const filter = e.target.value.toLowerCase();
@@ -230,7 +235,7 @@ export default function Example() {
                         }}
                         className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       />
-                      <ul className="absolute left-0 z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
+                      <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
                         <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
                           United States
                         </li>
@@ -241,7 +246,10 @@ export default function Example() {
                           Mexico
                         </li>
                       </ul>
-                      <span className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      <span
+                        id="country-label"
+                        className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
+                      >
                         Country
                       </span>
                     </div>
@@ -358,10 +366,11 @@ export default function Example() {
                         <label htmlFor="state" className="sr-only">
                           State
                         </label>
-                        <select
+                        <input
                           id="state"
                           name="state"
-                          autoComplete="state-name"
+                          type="text"
+                          autoComplete="on"
                           onFocus={(e) => {
                             e.target.nextElementSibling.classList.remove(
                               "hidden"
@@ -372,13 +381,50 @@ export default function Example() {
                               "top-1/4"
                             );
                           }}
-                          className="inputText text-sm py-3 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          onBlur={(e) => {
+                            setTimeout(() => {
+                              e.target.nextElementSibling.classList.add(
+                                "hidden"
+                              );
+                            }, 200);
+                            if (e.target.value) {
+                              document
+                                .getElementById("state-label")
+                                .classList.add("top-1/4");
+                            }
+                          }}
+                          onChange={(e) => {
+                            const filter = e.target.value.toLowerCase();
+                            const options =
+                              e.target.nextElementSibling.children;
+                            for (let i = 0; i < options.length; i++) {
+                              const option = options[i];
+                              const text =
+                                option.textContent || option.innerText;
+                              option.style.display = text
+                                .toLowerCase()
+                                .includes(filter)
+                                ? ""
+                                : "none";
+                            }
+                          }}
+                          className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        />
+                        <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            Utah
+                          </li>
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            California
+                          </li>
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            New York
+                          </li>
+                        </ul>
+                        <span
+                          id="state-label"
+                          className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                         >
-                          <option>Utah</option>
-                          <option>California</option>
-                          <option>New York</option>
-                        </select>
-                        <span className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 hidden peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           State
                         </span>
                       </div>
@@ -445,9 +491,25 @@ export default function Example() {
                   </div>
                 </fieldset>
                 <fieldset className="mt-6">
-                  <legend className="block text-sm/6 font-medium text-gray-900">
-                    Payment
-                  </legend>
+                  <div className="flex flex-row justify-between">
+                    <div className="text-sm/6 font-medium text-gray-900">
+                      Payment
+                    </div>
+                    <div className="flex flex-row space-x-1">
+                      <img
+                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg"
+                        alt="visa"
+                      />
+                      <img
+                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg"
+                        alt="mastercard"
+                      />
+                      <img
+                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg"
+                        alt="amex"
+                      />
+                    </div>
+                  </div>
                   <div className="mt-2 -space-y-px rounded bg-white shadow-sm">
                     <div
                       className="relative w-full"
@@ -471,7 +533,7 @@ export default function Example() {
                         Card number
                       </span>
                       <div className="flex flex-row space-x-1 absolute items-center right-2 top-1/2 transform -translate-y-1/2">
-                        <img
+                        {/* <img
                           src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg"
                           alt="visa"
                         />
@@ -486,8 +548,8 @@ export default function Example() {
                         <img
                           src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/discover.C7UbFpNb.svg"
                           alt="discover"
-                        />
-                        <RenderIcon path={LockIcon} size={"w-4"} />
+                        /> */}
+                        <RenderIcon path={LockIcon} size={"w-3"} />
                       </div>
                     </div>
                     <div className="flex -space-x-px">
@@ -574,27 +636,65 @@ export default function Example() {
                         <label htmlFor="country-billing" className="sr-only">
                           Country
                         </label>
-                        <select
+                        <input
                           id="country-billing"
                           name="country-billing"
-                          autoComplete="country-name"
-                          onBlur={(e) => {
+                          type="text"
+                          autoComplete="on"
+                          onFocus={(e) => {
                             e.target.nextElementSibling.classList.remove(
                               "hidden"
                             );
-                            e.target.classList.remove("py-3.5");
-                            e.target.classList.add("pt-5");
+                            e.target.classList.remove("py-3");
+                            e.target.classList.add("pt-4");
                             e.target.nextElementSibling.classList.add(
                               "top-1/4"
                             );
                           }}
-                          className="inputText text-sm py-3.5 peer w-full border-0 rounded-t ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          onBlur={(e) => {
+                            setTimeout(() => {
+                              e.target.nextElementSibling.classList.add(
+                                "hidden"
+                              );
+                            }, 200);
+                            if (e.target.value) {
+                              document
+                                .getElementById("country-label-billing")
+                                .classList.add("top-1/4");
+                            }
+                          }}
+                          onChange={(e) => {
+                            const filter = e.target.value.toLowerCase();
+                            const options =
+                              e.target.nextElementSibling.children;
+                            for (let i = 0; i < options.length; i++) {
+                              const option = options[i];
+                              const text =
+                                option.textContent || option.innerText;
+                              option.style.display = text
+                                .toLowerCase()
+                                .includes(filter)
+                                ? ""
+                                : "none";
+                            }
+                          }}
+                          className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        />
+                        <ul className="absolute left-0 z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            United States
+                          </li>
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            Canada
+                          </li>
+                          <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                            Mexico
+                          </li>
+                        </ul>
+                        <span
+                          id="country-label-billing"
+                          className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                         >
-                          <option>United States</option>
-                          <option>Canada</option>
-                          <option>Mexico</option>
-                        </select>
-                        <span className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 hidden peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           Country
                         </span>
                       </div>
@@ -723,10 +823,11 @@ export default function Example() {
                           <label htmlFor="state-billing" className="sr-only">
                             State
                           </label>
-                          <select
+                          <input
                             id="state-billing"
                             name="state-billing"
-                            autoComplete="state-name"
+                            type="text"
+                            autoComplete="on"
                             onFocus={(e) => {
                               e.target.nextElementSibling.classList.remove(
                                 "hidden"
@@ -737,13 +838,50 @@ export default function Example() {
                                 "top-1/4"
                               );
                             }}
-                            className="inputText text-sm py-3 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            onBlur={(e) => {
+                              setTimeout(() => {
+                                e.target.nextElementSibling.classList.add(
+                                  "hidden"
+                                );
+                              }, 200);
+                              if (e.target.value) {
+                                document
+                                  .getElementById("state-label-billing")
+                                  .classList.add("top-1/4");
+                              }
+                            }}
+                            onChange={(e) => {
+                              const filter = e.target.value.toLowerCase();
+                              const options =
+                                e.target.nextElementSibling.children;
+                              for (let i = 0; i < options.length; i++) {
+                                const option = options[i];
+                                const text =
+                                  option.textContent || option.innerText;
+                                option.style.display = text
+                                  .toLowerCase()
+                                  .includes(filter)
+                                  ? ""
+                                  : "none";
+                              }
+                            }}
+                            className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          />
+                          <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
+                            <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                              Utah
+                            </li>
+                            <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                              California
+                            </li>
+                            <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
+                              New York
+                            </li>
+                          </ul>
+                          <span
+                            id="state-label-billing"
+                            className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                           >
-                            <option>Utah</option>
-                            <option>California</option>
-                            <option>New York</option>
-                          </select>
-                          <span className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 hidden peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             State
                           </span>
                         </div>
@@ -838,7 +976,7 @@ export default function Example() {
                         </div> */}
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2 h-7 shadow-lg bg-gray-200 rounded">
+                    <div className="flex items-center space-x-2 h-6 shadow-lg bg-gray-200 rounded-xl">
                       <button
                         type="button"
                         className="flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-sm text-gray-600 hover:text-gray-800"
