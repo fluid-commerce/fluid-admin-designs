@@ -76,10 +76,10 @@ export default function Example() {
               <div className="flex flex-row space-x-2 justify-between items-center mt-6">
                 <button
                   type="button"
-                  className="flex-1 bg-gray-800 h-10 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
+                  className="flex-1 bg-gray-800 h-10 font-custom flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
                 >
                   <span className="sr-only">Pay with Fluid Pay</span>
-                  Fluid Pay
+                  fluid pay
                 </button>
                 <button
                   type="button"
@@ -103,7 +103,7 @@ export default function Example() {
                     type={"save-icons"}
                   />
                 </button>
-                <button
+                {/* <button
                   type="button"
                   className="flex-1 bg-yellow-300 h-10 flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-yellow-400"
                 >
@@ -113,7 +113,7 @@ export default function Example() {
                     size={"pt-1 pl-2"}
                     type={"save-icons"}
                   />
-                </button>
+                </button> */}
               </div>
               <div className="relative mt-8">
                 <div
@@ -930,15 +930,15 @@ export default function Example() {
           {/* Order summary */}
           <section
             aria-labelledby="summary-heading"
-            className="col-span-3 flex flex-col bg-gray-50 h-full px-2"
+            className="flex flex-col items-center bg-gray-50 h-full px-10 md:px-2 pb-12 w-full md:col-span-3"
           >
             <h2 id="summary-heading" className="sr-only">
               Order summary
             </h2>
-            <div className="max-w-lg mx-auto md:mx-0 md:mr-auto">
+            <div className="flex flex-col md:max-w-md md:mr-auto w-full">
               <ul
                 role="list"
-                className="flex-auto divide-y divide-gray-200 overflow-y-auto px-6"
+                className="flex-auto divide-y divide-gray-200 overflow-y-auto md:px-6 w-full"
               >
                 {products.map((product) => (
                   <li
@@ -1022,7 +1022,7 @@ export default function Example() {
                   </li>
                 ))}
               </ul>
-              <div className="flex-none bg-gray-50 px-6">
+              <div className="flex-none bg-gray-50 md:px-6 w-full">
                 <div
                   className="relative w-full"
                   onClick={() =>
