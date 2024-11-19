@@ -47,13 +47,13 @@ export default function Example() {
             className="col-span-4 flex-auto px-8 pb-16 pt-0 overflow-y-auto md:h-screen"
           >
             <div className="max-w-lg mx-auto md:mx-0 md:ml-auto">
-              <div className="pt-10 flex flex-row justify-between">
+              <div className="pt-10 flex flex-row justify-between items-center">
                 <a href="#">
                   <span className="sr-only">Your Company</span>
                   <img
                     alt=""
-                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                    className="h-8 w-auto"
+                    src="https://logos-world.net/wp-content/uploads/2024/07/Vuori-Logo.jpg"
+                    className="h-14 w-auto"
                   />
                 </a>
                 <div>
@@ -73,7 +73,10 @@ export default function Example() {
                   </select>
                 </div>
               </div>
-              <div className="flex flex-row space-x-2 justify-between items-center mt-6">
+              <div className="text-xs text-gray-400 mt-4 text-center">
+                Fast checkout
+              </div>
+              <div className="flex flex-row space-x-2 justify-between items-center mt-4">
                 <button
                   type="button"
                   className="flex-1 bg-gray-800 h-10 font-custom flex items-center justify-center rounded border border-transparent py-2 text-white hover:bg-gray-900"
@@ -159,11 +162,14 @@ export default function Example() {
                             e.target.nextElementSibling.classList.add(
                               "top-1/4"
                             );
+                            e.target.nextElementSibling.classList.add(
+                              "text-xs"
+                            );
                           }
                         }}
-                        className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       />
-                      <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                         Email
                       </span>
                     </div>
@@ -218,6 +224,9 @@ export default function Example() {
                             document
                               .getElementById("country-label")
                               .classList.add("top-1/4");
+                            document
+                              .getElementById("country-label")
+                              .classList.add("text-xs");
                           }
                         }}
                         onChange={(e) => {
@@ -233,7 +242,7 @@ export default function Example() {
                               : "none";
                           }
                         }}
-                        className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm pt-5 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       />
                       <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
                         <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
@@ -248,7 +257,7 @@ export default function Example() {
                       </ul>
                       <span
                         id="country-label"
-                        className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
+                        className="absolute left-3 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-sm text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                       >
                         Country
                       </span>
@@ -272,11 +281,14 @@ export default function Example() {
                             e.target.nextElementSibling.classList.add(
                               "top-1/4"
                             );
+                            e.target.nextElementSibling.classList.add(
+                              "text-xs"
+                            );
                           }
                         }}
-                        className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       />
-                      <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                         Full Name
                       </span>
                     </div>
@@ -300,11 +312,14 @@ export default function Example() {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           Address Line 1
                         </span>
                       </div>
@@ -327,11 +342,14 @@ export default function Example() {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           Address Line 2
                         </span>
                       </div>
@@ -354,11 +372,14 @@ export default function Example() {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
-                          className="inputText text-sm pt-4 peer rounded-bl w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer rounded-bl w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           City
                         </span>
                       </div>
@@ -391,6 +412,9 @@ export default function Example() {
                               document
                                 .getElementById("state-label")
                                 .classList.add("top-1/4");
+                              document
+                                .getElementById("state-label")
+                                .classList.add("text-xs");
                             }
                           }}
                           onChange={(e) => {
@@ -408,7 +432,7 @@ export default function Example() {
                                 : "none";
                             }
                           }}
-                          className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
                         <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
                           <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
@@ -423,7 +447,7 @@ export default function Example() {
                         </ul>
                         <span
                           id="state-label"
-                          className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
+                          className="absolute left-3 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-sm text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                         >
                           State
                         </span>
@@ -447,11 +471,14 @@ export default function Example() {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           ZIP / Postal code
                         </span>
                       </div>
@@ -478,13 +505,13 @@ export default function Example() {
                           e.target.classList.add("pt-4");
                           e.target.nextElementSibling.classList.add("top-1/4");
                         }}
-                        className="inputText text-sm py-3 peer w-full rounded border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm py-3.5 peer w-full rounded border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                       >
                         <option>Standard shipping - 3-5 business days</option>
                         <option>Express shipping - 2-3 business days</option>
                         <option>Overnight shipping - 1 business day</option>
                       </select>
-                      <span className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 hidden peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      <span className="absolute left-3 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 hidden peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                         Shipping Method
                       </span>
                     </div>
@@ -495,7 +522,7 @@ export default function Example() {
                     <div className="text-sm/6 font-medium text-gray-900">
                       Payment
                     </div>
-                    <div className="flex flex-row space-x-1">
+                    {/* <div className="flex flex-row space-x-1">
                       <img
                         src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg"
                         alt="visa"
@@ -508,7 +535,7 @@ export default function Example() {
                         src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg"
                         alt="amex"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="mt-2 -space-y-px rounded bg-white shadow-sm">
                     <div
@@ -520,36 +547,62 @@ export default function Example() {
                       <input
                         type="text"
                         id="card-number"
-                        className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-t focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                        className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-t focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         onBlur={(e) => {
                           if (e.target.value) {
                             e.target.nextElementSibling.classList.add(
                               "top-1/4"
                             );
+                            e.target.nextElementSibling.classList.add(
+                              "text-xs"
+                            );
+                          }
+                        }}
+                        onInput={(e) => {
+                          const value = e.target.value;
+                          const visaImg = document.getElementById("visa-img");
+                          const mastercardImg =
+                            document.getElementById("mastercard-img");
+                          const amexImg = document.getElementById("amex-img");
+
+                          visaImg.style.display = "block";
+                          mastercardImg.style.display = "block";
+                          amexImg.style.display = "block";
+
+                          if (value.startsWith("4")) {
+                            mastercardImg.style.display = "none";
+                            amexImg.style.display = "none";
+                          } else if (value.startsWith("5")) {
+                            visaImg.style.display = "none";
+                            amexImg.style.display = "none";
+                          } else if (value.startsWith("3")) {
+                            visaImg.style.display = "none";
+                            mastercardImg.style.display = "none";
                           }
                         }}
                       />
-                      <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                         Card number
                       </span>
                       <div className="flex flex-row space-x-1 absolute items-center right-2 top-1/2 transform -translate-y-1/2">
-                        {/* <img
+                        <img
+                          id="visa-img"
                           src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg"
                           alt="visa"
+                          style={{ display: "block" }}
                         />
                         <img
+                          id="mastercard-img"
                           src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg"
                           alt="mastercard"
+                          style={{ display: "block" }}
                         />
                         <img
+                          id="amex-img"
                           src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg"
                           alt="amex"
+                          style={{ display: "block" }}
                         />
-                        <img
-                          src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/discover.C7UbFpNb.svg"
-                          alt="discover"
-                        /> */}
-                        <RenderIcon path={LockIcon} size={"w-3"} />
                       </div>
                     </div>
                     <div className="flex -space-x-px">
@@ -565,16 +618,19 @@ export default function Example() {
                           id="card-expiration-date"
                           name="card-expiration-date"
                           type="text"
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-bl focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-bl focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           onBlur={(e) => {
                             if (e.target.value) {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           MM / YY
                         </span>
                       </div>
@@ -588,16 +644,19 @@ export default function Example() {
                           id="card-cvc"
                           name="card-cvc"
                           type="text"
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 rounded-br focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           onBlur={(e) => {
                             if (e.target.value) {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           CVC
                         </span>
                       </div>
@@ -661,6 +720,9 @@ export default function Example() {
                               document
                                 .getElementById("country-label-billing")
                                 .classList.add("top-1/4");
+                              document
+                                .getElementById("country-label-billing")
+                                .classList.add("text-xs");
                             }
                           }}
                           onChange={(e) => {
@@ -678,7 +740,7 @@ export default function Example() {
                                 : "none";
                             }
                           }}
-                          className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
                         <ul className="absolute left-0 z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
                           <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
@@ -693,7 +755,7 @@ export default function Example() {
                         </ul>
                         <span
                           id="country-label-billing"
-                          className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
+                          className="absolute left-3 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-sm text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                         >
                           Country
                         </span>
@@ -717,11 +779,14 @@ export default function Example() {
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
+                              e.target.nextElementSibling.classList.add(
+                                "text-xs"
+                              );
                             }
                           }}
-                          className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                          className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                         />
-                        <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                           Full Name
                         </span>
                       </div>
@@ -750,11 +815,14 @@ export default function Example() {
                                 e.target.nextElementSibling.classList.add(
                                   "top-1/4"
                                 );
+                                e.target.nextElementSibling.classList.add(
+                                  "text-xs"
+                                );
                               }
                             }}
-                            className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
-                          <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             Address Line 1
                           </span>
                         </div>
@@ -782,11 +850,14 @@ export default function Example() {
                                 e.target.nextElementSibling.classList.add(
                                   "top-1/4"
                                 );
+                                e.target.nextElementSibling.classList.add(
+                                  "text-xs"
+                                );
                               }
                             }}
-                            className="inputText text-sm pt-4 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-5 peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
-                          <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             Address Line 2
                           </span>
                         </div>
@@ -811,11 +882,14 @@ export default function Example() {
                                 e.target.nextElementSibling.classList.add(
                                   "top-1/4"
                                 );
+                                e.target.nextElementSibling.classList.add(
+                                  "text-xs"
+                                );
                               }
                             }}
-                            className="inputText text-sm pt-4 peer w-full rounded-bl border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-5 peer w-full rounded-bl border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
-                          <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             City
                           </span>
                         </div>
@@ -833,7 +907,7 @@ export default function Example() {
                                 "hidden"
                               );
                               e.target.classList.remove("py-3");
-                              e.target.classList.add("pt-4");
+                              e.target.classList.add("pt-5");
                               e.target.nextElementSibling.classList.add(
                                 "top-1/4"
                               );
@@ -848,6 +922,9 @@ export default function Example() {
                                 document
                                   .getElementById("state-label-billing")
                                   .classList.add("top-1/4");
+                                document
+                                  .getElementById("state-label-billing")
+                                  .classList.add("text-xs");
                               }
                             }}
                             onChange={(e) => {
@@ -865,7 +942,7 @@ export default function Example() {
                                   : "none";
                               }
                             }}
-                            className="inputText text-sm pt-4 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-5 rounded-t peer w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
                           <ul className="absolute left-0 text-sm z-50 right-0 top-full mt-1 bg-white border border-gray-300 rounded shadow-lg hidden">
                             <li className="px-4 py-2 cursor-pointer hover:bg-gray-100">
@@ -880,7 +957,7 @@ export default function Example() {
                           </ul>
                           <span
                             id="state-label-billing"
-                            className="absolute left-2.5 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-xs text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
+                            className="absolute left-3 top-1/2 transform transition-transform duration-300 ease-in-out -translate-y-1/2 text-sm text-gray-400 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700"
                           >
                             State
                           </span>
@@ -909,11 +986,14 @@ export default function Example() {
                                 e.target.nextElementSibling.classList.add(
                                   "top-1/4"
                                 );
+                                e.target.nextElementSibling.classList.add(
+                                  "text-xs"
+                                );
                               }
                             }}
-                            className="inputText text-sm pt-4 peer rounded-br w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                            className="inputText text-sm pt-5 peer rounded-br w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
                           />
-                          <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                          <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
                             ZIP / Postal code
                           </span>
                         </div>
@@ -1023,51 +1103,57 @@ export default function Example() {
                 ))}
               </ul>
               <div className="flex-none bg-gray-50 md:px-6 w-full">
-                <div
-                  className="relative w-full"
-                  onClick={() =>
-                    document.getElementById("discount-code").focus()
-                  }
-                >
-                  <input
-                    type="text"
-                    id="discount-code"
-                    className="inputText text-sm pt-4 peer rounded w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-                    onBlur={(e) => {
-                      if (e.target.value) {
-                        e.target.nextElementSibling.classList.add("top-1/4");
-                      }
-                    }}
-                  />
-                  <span className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
-                    Discount Code
-                  </span>
+                <div className="flex flex-row space-x-2">
+                  <div
+                    className="relative w-full"
+                    onClick={() =>
+                      document.getElementById("discount-code").focus()
+                    }
+                  >
+                    <input
+                      type="text"
+                      id="discount-code"
+                      className="inputText text-sm bg-gray-50 pt-5 peer rounded w-full border-0 ring-b-0 ring-1 ring-inset ring-gray-300 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+                      onBlur={(e) => {
+                        if (e.target.value) {
+                          e.target.nextElementSibling.classList.add("top-1/4");
+                          e.target.nextElementSibling.classList.add("text-xs");
+                        }
+                      }}
+                    />
+                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-gray-500 peer-focus:top-1/4 peer-focus:text-xs peer-focus:text-gray-700">
+                      Discount Code
+                    </span>
+                  </div>
+                  <button className="text-sm text-white font-semibold bg-gray-700 opacity-90 rounded border px-4 py-2 hover:bg-gray-800">
+                    Apply
+                  </button>
                 </div>
                 <dl className="mt-10 space-y-2 text-sm font-medium text-gray-500">
-                  <div className="flex justify-between">
+                  {/* <div className="flex justify-between">
                     <dt>Subtotal</dt>
                     <dd className="text-gray-900">{subtotal}</dd>
-                  </div>
+                  </div> */}
                   <div className="flex justify-between">
                     <dt className="flex">
                       Discount
-                      <span className="ml-2 rounded-full bg-gray-200 px-2 py-0.5 text-xs tracking-wide text-gray-600">
+                      <span className="ml-2 rounded-full bg-gray-200 px-2 py-0.5 text-xs tracking-wide text-gray-500">
                         {discount.code}
                       </span>
                     </dt>
-                    <dd className="text-gray-900">-{discount.amount}</dd>
+                    <dd className="text-gray-500">-{discount.amount}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Taxes</dt>
-                    <dd className="text-gray-900">{taxes}</dd>
+                    <dd className="text-gray-500">{taxes}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>Shipping</dt>
-                    <dd className="text-gray-900">{shipping}</dd>
+                    <dd className="text-gray-500">{shipping}</dd>
                   </div>
-                  <div className="flex items-center justify-between pt-4 text-gray-900">
-                    <dt className="text-base">Total</dt>
-                    <dd className="text-base">{total}</dd>
+                  <div className="flex items-center justify-between pt-3 text-gray-900">
+                    <dt className="text-gray-500">Total</dt>
+                    <dd className="text-base font-bold">{total}</dd>
                   </div>
                 </dl>
               </div>
